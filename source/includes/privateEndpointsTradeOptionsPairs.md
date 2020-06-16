@@ -37,5 +37,3 @@ api-key | Your API KEY ID
 
 <!-- END  GET - (Option Pairs) Display Options Trading Pairs -->
 
-
-<!-- START POST - Create new trade order with unitPremium -->
