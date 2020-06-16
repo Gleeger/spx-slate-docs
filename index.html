@@ -274,6 +274,9 @@
                   <li>
                     <a href="#get-order-book-for-pair" class="toc-h2 toc-link" data-title="GET - Order Book For Pair">GET - Order Book For Pair</a>
                   </li>
+                  <li>
+                    <a href="#get-order-book-filter-by-type" class="toc-h2 toc-link" data-title="GET - Order Book Filter By Type">GET - Order Book Filter By Type</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -2399,6 +2402,316 @@ You must replace <code>xyz</code> with your personal API key.
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-7'>URL Endpoint</h3>
 <p><code>https://api.sparrowsandbox.com/trades/book/BTC-SP$</code></p>
+
+<!-- END GET - Order Book For Pair-->
+<h2 id='get-order-book-filter-by-type'>GET - Order Book Filter By Type</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/BTC-SP$?type=call'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">requestOptions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">redirect</span><span class="p">:</span> <span class="dl">'</span><span class="s1">follow</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.sparrowsandbox.com/trades/book/BTC-SP$?type=call</span><span class="dl">"</span><span class="p">,</span> <span class="nx">requestOptions</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">));</span>
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s2">"uri"</span>
+<span class="nb">require</span> <span class="s2">"net/http"</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.sparrowsandbox.com/trades/book/BTC-SP$?type=call"</span><span class="p">)</span>
+
+<span class="n">https</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">);</span>
+<span class="n">https</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">https</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
+<span class="kn">import</span> <span class="nn">mimetypes</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s">"https://api.sparrowsandbox.com/trades"</span><span class="p">)</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="s">''</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/book/BTC-SP$?type=call"</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
+</code></pre></div><div class="highlight"><pre class="highlight go tab-go"><code><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="p">(</span>
+  <span class="s">"fmt"</span>
+  <span class="s">"net/http"</span>
+  <span class="s">"io/ioutil"</span>
+<span class="p">)</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="n">url</span> <span class="o">:=</span> <span class="s">"https://api.sparrowsandbox.com/trades/book/BTC-SP$?type=call"</span>
+  <span class="n">method</span> <span class="o">:=</span> <span class="s">"GET"</span>
+
+  <span class="n">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">http</span><span class="o">.</span><span class="n">Client</span> <span class="p">{</span>
+  <span class="p">}</span>
+  <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="no">nil</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="n">res</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">client</span><span class="o">.</span><span class="n">Do</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+  <span class="k">defer</span> <span class="n">res</span><span class="o">.</span><span class="n">Body</span><span class="o">.</span><span class="n">Close</span><span class="p">()</span>
+  <span class="n">body</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">ioutil</span><span class="o">.</span><span class="n">ReadAll</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">Body</span><span class="p">)</span>
+
+  <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="kt">string</span><span class="p">(</span><span class="n">body</span><span class="p">))</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"pair"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-SP$"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-04T08:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"strike"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"call"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"totalQuantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maxBid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"unitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"307.44"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"tradeUnitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30.744"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"totalPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"307.44"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"impliedVolatility"</span><span class="p">:</span><span class="w"> </span><span class="s2">"119.586292"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"greeks"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"delta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.44551539755575087"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"gamma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0004513544127329389"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"theta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-17421.057502665175"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"vega"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.2623289499362587"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"minAsk"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"openInterest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"put"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"pair"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-SP$"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-04T08:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"strike"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8250"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"call"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"totalQuantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maxBid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"unitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"214.17"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"tradeUnitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21.417"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"totalPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"214.17"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"impliedVolatility"</span><span class="p">:</span><span class="w"> </span><span class="s2">"117.992588"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"greeks"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"delta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.3493781039763387"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"gamma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0003587379573724116"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"theta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-16101.110834773377"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"vega"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.0558761453717715"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"minAsk"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"openInterest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"put"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"pair"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-SP$"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-11T08:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"strike"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8500"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"call"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"totalQuantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maxBid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"unitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"244.3"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"tradeUnitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.43"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"totalPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.43"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"impliedVolatility"</span><span class="p">:</span><span class="w"> </span><span class="s2">"92.162149"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"greeks"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"delta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.3245546194179445"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"gamma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00025903867958489233"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"theta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-7420.420798469983"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"vega"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.89130212111081"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"minAsk"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"openInterest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"put"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"pair"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-SP$"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-04T08:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"strike"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"call"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"totalQuantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19.5"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maxBid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"minAsk"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19.5"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"unitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17.5"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"tradeUnitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.75"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"totalPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"341.25"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"impliedVolatility"</span><span class="p">:</span><span class="w"> </span><span class="s2">"84.591524"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"greeks"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"delta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.06021156730496735"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"gamma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0000862361693246329"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"theta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-3721.4394036662957"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"vega"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.985187148023525"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"openInterest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"put"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"pair"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-SP$"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-04T08:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"strike"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9750"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"call"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"totalQuantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maxBid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"minAsk"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"unitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16.63"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"tradeUnitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.663"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"totalPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.663"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"impliedVolatility"</span><span class="p">:</span><span class="w"> </span><span class="s2">"118.826486"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"greeks"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"delta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.04344833423026628"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"gamma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00004429923758647504"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"theta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-4039.034919879933"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"vega"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.7612003697120275"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"openInterest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"put"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"pair"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-SP$"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-04T08:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"strike"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"call"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"totalQuantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.8"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maxBid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.8"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"unitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17.14"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"tradeUnitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.714"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"totalPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13.712"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"impliedVolatility"</span><span class="p">:</span><span class="w"> </span><span class="s2">"130.182542"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"greeks"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"delta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.04145904158414915"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"gamma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000038583612420825715"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"theta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-4253.108332603115"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"vega"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.73162465870199"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"minAsk"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"openInterest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.2"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"put"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"pair"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-SP$"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-04T08:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"strike"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11500"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"call"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"totalQuantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maxBid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"minAsk"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"unitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"221.65"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"tradeUnitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22.165"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"totalPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"221.65"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"impliedVolatility"</span><span class="p">:</span><span class="w"> </span><span class="s2">"331.432859"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"greeks"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"delta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.17566826271590297"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"gamma"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00006421464969136541"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"theta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-31580.401043302005"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"vega"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.1338147539141272"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"openInterest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"put"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"pair"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-SP$"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-12-27T08:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"strike"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"call"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"totalQuantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maxBid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"minAsk"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"openInterest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"put"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"pair"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-SP$"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-12-27T08:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"strike"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9250"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"call"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"totalQuantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maxBid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"minAsk"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"openInterest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.8"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"put"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"pair"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-SP$"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-27T08:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"strike"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"call"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"totalQuantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maxBid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"minAsk"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"openInterest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"put"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h3 id='url-endpoint-8'>URL Endpoint</h3>
+<p><code>https://api.sparrowsandbox.com/trades/book/:pair?type={{type}}</code></p>
+<h3 id='params'>PARAMS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>{{type}} CALL/PUT</td>
+</tr>
+</tbody></table>
+<h3 id='path-variable'>PATH VARIABLE</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pair</td>
+<td>BTC/SP$</td>
+</tr>
+</tbody></table>
 
 <!-- END GET - Order Book For Pair-->
 <h1 id='public-endpoints'>Public Endpoints</h1>
