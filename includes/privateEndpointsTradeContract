@@ -1,0 +1,367 @@
+<h1 id='private-endpoints-contract'>Private Endpoints - Contract</h1><h2 id='get-display-own-trade-contracts'>GET - Display own trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
+</code></pre></div><h3 id='url-endpoint'>URL Endpoint</h3>
+<p><code>https://api.sparrowsandbox.com/trades/contracts/own</code></p>
+<h3 id='headers'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your authorization key</td>
+</tr>
+<tr>
+<td>api-key</td>
+<td>Your API Key ID</td>
+</tr>
+</tbody></table>
+
+<!-- END -->
+<h2 id='get-display-own-active-trade-contracts'>GET - Display own active trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own?status=active'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
+</code></pre></div><h3 id='url-endpoint-2'>URL Endpoint</h3>
+<p><code>https://api.sparrowsandbox.com/trades/contracts/own?status=active</code></p>
+<h3 id='headers-2'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your authorization key</td>
+</tr>
+<tr>
+<td>api-key</td>
+<td>Your API Key ID</td>
+</tr>
+</tbody></table>
+<h3 id='params'>Params</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>active</td>
+</tr>
+</tbody></table>
+
+<!-- END -->
+<h2 id='get-display-own-settled-trade-contracts'>GET - Display own settled trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own?status=settled'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
+</code></pre></div><h3 id='url-endpoint-3'>URL Endpoint</h3>
+<p><code>https://api.sparrowsandbox.com/trades/contracts/own?status=settled</code></p>
+<h3 id='headers-3'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your authorization key</td>
+</tr>
+<tr>
+<td>api-key</td>
+<td>Your API Key ID</td>
+</tr>
+</tbody></table>
+<h3 id='params-2'>Params</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>settled</td>
+</tr>
+</tbody></table>
+
+<!-- END -->
+<h2 id='get-display-own-buy-trade-contracts'>GET - Display own buy trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own?filter=buy'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
+</code></pre></div><h3 id='url-endpoint-4'>URL Endpoint</h3>
+<p><code>https://api.sparrowsandbox.com/trades/contracts/own?filter=buy</code></p>
+<h3 id='headers-4'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your authorization key</td>
+</tr>
+<tr>
+<td>api-key</td>
+<td>Your API Key ID</td>
+</tr>
+</tbody></table>
+<h3 id='params-3'>Params</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>filter</td>
+<td>buy</td>
+</tr>
+</tbody></table>
+
+<!-- END -->
+<h2 id='get-display-own-sell-trade-contracts'>GET - Display own sell trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own?filter=sell'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
+</code></pre></div><h3 id='url-endpoint-5'>URL Endpoint</h3>
+<p><code>https://api.sparrowsandbox.com/trades/contracts/own?filter=sell</code></p>
+<h3 id='headers-5'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your authorization key</td>
+</tr>
+<tr>
+<td>api-key</td>
+<td>Your API Key ID</td>
+</tr>
+</tbody></table>
+<h3 id='params-4'>Params</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>filter</td>
+<td>sell</td>
+</tr>
+</tbody></table>
+
+<!-- END -->
+<h2 id='get-display-own-trade-contracts-custom'>GET - Display own trade contracts - custom</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own?filter=sell&amp;status=settled'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
+</code></pre></div><h3 id='url-endpoint-6'>URL Endpoint</h3>
+<p><code>https://api.sparrowsandbox.com/trades/contracts/own?filter=sell&amp;status=settled</code></p>
+<h3 id='headers-6'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your authorization key</td>
+</tr>
+<tr>
+<td>api-key</td>
+<td>Your API Key ID</td>
+</tr>
+</tbody></table>
+<h3 id='params-5'>Params</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>filter</td>
+<td>sell</td>
+</tr>
+<tr>
+<td>status</td>
+<td>settled</td>
+</tr>
+</tbody></table>
+
+<!-- END -->
+<h2 id='get-display-own-trade-contracts-group-by-market'>GET - Display own trade contracts (group by market)</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own?format=grouped'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
+</code></pre></div><h3 id='url-endpoint-7'>URL Endpoint</h3>
+<p><code>https://api.sparrowsandbox.com/trades/contracts/own?format=grouped</code></p>
+<h3 id='headers-7'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your authorization key</td>
+</tr>
+<tr>
+<td>api-key</td>
+<td>Your API Key ID</td>
+</tr>
+</tbody></table>
+<h3 id='params-6'>Params</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>grouped (list / grouped (default is list) refer to TRD-CN-1a)</td>
+</tr>
+</tbody></table>
+
+<!-- END -->
+<h2 id='get-display-all-trade-contracts'>GET - Display all trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
+</code></pre></div>
+<p>By default, sorted by createdAt and status is ACTIVE</p>
+<h3 id='url-endpoint-8'>URL Endpoint</h3>
+<p><code>https://api.sparrowsandbox.com/trades/contracts</code></p>
+<h3 id='headers-8'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your authorization key</td>
+</tr>
+<tr>
+<td>api-key</td>
+<td>Your API Key ID</td>
+</tr>
+</tbody></table>
+
+<!-- END -->
+<h2 id='get-display-all-settled-trade-contracts'>GET - Display all settled trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts?status=settled'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
+</code></pre></div><h3 id='url-endpoint-9'>URL Endpoint</h3>
+<p><code>https://api.sparrowsandbox.com/trades/contracts?status=settled</code></p>
+<h3 id='headers-9'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your authorization key</td>
+</tr>
+<tr>
+<td>api-key</td>
+<td>Your API Key ID</td>
+</tr>
+</tbody></table>
+<h3 id='params-7'>PARAMS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>settled</td>
+</tr>
+</tbody></table>
+
+<!-- END -->
+<h2 id='get-display-all-put-trade-contracts'>GET - Display all put trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts?type=put'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
+</code></pre></div><h3 id='url-endpoint-10'>URL Endpoint</h3>
+<p><code>https://api.sparrowsandbox.com/trades/contracts?type=put</code></p>
+<h3 id='headers-10'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your authorization key</td>
+</tr>
+<tr>
+<td>api-key</td>
+<td>Your API Key ID</td>
+</tr>
+</tbody></table>
+<h3 id='params-8'>PARAMS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>put</td>
+</tr>
+</tbody></table>
+
+<!-- END -->
+<h2 id='get-display-all-call-trade-contracts'>GET - Display all call trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts?type=call'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
+</code></pre></div><h3 id='url-endpoint-11'>URL Endpoint</h3>
+<p><code>https://api.sparrowsandbox.com/trades/contracts?type=put</code></p>
+<h3 id='headers-11'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your authorization key</td>
+</tr>
+<tr>
+<td>api-key</td>
+<td>Your API Key ID</td>
+</tr>
+</tbody></table>
+<h3 id='params-9'>PARAMS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>put</td>
+</tr>
+</tbody></table>
+
+<!-- END -->
