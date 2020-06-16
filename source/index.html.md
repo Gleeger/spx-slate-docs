@@ -843,174 +843,161 @@ api-key | Your API KEY ID
 <!-- END  POST - Create new trade order with totalPremium -->
 
 
-# Public Endpoints
-<!-- ### Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
+<!-- START POST - Create new trade order with tradeUnitPremium -->
+## [TRADE] POST - (Orders) - Create new trade order with tradeUnitPremium
 ```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
+curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/create' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Your Authorization Token' \
+--header 'api-key: Your API Key ID' \
+--data-raw '{
+	"action": "BUY",
+	"type": "PUT",
+	"lifetime": "GTD",
+	"txFeeCoin": "SP$",
+	"pair": "BTC-SP$",
+	"strike": "7000",
+	"amount": "10",
+	"tradeUnitPremium": "0.2",
+	"expiryDate": "2019-03-01T08:00:00.000Z"
+}'
 ```
 
 ```javascript
-const kittn = require('kittn');
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+myHeaders.append("Authorization", "Your Authorization Token");
+myHeaders.append("api-key", "Your API Key ID");
 
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
+var raw = JSON.stringify({"action":"BUY","type":"PUT","lifetime":"GTD","txFeeCoin":"SP$","pair":"BTC-SP$","strike":"7000","amount":"10","tradeUnitPremium":"0.2","expiryDate":"2019-03-01T08:00:00.000Z"});
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("https://api.sparrowsandbox.com/trades/book/create", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
 ```
 
-> The above command returns JSON structured like this:
+```python
+import http.client
+import mimetypes
+conn = http.client.HTTPSConnection("api.sparrowsandbox.com")
+payload = "{\n\t\"action\": \"BUY\",\n\t\"type\": \"PUT\",\n\t\"lifetime\": \"GTD\",\n\t\"txFeeCoin\": \"SP$\",\n\t\"pair\": \"BTC-SP$\",\n\t\"strike\": \"7000\",\n\t\"amount\": \"10\",\n\t\"tradeUnitPremium\": \"0.2\",\n\t\"expiryDate\": \"2019-03-01T08:00:00.000Z\"\n}"
+headers = {
+  'Content-Type': 'application/json',
+  'Authorization': 'Your Authorization Token',
+  'api-key': 'Your API Key ID'
+}
+conn.request("POST", "/trades/book/create", payload, headers)
+res = conn.getresponse()
+data = res.read()
+print(data.decode("utf-8"))
+```
 
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
+```ruby
+require "uri"
+require "net/http"
+
+url = URI("https://api.sparrowsandbox.com/trades/book/create")
+
+https = Net::HTTP.new(url.host, url.port);
+https.use_ssl = true
+
+request = Net::HTTP::Post.new(url)
+request["Content-Type"] = "application/json"
+request["Authorization"] = "Your Authorization Token"
+request["api-key"] = "Your API Key ID"
+request.body = "{\n\t\"action\": \"BUY\",\n\t\"type\": \"PUT\",\n\t\"lifetime\": \"GTD\",\n\t\"txFeeCoin\": \"SP$\",\n\t\"pair\": \"BTC-SP$\",\n\t\"strike\": \"7000\",\n\t\"amount\": \"10\",\n\t\"tradeUnitPremium\": \"0.2\",\n\t\"expiryDate\": \"2019-03-01T08:00:00.000Z\"\n}"
+
+response = https.request(request)
+puts response.read_body
+```
+
+```go
+package main
+
+import (
+  "fmt"
+  "strings"
+  "net/http"
+  "io/ioutil"
+)
+
+func main() {
+
+  url := "https://api.sparrowsandbox.com/trades/book/create"
+  method := "POST"
+
+  payload := strings.NewReader("{\n	\"action\": \"BUY\",\n	\"type\": \"PUT\",\n	\"lifetime\": \"GTD\",\n	\"txFeeCoin\": \"SP$\",\n	\"pair\": \"BTC-SP$\",\n	\"strike\": \"7000\",\n	\"amount\": \"10\",\n	\"tradeUnitPremium\": \"0.2\",\n	\"expiryDate\": \"2019-03-01T08:00:00.000Z\"\n}")
+
+  client := &http.Client {
   }
-]
+  req, err := http.NewRequest(method, url, payload)
+
+  if err != nil {
+    fmt.Println(err)
+  }
+  req.Header.Add("Content-Type", "application/json")
+  req.Header.Add("Authorization", "Your Authorization Token")
+  req.Header.Add("api-key", "Your API Key ID")
+
+  res, err := client.Do(req)
+  defer res.Body.Close()
+  body, err := ioutil.ReadAll(res.Body)
+
+  fmt.Println(string(body))
+}
 ```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
+> Example Body
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+	"action": "BUY",
+	"type": "PUT",
+	"lifetime": "GTD",
+	"txFeeCoin": "SP$",
+	"pair": "BTC-SP$",
+	"strike": "7000",
+	"amount": "10",
+	"tradeUnitPremium": "0.2",
+	"expiryDate": "2019-10-04T08:00:00.000Z"
 }
 ```
 
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
+> Example Response
 
 ```json
 {
-  "id": 2,
-  "deleted" : ":("
+  "result": {
+    "expiry_date": "11/10/2019",
+    "iv": 1.1939,
+    "option_price": 0.01,
+    "quantity": 0.1,
+    "spot": 7803,
+    "strike": 80000
+  },
+  "status": "success"
 }
 ```
 
-This endpoint deletes a specific kitten.
+### URL Endpoint
+`https://api.sparrowsandbox.com/trades/book/create`
 
-### HTTP Request
+### HEADERS
+Parameter | Default 
+--------- | ------- 
+Content-Type | application/json
+Authorization | Your Authorization Token
+api-key | Your API KEY ID
 
-`DELETE http://example.com/kittens/<ID>`
 
-### URL Parameters
+<!-- END POST - Create new trade order with tradeUnitPremium -->
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete -->
 
+# Public Endpoints
