@@ -14,7 +14,10 @@ includes:
   - privateEndpointsTradeOptionsPairs
   - privateEndpointsTradeOrders
   - privateEndpointsTradeCancelOrders
+  - privateEndpointsTradeContract
   - publicEndpoints
+  - publicEndpointsTicker
+  - publicEndpointsOptions
 
 search: true
 ---
