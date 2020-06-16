@@ -243,6 +243,12 @@
                   <li>
                     <a href="#trade-post-orders-create-new-trade-order-with-unitpremium" class="toc-h2 toc-link" data-title="[TRADE] POST - (Orders) - Create new trade order with unitPremium">[TRADE] POST - (Orders) - Create new trade order with unitPremium</a>
                   </li>
+                  <li>
+                    <a href="#trade-post-orders-create-new-trade-order-with-totalpremium" class="toc-h2 toc-link" data-title="[TRADE] POST - (Orders) - Create new trade order with totalPremium">[TRADE] POST - (Orders) - Create new trade order with totalPremium</a>
+                  </li>
+                  <li>
+                    <a href="#trade-post-orders-create-new-trade-order-with-tradeunitpremium" class="toc-h2 toc-link" data-title="[TRADE] POST - (Orders) - Create new trade order with tradeUnitPremium">[TRADE] POST - (Orders) - Create new trade order with tradeUnitPremium</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -906,177 +912,309 @@ You must replace <code>xyz</code> with your personal API key.
 </tbody></table>
 
 <!-- END  POST - Create new trade order with unitPremium -->
-<h1 id='public-endpoints'>Public Endpoints</h1>
-<!-- ### Get All Kittens
 
-```ruby
-require 'kittn'
+<!-- START POST - Create new trade order with totalPremium -->
+<h2 id='trade-post-orders-create-new-trade-order-with-totalpremium'>[TRADE] POST - (Orders) - Create new trade order with totalPremium</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowsandbox.com/trades/book/create'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">'{
+    "action": "BUY",
+    "type": "PUT",
+    "lifetime": "GTD",
+    "txFeeCoin": "SP$",
+    "pair": "BTC-SP$",
+    "strike": "7000",
+    "amount": "3",
+    "totalPremium": "10",
+    "expiryDate": "2019-04-20T08:00:00.000Z"
+}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">myHeaders</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Headers</span><span class="p">();</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Your Authorization Token</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">api-key</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Your API Key ID</span><span class="dl">"</span><span class="p">);</span>
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
+<span class="kd">var</span> <span class="nx">raw</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="dl">"</span><span class="s2">action</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">BUY</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">PUT</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">lifetime</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">GTD</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">txFeeCoin</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">SP$</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">pair</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">BTC-SP$</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">strike</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">7000</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">amount</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">3</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">totalPremium</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">10</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">expiryDate</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">2019-04-20T08:00:00.000Z</span><span class="dl">"</span><span class="p">});</span>
 
-```python
-import kittn
+<span class="kd">var</span> <span class="nx">requestOptions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">myHeaders</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">raw</span><span class="p">,</span>
+  <span class="na">redirect</span><span class="p">:</span> <span class="dl">'</span><span class="s1">follow</span><span class="dl">'</span>
+<span class="p">};</span>
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.sparrowsandbox.com/trades/book/create</span><span class="dl">"</span><span class="p">,</span> <span class="nx">requestOptions</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">));</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
+<span class="kn">import</span> <span class="nn">mimetypes</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s">"api.sparrowsandbox.com"</span><span class="p">)</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="s">"{</span><span class="se">\n\t\"</span><span class="s">action</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">BUY</span><span class="se">\"</span><span class="s">,</span><span class="se">\n\t\"</span><span class="s">type</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">PUT</span><span class="se">\"</span><span class="s">,</span><span class="se">\n\t\"</span><span class="s">lifetime</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">GTD</span><span class="se">\"</span><span class="s">,</span><span class="se">\n\t\"</span><span class="s">txFeeCoin</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">SP$</span><span class="se">\"</span><span class="s">,</span><span class="se">\n\t\"</span><span class="s">pair</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">BTC-SP$</span><span class="se">\"</span><span class="s">,</span><span class="se">\n\t\"</span><span class="s">strike</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">7000</span><span class="se">\"</span><span class="s">,</span><span class="se">\n\t\"</span><span class="s">amount</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">3</span><span class="se">\"</span><span class="s">,</span><span class="se">\n\t\"</span><span class="s">totalPremium</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">10</span><span class="se">\"</span><span class="s">,</span><span class="se">\n\t\"</span><span class="s">expiryDate</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">2019-04-20T08:00:00.000Z</span><span class="se">\"\n</span><span class="s">}"</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+  <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Your Authorization Token'</span><span class="p">,</span>
+  <span class="s">'api-key'</span><span class="p">:</span> <span class="s">'Your API Key ID'</span>
+<span class="p">}</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="s">"/trades/book/create"</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s2">"uri"</span>
+<span class="nb">require</span> <span class="s2">"net/http"</span>
 
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.sparrowsandbox.com/trades/book/create"</span><span class="p">)</span>
 
-```javascript
-const kittn = require('kittn');
+<span class="n">https</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">);</span>
+<span class="n">https</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
 
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Content-Type"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"application/json"</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Your Authorization Token"</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"api-key"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Your API Key ID"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{</span><span class="se">\n\t\"</span><span class="s2">action</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">BUY</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n\t\"</span><span class="s2">type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">PUT</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n\t\"</span><span class="s2">lifetime</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">GTD</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n\t\"</span><span class="s2">txFeeCoin</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">SP$</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n\t\"</span><span class="s2">pair</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">BTC-SP$</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n\t\"</span><span class="s2">strike</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">7000</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n\t\"</span><span class="s2">amount</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">3</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n\t\"</span><span class="s2">totalPremium</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">10</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n\t\"</span><span class="s2">expiryDate</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2019-04-20T08:00:00.000Z</span><span class="se">\"\n</span><span class="s2">}"</span>
 
-> The above command returns JSON structured like this:
+<span class="n">response</span> <span class="o">=</span> <span class="n">https</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre></div><div class="highlight"><pre class="highlight go tab-go"><code><span class="k">package</span> <span class="n">main</span>
 
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
+<span class="k">import</span> <span class="p">(</span>
+  <span class="s">"fmt"</span>
+  <span class="s">"strings"</span>
+  <span class="s">"net/http"</span>
+  <span class="s">"io/ioutil"</span>
+<span class="p">)</span>
 
-This endpoint retrieves all kittens.
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
 
-### HTTP Request
+  <span class="n">url</span> <span class="o">:=</span> <span class="s">"https://api.sparrowsandbox.com/trades/book/create"</span>
+  <span class="n">method</span> <span class="o">:=</span> <span class="s">"POST"</span>
 
-`GET http://example.com/api/kittens`
+  <span class="n">payload</span> <span class="o">:=</span> <span class="n">strings</span><span class="o">.</span><span class="n">NewReader</span><span class="p">(</span><span class="s">"{</span><span class="se">\n</span><span class="s"> </span><span class="se">\"</span><span class="s">action</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">BUY</span><span class="se">\"</span><span class="s">,</span><span class="se">\n</span><span class="s">  </span><span class="se">\"</span><span class="s">type</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">PUT</span><span class="se">\"</span><span class="s">,</span><span class="se">\n</span><span class="s">    </span><span class="se">\"</span><span class="s">lifetime</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">GTD</span><span class="se">\"</span><span class="s">,</span><span class="se">\n</span><span class="s">    </span><span class="se">\"</span><span class="s">txFeeCoin</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">SP$</span><span class="se">\"</span><span class="s">,</span><span class="se">\n</span><span class="s">   </span><span class="se">\"</span><span class="s">pair</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">BTC-SP$</span><span class="se">\"</span><span class="s">,</span><span class="se">\n</span><span class="s">    </span><span class="se">\"</span><span class="s">strike</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">7000</span><span class="se">\"</span><span class="s">,</span><span class="se">\n</span><span class="s"> </span><span class="se">\"</span><span class="s">amount</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">3</span><span class="se">\"</span><span class="s">,</span><span class="se">\n</span><span class="s">    </span><span class="se">\"</span><span class="s">totalPremium</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">10</span><span class="se">\"</span><span class="s">,</span><span class="se">\n</span><span class="s"> </span><span class="se">\"</span><span class="s">expiryDate</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">2019-04-20T08:00:00.000Z</span><span class="se">\"\n</span><span class="s">}"</span><span class="p">)</span>
 
-### Query Parameters
+  <span class="n">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">http</span><span class="o">.</span><span class="n">Client</span> <span class="p">{</span>
+  <span class="p">}</span>
+  <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span>
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+  <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="n">req</span><span class="o">.</span><span class="n">Header</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s">"Content-Type"</span><span class="p">,</span> <span class="s">"application/json"</span><span class="p">)</span>
+  <span class="n">req</span><span class="o">.</span><span class="n">Header</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s">"Authorization"</span><span class="p">,</span> <span class="s">"Your Authorization Token"</span><span class="p">)</span>
+  <span class="n">req</span><span class="o">.</span><span class="n">Header</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s">"api-key"</span><span class="p">,</span> <span class="s">"Your API Key ID"</span><span class="p">)</span>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
+  <span class="n">res</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">client</span><span class="o">.</span><span class="n">Do</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+  <span class="k">defer</span> <span class="n">res</span><span class="o">.</span><span class="n">Body</span><span class="o">.</span><span class="n">Close</span><span class="p">()</span>
+  <span class="n">body</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">ioutil</span><span class="o">.</span><span class="n">ReadAll</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">Body</span><span class="p">)</span>
 
-## Get a Specific Kitten
+  <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="kt">string</span><span class="p">(</span><span class="n">body</span><span class="p">))</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>Example Body</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PUT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lifetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GTD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"txFeeCoin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SP$"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pair"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-SP$"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"strike"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expiryDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-04T08:00:00.000Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"expiry_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11/10/2019"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"iv"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1939</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"option_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"spot"</span><span class="p">:</span><span class="w"> </span><span class="mi">7803</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"strike"</span><span class="p">:</span><span class="w"> </span><span class="mi">80000</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='url-endpoint-5'>URL Endpoint</h3>
+<p><code>https://api.sparrowsandbox.com/trades/book/create</code></p>
+<h3 id='headers-5'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Content-Type</td>
+<td>application/json</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>Your Authorization Token</td>
+</tr>
+<tr>
+<td>api-key</td>
+<td>Your API KEY ID</td>
+</tr>
+</tbody></table>
 
-```ruby
-require 'kittn'
+<!-- END  POST - Create new trade order with totalPremium -->
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
+<!-- START POST - Create new trade order with tradeUnitPremium -->
+<h2 id='trade-post-orders-create-new-trade-order-with-tradeunitpremium'>[TRADE] POST - (Orders) - Create new trade order with tradeUnitPremium</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowsandbox.com/trades/book/create'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">'{
+    "action": "BUY",
+    "type": "PUT",
+    "lifetime": "GTD",
+    "txFeeCoin": "SP$",
+    "pair": "BTC-SP$",
+    "strike": "7000",
+    "amount": "10",
+    "tradeUnitPremium": "0.2",
+    "expiryDate": "2019-03-01T08:00:00.000Z"
+}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">myHeaders</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Headers</span><span class="p">();</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Your Authorization Token</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">api-key</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Your API Key ID</span><span class="dl">"</span><span class="p">);</span>
 
-```python
-import kittn
+<span class="kd">var</span> <span class="nx">raw</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="dl">"</span><span class="s2">action</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">BUY</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">PUT</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">lifetime</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">GTD</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">txFeeCoin</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">SP$</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">pair</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">BTC-SP$</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">strike</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">7000</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">amount</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">10</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">tradeUnitPremium</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">0.2</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">expiryDate</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">2019-03-01T08:00:00.000Z</span><span class="dl">"</span><span class="p">});</span>
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
+<span class="kd">var</span> <span class="nx">requestOptions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">myHeaders</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">raw</span><span class="p">,</span>
+  <span class="na">redirect</span><span class="p">:</span> <span class="dl">'</span><span class="s1">follow</span><span class="dl">'</span>
+<span class="p">};</span>
 
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.sparrowsandbox.com/trades/book/create</span><span class="dl">"</span><span class="p">,</span> <span class="nx">requestOptions</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">));</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
+<span class="kn">import</span> <span class="nn">mimetypes</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s">"api.sparrowsandbox.com"</span><span class="p">)</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="s">"{</span><span class="se">\n\t\"</span><span class="s">action</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">BUY</span><span class="se">\"</span><span class="s">,</span><span class="se">\n\t\"</span><span class="s">type</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">PUT</span><span class="se">\"</span><span class="s">,</span><span class="se">\n\t\"</span><span class="s">lifetime</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">GTD</span><span class="se">\"</span><span class="s">,</span><span class="se">\n\t\"</span><span class="s">txFeeCoin</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">SP$</span><span class="se">\"</span><span class="s">,</span><span class="se">\n\t\"</span><span class="s">pair</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">BTC-SP$</span><span class="se">\"</span><span class="s">,</span><span class="se">\n\t\"</span><span class="s">strike</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">7000</span><span class="se">\"</span><span class="s">,</span><span class="se">\n\t\"</span><span class="s">amount</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">10</span><span class="se">\"</span><span class="s">,</span><span class="se">\n\t\"</span><span class="s">tradeUnitPremium</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">0.2</span><span class="se">\"</span><span class="s">,</span><span class="se">\n\t\"</span><span class="s">expiryDate</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">2019-03-01T08:00:00.000Z</span><span class="se">\"\n</span><span class="s">}"</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+  <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Your Authorization Token'</span><span class="p">,</span>
+  <span class="s">'api-key'</span><span class="p">:</span> <span class="s">'Your API Key ID'</span>
+<span class="p">}</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="s">"/trades/book/create"</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s2">"uri"</span>
+<span class="nb">require</span> <span class="s2">"net/http"</span>
 
-```javascript
-const kittn = require('kittn');
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.sparrowsandbox.com/trades/book/create"</span><span class="p">)</span>
 
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
+<span class="n">https</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">);</span>
+<span class="n">https</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
 
-> The above command returns JSON structured like this:
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Content-Type"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"application/json"</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Your Authorization Token"</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"api-key"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Your API Key ID"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{</span><span class="se">\n\t\"</span><span class="s2">action</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">BUY</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n\t\"</span><span class="s2">type</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">PUT</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n\t\"</span><span class="s2">lifetime</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">GTD</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n\t\"</span><span class="s2">txFeeCoin</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">SP$</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n\t\"</span><span class="s2">pair</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">BTC-SP$</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n\t\"</span><span class="s2">strike</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">7000</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n\t\"</span><span class="s2">amount</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">10</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n\t\"</span><span class="s2">tradeUnitPremium</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">0.2</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n\t\"</span><span class="s2">expiryDate</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">2019-03-01T08:00:00.000Z</span><span class="se">\"\n</span><span class="s2">}"</span>
 
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
+<span class="n">response</span> <span class="o">=</span> <span class="n">https</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre></div><div class="highlight"><pre class="highlight go tab-go"><code><span class="k">package</span> <span class="n">main</span>
 
-This endpoint retrieves a specific kitten.
+<span class="k">import</span> <span class="p">(</span>
+  <span class="s">"fmt"</span>
+  <span class="s">"strings"</span>
+  <span class="s">"net/http"</span>
+  <span class="s">"io/ioutil"</span>
+<span class="p">)</span>
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
 
-### HTTP Request
+  <span class="n">url</span> <span class="o">:=</span> <span class="s">"https://api.sparrowsandbox.com/trades/book/create"</span>
+  <span class="n">method</span> <span class="o">:=</span> <span class="s">"POST"</span>
 
-`GET http://example.com/kittens/<ID>`
+  <span class="n">payload</span> <span class="o">:=</span> <span class="n">strings</span><span class="o">.</span><span class="n">NewReader</span><span class="p">(</span><span class="s">"{</span><span class="se">\n</span><span class="s"> </span><span class="se">\"</span><span class="s">action</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">BUY</span><span class="se">\"</span><span class="s">,</span><span class="se">\n</span><span class="s">  </span><span class="se">\"</span><span class="s">type</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">PUT</span><span class="se">\"</span><span class="s">,</span><span class="se">\n</span><span class="s">    </span><span class="se">\"</span><span class="s">lifetime</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">GTD</span><span class="se">\"</span><span class="s">,</span><span class="se">\n</span><span class="s">    </span><span class="se">\"</span><span class="s">txFeeCoin</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">SP$</span><span class="se">\"</span><span class="s">,</span><span class="se">\n</span><span class="s">   </span><span class="se">\"</span><span class="s">pair</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">BTC-SP$</span><span class="se">\"</span><span class="s">,</span><span class="se">\n</span><span class="s">    </span><span class="se">\"</span><span class="s">strike</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">7000</span><span class="se">\"</span><span class="s">,</span><span class="se">\n</span><span class="s"> </span><span class="se">\"</span><span class="s">amount</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">10</span><span class="se">\"</span><span class="s">,</span><span class="se">\n</span><span class="s">   </span><span class="se">\"</span><span class="s">tradeUnitPremium</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">0.2</span><span class="se">\"</span><span class="s">,</span><span class="se">\n</span><span class="s">    </span><span class="se">\"</span><span class="s">expiryDate</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">2019-03-01T08:00:00.000Z</span><span class="se">\"\n</span><span class="s">}"</span><span class="p">)</span>
 
-### URL Parameters
+  <span class="n">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">http</span><span class="o">.</span><span class="n">Client</span> <span class="p">{</span>
+  <span class="p">}</span>
+  <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span>
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+  <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="n">req</span><span class="o">.</span><span class="n">Header</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s">"Content-Type"</span><span class="p">,</span> <span class="s">"application/json"</span><span class="p">)</span>
+  <span class="n">req</span><span class="o">.</span><span class="n">Header</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s">"Authorization"</span><span class="p">,</span> <span class="s">"Your Authorization Token"</span><span class="p">)</span>
+  <span class="n">req</span><span class="o">.</span><span class="n">Header</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s">"api-key"</span><span class="p">,</span> <span class="s">"Your API Key ID"</span><span class="p">)</span>
 
-## Delete a Specific Kitten
+  <span class="n">res</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">client</span><span class="o">.</span><span class="n">Do</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+  <span class="k">defer</span> <span class="n">res</span><span class="o">.</span><span class="n">Body</span><span class="o">.</span><span class="n">Close</span><span class="p">()</span>
+  <span class="n">body</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">ioutil</span><span class="o">.</span><span class="n">ReadAll</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">Body</span><span class="p">)</span>
 
-```ruby
-require 'kittn'
+  <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="kt">string</span><span class="p">(</span><span class="n">body</span><span class="p">))</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>Example Body</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PUT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lifetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GTD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"txFeeCoin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SP$"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pair"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-SP$"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"strike"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tradeUnitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expiryDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-04T08:00:00.000Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"expiry_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11/10/2019"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"iv"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1939</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"option_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"spot"</span><span class="p">:</span><span class="w"> </span><span class="mi">7803</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"strike"</span><span class="p">:</span><span class="w"> </span><span class="mi">80000</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='url-endpoint-6'>URL Endpoint</h3>
+<p><code>https://api.sparrowsandbox.com/trades/book/create</code></p>
+<h3 id='headers-6'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Content-Type</td>
+<td>application/json</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>Your Authorization Token</td>
+</tr>
+<tr>
+<td>api-key</td>
+<td>Your API KEY ID</td>
+</tr>
+</tbody></table>
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
-```
-
-This endpoint deletes a specific kitten.
-
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete -->
-<h1 id='errors'>Errors</h1>
+<!-- END POST - Create new trade order with tradeUnitPremium -->
+<h1 id='public-endpoints'>Public Endpoints</h1><h1 id='errors'>Errors</h1>
 <aside class="notice">
 This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
 </aside>
