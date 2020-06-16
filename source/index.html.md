@@ -41,7 +41,7 @@ You must replace <code>xyz</code> with your personal API key.
 
 
 # Private Endpoints
-## [Account Balance] Wallet Balance
+## [Account Balance] GET - Wallet Balance
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/wallets/balance' \
 --header 'Authorization: Your Authorization Token' \
