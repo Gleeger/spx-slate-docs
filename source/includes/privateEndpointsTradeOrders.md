@@ -340,11 +340,6 @@ api-key | Your API KEY ID
 
 <!-- END POST - Bulk Create new trade orders with unitPremium -->
 
-
-```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/book'
-```
-
 > Example Response
 
 ```json
