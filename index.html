@@ -238,7 +238,7 @@
                     <a href="#account-balance-get-wallet-balance-only-options-trading-pairs" class="toc-h2 toc-link" data-title="[Account Balance] GET - Wallet Balance (Only Options Trading Pairs)">[Account Balance] GET - Wallet Balance (Only Options Trading Pairs)</a>
                   </li>
                   <li>
-                    <a href="#trade" class="toc-h2 toc-link" data-title="Trade">Trade</a>
+                    <a href="#trade-get-option-pairs-display-options-trading-pairs" class="toc-h2 toc-link" data-title="[TRADE] GET - (Option Pairs) Display Options Trading Pairs">[TRADE] GET - (Option Pairs) Display Options Trading Pairs</a>
                   </li>
               </ul>
           </li>
@@ -458,7 +458,7 @@ You must replace <code>xyz</code> with your personal API key.
     </span><span class="nl">"market"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CRYPTO"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h3 id='get-wallet-balance'>GET Wallet Balance</h3>
+</span></code></pre></div><h3 id='url-endpoint'>URL Endpoint</h3>
 <p><code>https://api.sparrowsandbox.com/wallets/balance</code></p>
 <h3 id='headers'>HEADERS</h3>
 <table><thead>
@@ -604,7 +604,7 @@ You must replace <code>xyz</code> with your personal API key.
     </span><span class="nl">"market"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CRYPTO"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre></div><h3 id='get-wallet-balance-2'>GET Wallet Balance</h3>
+</span></code></pre></div><h3 id='url-endpoint-2'>URL Endpoint</h3>
 <p><code>https://api.sparrowsandbox.com/wallets/balance?filter=optionsTrading</code></p>
 <h3 id='headers-2'>HEADERS</h3>
 <table><thead>
@@ -640,7 +640,119 @@ You must replace <code>xyz</code> with your personal API key.
 </tbody></table>
 
 <!-- END GET - WALLET BALANCE (ONLY OPTIONS TRADING PAIRS) -->
-<h2 id='trade'>Trade</h2><h1 id='public-endpoints'>Public Endpoints</h1>
+
+<!-- START  GET - (Option Pairs) Display Options Trading Pairs -->
+<h2 id='trade-get-option-pairs-display-options-trading-pairs'>[TRADE] GET - (Option Pairs) Display Options Trading Pairs</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/pairs'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">myHeaders</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Headers</span><span class="p">();</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Your Authorization Token</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">api-key</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Your API Key ID</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">requestOptions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">myHeaders</span><span class="p">,</span>
+  <span class="na">redirect</span><span class="p">:</span> <span class="dl">'</span><span class="s1">follow</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.sparrowsandbox.com/trades/pairs</span><span class="dl">"</span><span class="p">,</span> <span class="nx">requestOptions</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">));</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
+<span class="kn">import</span> <span class="nn">mimetypes</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s">"api.sparrowsandbox.com"</span><span class="p">)</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="s">''</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Your Authorization Token'</span><span class="p">,</span>
+  <span class="s">'api-key'</span><span class="p">:</span> <span class="s">'Your API Key ID'</span>
+<span class="p">}</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/trades/pairs"</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s2">"uri"</span>
+<span class="nb">require</span> <span class="s2">"net/http"</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://api.sparrowsandbox.com/trades/pairs"</span><span class="p">)</span>
+
+<span class="n">https</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">);</span>
+<span class="n">https</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"Authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Your Authorization Token"</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"api-key"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Your API Key ID"</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">https</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre></div><div class="highlight"><pre class="highlight go tab-go"><code><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="p">(</span>
+  <span class="s">"fmt"</span>
+  <span class="s">"net/http"</span>
+  <span class="s">"io/ioutil"</span>
+<span class="p">)</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="n">url</span> <span class="o">:=</span> <span class="s">"https://api.sparrowsandbox.com/trades/pairs"</span>
+  <span class="n">method</span> <span class="o">:=</span> <span class="s">"GET"</span>
+
+  <span class="n">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">http</span><span class="o">.</span><span class="n">Client</span> <span class="p">{</span>
+  <span class="p">}</span>
+  <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="no">nil</span><span class="p">)</span>
+
+  <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="n">req</span><span class="o">.</span><span class="n">Header</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s">"Authorization"</span><span class="p">,</span> <span class="s">"Your Authorization Token"</span><span class="p">)</span>
+  <span class="n">req</span><span class="o">.</span><span class="n">Header</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s">"api-key"</span><span class="p">,</span> <span class="s">"Your API Key ID"</span><span class="p">)</span>
+
+  <span class="n">res</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">client</span><span class="o">.</span><span class="n">Do</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+  <span class="k">defer</span> <span class="n">res</span><span class="o">.</span><span class="n">Body</span><span class="o">.</span><span class="n">Close</span><span class="p">()</span>
+  <span class="n">body</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">ioutil</span><span class="o">.</span><span class="n">ReadAll</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">Body</span><span class="p">)</span>
+
+  <span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="kt">string</span><span class="p">(</span><span class="n">body</span><span class="p">))</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"pair"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH-SP$"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"strikeStep"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amountStep"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"unitPremiumStep"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"pair"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-SP$"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"strikeStep"</span><span class="p">:</span><span class="w"> </span><span class="s2">"250"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amountStep"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"unitPremiumStep"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h3 id='url-endpoint-3'>URL Endpoint</h3>
+<p><code>https://api.sparrowsandbox.com/trades/pairs</code></p>
+<h3 id='headers-3'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your Authorization Token</td>
+</tr>
+<tr>
+<td>api-key</td>
+<td>Your API KEY ID</td>
+</tr>
+</tbody></table>
+
+<!-- END  GET - (Option Pairs) Display Options Trading Pairs -->
+<h1 id='public-endpoints'>Public Endpoints</h1>
 <!-- ### Get All Kittens
 
 ```ruby
