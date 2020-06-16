@@ -13,6 +13,7 @@ includes:
   - privateEndpointsAccountBalance
   - privateEndpointsTradeOptionsPairs
   - privateEndpointsTradeOrders
+  - privateEndpointsTradeCancelOrders
   - publicEndpoints
 
 search: true
