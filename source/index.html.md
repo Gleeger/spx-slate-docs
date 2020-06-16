@@ -1,12 +1,11 @@
 ---
-title: API Reference
+title: Sparrow API Documentation
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
 
-# toc_footers:
-#   - <a href='#'>Sign Up for a Developer Key</a>
-#   - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
+toc_footers:
+  - <a href='https://sparrowexchange.com/'>Sparrow Exchange</a>
 
 includes:
   - privateEndpoints
@@ -93,34 +92,42 @@ You can sign and generate the token with any programming languages such as `Pyth
 
 ## Python
 
-**1. Step 1: Import dependencies**
+> Step 1: Import dependencies
+
 ```python
+
 import jwt
 from datetime import datetime, timedelta
 ```
-**2. Step 2: Initialize the required variables**
+
+> Step 2: Initialize the required variables
+
 ```python
 userId = Your User ID
 apiKeyId = {{api_key_id}}
 privateKey = Your RSA Private Key
 expSec = Token expiry in seconds (max 5 minutes)
 ```
-**3. Step 3: Sign jwt and generate token**
+
+> Step 3: Sign jwt and generate token
+
 ```python
 expiryTime = int((datetime.now() + timedelta(seconds=expSec)).timestamp())
 currentTime = int((datetime.now().timestamp()))
 tokenPayload = {'userId': userId, 'exp': expiryTime, 'iat': currentTime}
 signedJwt = jwt.encode(tokenPayload, privateKey, algorithm='RS256')
 signedJwt = signedJwt.decode('UTF-8')
-```
-The value you obtained from `signedJwt` will be {{auth_token}} for each API request to Sparrow Private API and WebSocket endpoints. Below is a sample of the Authorization token for your reference:
-```
+
+# The value you obtained from `signedJwt` will be {{auth_token}} 
+# for each API request to Sparrow Private API and WebSocket endpoints. 
+# Below is a sample of the Authorization token for your reference:
 eyJhbGciOiJSUzI1NiIsInR5cCI6
-... ... 
+... ...
 thjybpTcmmoalGz_9EHG048pCBCA
 ```
 
-**4. Step 4: Construct Your API Request Headers**
+
+> Step 4: Construct Your API Request Headers**
 ```python
 "Content-Type": "application/json",
 "Authorization": signedJwt,
@@ -129,9 +136,9 @@ thjybpTcmmoalGz_9EHG048pCBCA
 
 ## Go 
 
-```
-**1. Step 1: Import dependencies**
-```Go
+> Step 1: Import dependencies
+
+```golang
 import {
 	"bufio"
 	"crypto/rsa"
@@ -141,8 +148,10 @@ import {
 	"encoding/pem"
 }
 ```
-**2. Step 2: Read private key from file**
-```Go
+
+> Step 2: Read private key from file
+
+```golang
 func readPrivateKey(keyPath string) *rsa.PrivateKey {
 	privateKeyFile, err := os.Open(keyPath)
 	defer privateKeyFile.Close()
@@ -168,15 +177,20 @@ func readPrivateKey(keyPath string) *rsa.PrivateKey {
 	return privateKeyImported
 }
 ```
-**3. Step 3: Initialize the required variables**
-```Go
+
+
+> Step 3: Initialize the required variables
+
+```golang
 userId = Your User ID
 apiKeyId = {{api_key_id}}
 privateKey = Your RSA Private Key
 expSec = Token expiry in seconds (max 5 minutes)
 ```
-**Step 4: Sign jwt and generate token**
-```Go
+
+> Step 4: Sign jwt and generate token
+
+```golang
 func newAuth(userID string, privateKey *rsa.PrivateKey, expSec int64) string {
 	token := jwt.New(jwt.SigningMethodRS256)
 	var payload = jwt.MapClaims{"exp": time.Now().Add(time.Second * time.Duration(expSec)).Unix(),
@@ -190,16 +204,17 @@ func newAuth(userID string, privateKey *rsa.PrivateKey, expSec int64) string {
 	}
 	return tokenString
 }
-```
-The value you obtained from `tokenString` will be {{auth_token}} for each API request to Sparrow Private API and WebSocket endpoints. Below is a sample of the Authorization token for your reference:
-```
+// The value you obtained from `tokenString` will be {{auth_token}} 
+// for each API request to Sparrow Private API and WebSocket endpoints. Below is a sample of the Authorization token for your reference:
+
 eyJhbGciOiJSUzI1NiIsInR5cCI6
 ... ... 
 thjybpTcmmoalGz_9EHG048pCBCA
 ```
 
-**5. Step 5: Construct Your API Request Headers**
-```Go
+> Step 5: Construct Your API Request Headers
+
+```golang
 "Content-Type": "application/json",
 "Authorization": tokenString,
 "api-key": {{api_key_id}}
