@@ -196,7 +196,7 @@
   color: #f92672;
 }
     </style>
-    <link href="stylesheets/screen-c6b8b3ce.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/screen-12b89cbd.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-c427a123.css" rel="stylesheet" media="print" />
       <script src="javascripts/all-c5541673.js"></script>
   </head>
@@ -219,10 +219,27 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+            <a href="#sparrow-environments" class="toc-h1 toc-link" data-title="Sparrow Environments">Sparrow Environments</a>
           </li>
           <li>
-            <a href="#api-key-setup" class="toc-h1 toc-link" data-title="API Key setup">API Key setup</a>
+            <a href="#api-keys" class="toc-h1 toc-link" data-title="API Keys">API Keys</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#python" class="toc-h2 toc-link" data-title="Python">Python</a>
+                  </li>
+                  <li>
+                    <a href="#go" class="toc-h2 toc-link" data-title="Go">Go</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#making-your-first-call" class="toc-h1 toc-link" data-title="Making Your First Call">Making Your First Call</a>
+          </li>
+          <li>
+            <a href="#questions-comments" class="toc-h1 toc-link" data-title="Questions/Comments">Questions/Comments</a>
           </li>
           <li>
             <a href="#private-endpoints" class="toc-h1 toc-link" data-title="Private Endpoints">Private Endpoints</a>
@@ -295,22 +312,225 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the SPARROW API! </p>
-<h1 id='api-key-setup'>API Key setup</h1>
-<p>API Key Setup</p>
+        <p><img src="https://sparrowexchange.com/img/logo.png" alt="Sparrow API Documentation" /></p>
 
-<p>Some endpoints will require an API Key. Please refer to this page regarding API key creation.</p>
+<p>Welcome to Sparrow&#39;s API. </p>
 
-<p>Once API key is created, it is recommended to set IP restrictions on the key for security reasons.</p>
+<p>This documentation will list all available API endpoints for Sparrow users to interact with the platform.</p>
+<h1 id='sparrow-environments'>Sparrow Environments</h1>
+<p>Sparrow have two API environments, Sparrow Sandbox and Sparrow Production. Sparrow Sandbox can be used for users to test their API before deploying the application to Sparrow Production. </p>
 
-<p>Never share your API key/secret key to ANYONE.</p>
+<table><thead>
+<tr>
+<th style="text-align: left">Endpoints URLs</th>
+<th style="text-align: left">Sandbox Environments</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">Platform</td>
+<td style="text-align: left">https://sparrowsandbox.com/</td>
+</tr>
+<tr>
+<td style="text-align: left">Private API</td>
+<td style="text-align: left">https://api.sparrowsandbox.com/</td>
+</tr>
+<tr>
+<td style="text-align: left">Public API</td>
+<td style="text-align: left">https://pricing.sparrowsandbox.com/v1/</td>
+</tr>
+<tr>
+<td style="text-align: left">WebSocket</td>
+<td style="text-align: left">https://ws.sparrowsandbox.com/</td>
+</tr>
+</tbody></table>
 
-<p><code>Authorization: xyz</code></p>
+<table><thead>
+<tr>
+<th style="text-align: left">Endpoints URLs</th>
+<th style="text-align: left">Production Environments</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">Platform</td>
+<td style="text-align: left">https://sparrowexchange.com/</td>
+</tr>
+<tr>
+<td style="text-align: left">Private API</td>
+<td style="text-align: left">https://api.sparrowexchange.com/</td>
+</tr>
+<tr>
+<td style="text-align: left">Public API</td>
+<td style="text-align: left">https://pricing.sparrowexchange.com/v1/</td>
+</tr>
+<tr>
+<td style="text-align: left">WebSocket</td>
+<td style="text-align: left">https://ws.sparrowexchange.com/</td>
+</tr>
+</tbody></table>
 
-<aside class="notice">
-You must replace <code>xyz</code> with your personal API key.
-</aside>
+<p><strong>Note:</strong></p>
+
+<ul>
+<li>Each platform will have separate API keys for each environment.</li>
+<li>Data created or modified in each environment will not affect the other. </li>
+<li>Please <strong>DO NOT</strong> deposit any digital asset to Sparrow Sandbox environment. You may contact support@sparrowexchange.com if you need testing fund in your Sandbox account. </li>
+</ul>
+<h1 id='api-keys'>API Keys</h1>
+<p>Before you start using Sparrow API, you will need to enable your API access by creating {{api_key_id}} and download your API RSA Private key in PEM format (api.pem). </p>
+
+<p>In order to do so, you will need to login with your account and go to <strong>API Management</strong> &gt; <strong>New API</strong> to submit your API Key request with the necessary privileges. </p>
+
+<p><img src="https://spx-publicassets.s3-ap-southeast-1.amazonaws.com/img/1Keycreation.png" alt="Sparrow API Key Creations" /></p>
+
+<p>Once your API Key request has been submitted, you will receive an API Key Request confirmation email for you to confirm and download the API RSA Private key in PEM format (api.pem). </p>
+
+<p>The private key can be opened by any text editor with the content looks like below: 
+<code>
+-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEAv1oaYMFaXX/FRrlNyDloizH/1W7cKJAGac9G0PCEZsFgcGBi
+... ... 
+ZwPHzaUUtebC6ge9rboRaRsS+wFYVU6OkdEVJIDasm4XMf+etS8=
+-----END RSA PRIVATE KEY-----
+</code>
+Think of your API RSA Private key like a password:</p>
+
+<ul>
+<li>Store it <strong>securely</strong></li>
+<li><strong>Don&#39;t</strong> share it with anyone</li>
+<li><strong>Don&#39;t</strong> put it in any code that is publicly accessible </li>
+</ul>
+
+<p>You will also need {{api_key_id}}, which can be found in <strong>API Management</strong> &gt; <strong>API Key ID</strong>. This will also be used to generate and sign access token for your application. </p>
+<h1 id='authentication'>Authentication</h1>
+<p>All requests to Sparrow Private API and WebSocket endpoints are required to be signed with an API Key and JWT token. </p>
+
+<p>This section will provide you how to use the API Key ID and RSA Private Key (api.pem) to generate and sign JWT token for your application. </p>
+
+<p>To generate a signed JWT token, you will need:</p>
+
+<ol>
+<li>Your <strong>User ID</strong> (can be found under your Sparrow Dashboard <strong>Account</strong> tab)</li>
+<li>Your <strong>API Key ID</strong> (can be found under your Sparrow Dashboard <strong>API Management</strong> tab)</li>
+<li>Your <strong>RSA Private Key</strong> downloaded (api.pem)</li>
+</ol>
+
+<p>You can sign and generate the token with any programming languages such as <code>Python</code> and <code>Go</code>. Below are some samples for your reference. </p>
+<h2 id='python'>Python</h2>
+<p><strong>1. Step 1: Import dependencies</strong>
+<code>python
+import jwt
+from datetime import datetime, timedelta
+</code>
+<strong>2. Step 2: Initialize the required variables</strong>
+<code>python
+userId = Your User ID
+apiKeyId = {{api_key_id}}
+privateKey = Your RSA Private Key
+expSec = Token expiry in seconds (max 5 minutes)
+</code>
+<strong>3. Step 3: Sign jwt and generate token</strong>
+<code>python
+expiryTime = int((datetime.now() + timedelta(seconds=expSec)).timestamp())
+currentTime = int((datetime.now().timestamp()))
+tokenPayload = {&#39;userId&#39;: userId, &#39;exp&#39;: expiryTime, &#39;iat&#39;: currentTime}
+signedJwt = jwt.encode(tokenPayload, privateKey, algorithm=&#39;RS256&#39;)
+signedJwt = signedJwt.decode(&#39;UTF-8&#39;)
+</code>
+The value you obtained from <code>signedJwt</code> will be {{auth_token}} for each API request to Sparrow Private API and WebSocket endpoints. Below is a sample of the Authorization token for your reference:
+<code>
+eyJhbGciOiJSUzI1NiIsInR5cCI6
+... ... 
+thjybpTcmmoalGz_9EHG048pCBCA
+</code></p>
+
+<p><strong>4. Step 4: Construct Your API Request Headers</strong>
+<code>python
+&quot;Content-Type&quot;: &quot;application/json&quot;,
+&quot;Authorization&quot;: signedJwt,
+&quot;api-key&quot;: {{api_key_id}}
+</code></p>
+<h2 id='go'>Go</h2><div class="highlight"><pre class="highlight plaintext"><code>**1. Step 1: Import dependencies**
+```Go
+import {
+    "bufio"
+    "crypto/rsa"
+    "crypto/x509"
+    "os"
+    jwt "github.com/dgrijalva/jwt-go"
+    "encoding/pem"
+}
+</code></pre></div>
+<p><strong>2. Step 2: Read private key from file</strong>
+```Go
+func readPrivateKey(keyPath string) *rsa.PrivateKey {
+    privateKeyFile, err := os.Open(keyPath)
+    defer privateKeyFile.Close()
+    if err != nil {
+        log.Errorln(err)
+        panic(err)
+    }
+    pemfileinfo, _ := privateKeyFile.Stat()
+    var size = pemfileinfo.Size()
+    pembytes := make([]byte, size)</p>
+
+<p>buffer := bufio.NewReader(privateKeyFile)
+    _, err = buffer.Read(pembytes)</p>
+
+<p>data, _ := pem.Decode([]byte(pembytes))</p>
+
+<p>privateKeyImported, err := x509.ParsePKCS1PrivateKey(data.Bytes)</p>
+
+<p>if err != nil {
+        panic(err)
+    }</p>
+
+<p>return privateKeyImported
+}
+<code>
+**3. Step 3: Initialize the required variables**
+</code>Go
+userId = Your User ID
+apiKeyId = {{api_key_id}}
+privateKey = Your RSA Private Key
+expSec = Token expiry in seconds (max 5 minutes)
+<code>
+**Step 4: Sign jwt and generate token**
+</code>Go
+func newAuth(userID string, privateKey *rsa.PrivateKey, expSec int64) string {
+    token := jwt.New(jwt.SigningMethodRS256)
+    var payload = jwt.MapClaims{&quot;exp&quot;: time.Now().Add(time.Second * time.Duration(expSec)).Unix(),
+        &quot;userId&quot;: userID, &quot;iat&quot;: time.Now().Unix()}
+    token.Claims = payload
+    tokenString, err := token.SignedString(privateKey)</p>
+
+<p>if err != nil {
+        log.Errorln(err)
+        return &quot;&quot;
+    }
+    return tokenString
+}
+<code>
+The value you obtained from `tokenString` will be {{auth_token}} for each API request to Sparrow Private API and WebSocket endpoints. Below is a sample of the Authorization token for your reference:
+</code>
+eyJhbGciOiJSUzI1NiIsInR5cCI6
+... ... 
+thjybpTcmmoalGz_9EHG048pCBCA
+```</p>
+
+<p><strong>5. Step 5: Construct Your API Request Headers</strong>
+<code>Go
+&quot;Content-Type&quot;: &quot;application/json&quot;,
+&quot;Authorization&quot;: tokenString,
+&quot;api-key&quot;: {{api_key_id}}
+</code></p>
+<h1 id='making-your-first-call'>Making Your First Call</h1>
+<p>Test that you have the headers setup by making a <code>GET</code> request to <code>&quot;wallets/balance&quot;</code> with the above API Request Headers obtained from the Authentication session. You should get a <code>HTTP 200 OK</code> response if your keys are correct.</p>
+
+<p><strong>NOTE:</strong> </p>
+
+<p>You&#39;ll need to have the API Request Headers with Authorization token in all API requests to Sparrow Private API and WebSocket endpoints, except Public API endpoints where Authorization token is not required. </p>
+<h1 id='questions-comments'>Questions/Comments</h1>
+<p>If you have any questions or comments, please let us know at <a href="mailto:support@sparrowexchange.com">support@sparrowexchange.com</a>.</p>
 <h1 id='private-endpoints'>Private Endpoints</h1><h1 id='private-endpoints-account-balance'>Private Endpoints - Account Balance</h1><h2 id='get-wallet-balance'>GET - Wallet Balance</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/wallets/balance'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span> <span class="se">\</span>
