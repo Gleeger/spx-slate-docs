@@ -322,6 +322,24 @@
                   <li>
                     <a href="#get-display-own-canceled-amp-expired-trade-orders" class="toc-h2 toc-link" data-title="GET - Display own canceled &amp; expired trade orders">GET - Display own canceled &amp; expired trade orders</a>
                   </li>
+                  <li>
+                    <a href="#get-display-own-canceled-amp-expired-trade-orders-custom" class="toc-h2 toc-link" data-title="GET - Display own canceled &amp; expired trade orders - custom">GET - Display own canceled &amp; expired trade orders - custom</a>
+                  </li>
+                  <li>
+                    <a href="#get-display-own-buy-trades" class="toc-h2 toc-link" data-title="GET - Display own buy trades">GET - Display own buy trades</a>
+                  </li>
+                  <li>
+                    <a href="#get-display-own-buy-trades-custom" class="toc-h2 toc-link" data-title="GET - Display own buy trades - custom">GET - Display own buy trades - custom</a>
+                  </li>
+                  <li>
+                    <a href="#get-display-own-sell-trades" class="toc-h2 toc-link" data-title="GET - Display own sell trades">GET - Display own sell trades</a>
+                  </li>
+                  <li>
+                    <a href="#get-display-own-sell-trades-custom" class="toc-h2 toc-link" data-title="GET - Display own sell trades - custom">GET - Display own sell trades - custom</a>
+                  </li>
+                  <li>
+                    <a href="#get-display-single-trade-order-with-detail" class="toc-h2 toc-link" data-title="GET - Display single trade order with detail">GET - Display single trade order with detail</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -3569,7 +3587,7 @@ thjybpTcmmoalGz_9EHG048pCBCA
 <blockquote>
 <p>Example Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"73148dac-ebb7-4c65-85a2-cb37e2e88679"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SELL"</span><span class="p">,</span><span class="w">
@@ -3644,6 +3662,561 @@ thjybpTcmmoalGz_9EHG048pCBCA
 </tbody></table>
 
 <!-- END GET - Order Book depth Filter by Action-->
+<h2 id='get-display-own-canceled-amp-expired-trade-orders-custom'>GET - Display own canceled &amp; expired trade orders - custom</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?status=closed&amp;orderby=expiry&amp;order=asc'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"49c95251-6182-436e-9631-d39bf93ae225"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CALL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lifetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GTC"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"strike"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"unfilled"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"premium"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"unitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"46.72"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tradeUnitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.672"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.672"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SP$"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-24T16:19:48.520Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-04T08:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CANCELED"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"txFee"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tradeLock"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"premium"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"matched"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"payoff"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tradeLock"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tradeRelease"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"premium"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"contracts"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"orderType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PREMIUM"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"impliedVolatility"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.66075075"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h3 id='url-endpoint-18'>URL Endpoint</h3>
+<p><code>https://api.sparrowsandbox.com/trades/book/own?status=closed&amp;orderby=expiry&amp;order=asc</code></p>
+<h3 id='headers-12'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your authorization key</td>
+</tr>
+<tr>
+<td>api-key</td>
+<td>Your API Key ID</td>
+</tr>
+</tbody></table>
+<h3 id='params-10'>PARAMS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>closed</td>
+</tr>
+<tr>
+<td>orderby</td>
+<td>expiry</td>
+</tr>
+<tr>
+<td>order</td>
+<td>asc</td>
+</tr>
+</tbody></table>
+
+<!-- END GET - Order Book depth Filter by Action-->
+<h2 id='get-display-own-buy-trades'>GET - Display own buy trades</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?filter=buy'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bd3335ea-90a4-4958-86a0-5ac800b2f767"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CALL"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lifetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GTD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"strike"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8500"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"unfilled"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"premium"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"unitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"244.3"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tradeUnitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.43"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.43"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SP$"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-30T05:54:04.687Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-11T08:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BOOKED"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"txFee"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SP$"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.780946"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"sp$Equivalent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.780946"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"tradeLock"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"premium"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"unitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"244.3"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"tradeUnitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.43"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"totalPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.43"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"matched"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"payoff"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tradeLock"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tradeRelease"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"premium"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"contracts"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="nl">"orderType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PREMIUM"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"impliedVolatility"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.93382661"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h3 id='url-endpoint-19'>URL Endpoint</h3>
+<p><code>https://api.sparrowsandbox.com/trades/book/own?filter=buy</code></p>
+<h3 id='headers-13'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your authorization key</td>
+</tr>
+<tr>
+<td>api-key</td>
+<td>Your API Key ID</td>
+</tr>
+</tbody></table>
+<h3 id='params-11'>PARAMS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>filter</td>
+<td>buy</td>
+</tr>
+</tbody></table>
+
+<!-- END GET - Order Book depth Filter by Action-->
+<h2 id='get-display-own-buy-trades-custom'>GET - Display own buy trades - custom</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?filter=buy&amp;status=closed&amp;orderby=expiry&amp;order=asc'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bd3335ea-90a4-4958-86a0-5ac800b2f767"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CALL"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lifetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GTD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"strike"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8500"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"unfilled"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"premium"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"unitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"244.3"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tradeUnitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.43"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.43"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SP$"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-30T05:54:04.687Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-11T08:00:00.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BOOKED"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"txFee"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SP$"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.780946"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"sp$Equivalent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.780946"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"tradeLock"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"premium"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"unitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"244.3"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"tradeUnitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.43"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"totalPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.43"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"matched"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"payoff"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tradeLock"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tradeRelease"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"premium"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"contracts"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="nl">"orderType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PREMIUM"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"impliedVolatility"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.93382661"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h3 id='url-endpoint-20'>URL Endpoint</h3>
+<p><code>https://api.sparrowsandbox.com/trades/book/own?filter=buy&amp;status=closed&amp;orderby=expiry&amp;order=asc</code></p>
+<h3 id='headers-14'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your authorization key</td>
+</tr>
+<tr>
+<td>api-key</td>
+<td>Your API Key ID</td>
+</tr>
+</tbody></table>
+<h3 id='params-12'>PARAMS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>filter</td>
+<td>buy</td>
+</tr>
+<tr>
+<td>status</td>
+<td>closed</td>
+</tr>
+<tr>
+<td>orderby</td>
+<td>expiry</td>
+</tr>
+<tr>
+<td>order</td>
+<td>asc</td>
+</tr>
+</tbody></table>
+
+<!-- END GET - Order Book depth Filter by Action-->
+<h2 id='get-display-own-sell-trades'>GET - Display own sell trades</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?filter=sell'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID''
+</span></code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bd3335ea-90a4-4958-86a0-5ac800b2f767"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CALL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lifetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GTD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"strike"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8500"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"unfilled"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"premium"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"unitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"244.3"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tradeUnitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.43"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.43"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SP$"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-30T05:54:04.687Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-11T08:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BOOKED"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"txFee"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SP$"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.780946"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sp$Equivalent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.780946"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"tradeLock"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"premium"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"unitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"244.3"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tradeUnitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.43"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.43"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"matched"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"payoff"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tradeLock"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tradeRelease"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"premium"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"contracts"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"orderType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PREMIUM"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"impliedVolatility"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.94471709"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h3 id='url-endpoint-21'>URL Endpoint</h3>
+<p><code>https://api.sparrowsandbox.com/trades/book/own?filter=sell</code></p>
+<h3 id='headers-15'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your authorization key</td>
+</tr>
+<tr>
+<td>api-key</td>
+<td>Your API Key ID</td>
+</tr>
+</tbody></table>
+<h3 id='params-13'>PARAMS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>filter</td>
+<td>sell</td>
+</tr>
+</tbody></table>
+
+<!-- END GET - Order Book depth Filter by Action-->
+<h2 id='get-display-own-sell-trades-custom'>GET - Display own sell trades - custom</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?filter=sell&amp;orderby=expiry&amp;order=asc'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bd3335ea-90a4-4958-86a0-5ac800b2f767"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CALL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lifetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GTD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"strike"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8500"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"unfilled"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"premium"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"unitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"244.3"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tradeUnitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.43"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.43"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SP$"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-30T05:54:04.687Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-11T08:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BOOKED"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"txFee"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SP$"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.780946"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sp$Equivalent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.780946"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"tradeLock"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"premium"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"unitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"244.3"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tradeUnitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.43"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"totalPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.43"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"matched"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"payoff"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tradeLock"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tradeRelease"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"premium"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"contracts"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"orderType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PREMIUM"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"impliedVolatility"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.94471709"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h3 id='url-endpoint-22'>URL Endpoint</h3>
+<p><code>https://api.sparrowsandbox.com/trades/book/own?filter=sell&amp;orderby=expiry&amp;order=asc</code></p>
+<h3 id='headers-16'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your authorization key</td>
+</tr>
+<tr>
+<td>api-key</td>
+<td>Your API Key ID</td>
+</tr>
+</tbody></table>
+<h3 id='params-14'>PARAMS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>filter</td>
+<td>sell</td>
+</tr>
+<tr>
+<td>orderby</td>
+<td>expiry</td>
+</tr>
+<tr>
+<td>order</td>
+<td>asc</td>
+</tr>
+</tbody></table>
+
+<!-- END GET - Order Book depth Filter by Action-->
+<h2 id='get-display-single-trade-order-with-detail'>GET - Display single trade order with detail</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own/bd3335ea-90a4-4958-86a0-5ac800b2f767'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bd3335ea-90a4-4958-86a0-5ac800b2f767"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CALL"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lifetime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GTD"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"strike"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8500"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"unfilled"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"premium"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"unitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"244.3"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tradeUnitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.43"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.43"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"asset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SP$"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-30T05:54:04.687Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-11T08:00:00.000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BOOKED"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"locked"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"txFee"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SP$"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.780946"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sp$Equivalent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.780946"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"tradeLock"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"premium"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"unitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"244.3"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tradeUnitPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.43"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"totalPremium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.43"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"matched"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payoff"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tradeLock"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tradeRelease"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"premium"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"contracts"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="nl">"orderType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PREMIUM"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"impliedVolatility"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.92780481"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='url-endpoint-23'>URL Endpoint</h3>
+<p><code>https://api.sparrowsandbox.com/trades/book/own/:tradeOrderId</code></p>
+<h3 id='headers-17'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Your authorization key</td>
+</tr>
+<tr>
+<td>api-key</td>
+<td>Your API Key ID</td>
+</tr>
+</tbody></table>
+<h3 id='params-15'>PARAMS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tradeOrderId</td>
+<td>bd3335ea-90a4-4958-86a0-5ac800b2f767</td>
+</tr>
+</tbody></table>
 <h1 id='public-endpoints'>Public Endpoints</h1>
       </div>
       <div class="dark-box">
