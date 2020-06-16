@@ -999,7 +999,7 @@ api-key | Your API KEY ID
 
 <!-- END POST - Create new trade order with tradeUnitPremium -->
 
-<!-- START POST - Create new trade order with tradeUnitPremium -->
+<!-- START POST - Create new trade order without matching process -->
 ## [TRADE] POST - (Orders) - Create new trade order without matching process
 ```shell
 curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/create' \
@@ -1155,7 +1155,7 @@ Authorization | Your Authorization Token
 api-key | Your API KEY ID
 
 
-<!-- END POST - Create new trade order with tradeUnitPremium -->
+<!-- END POST - Create new trade order without matching process -->
 
 
 # Public Endpoints
