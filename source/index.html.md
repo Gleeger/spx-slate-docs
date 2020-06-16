@@ -14,6 +14,7 @@ includes:
   - privateEndpointsTradeOrders
   - privateEndpointsTradeCancelOrders
   - privateEndpointsTradeContract
+  - privateEndpointsWebsocket
   - publicEndpoints
   - publicEndpointsTicker
   - publicEndpointsOptions
