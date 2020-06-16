@@ -999,5 +999,163 @@ api-key | Your API KEY ID
 
 <!-- END POST - Create new trade order with tradeUnitPremium -->
 
+<!-- START POST - Create new trade order with tradeUnitPremium -->
+## [TRADE] POST - (Orders) - Create new trade order without matching process
+```shell
+curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/create' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Your Authorization Token' \
+--header 'api-key: Your API Key ID' \
+--data-raw '{
+	"action": "BUY",
+	"type": "PUT",
+	"lifetime": "GTD",
+	"txFeeCoin": "SP$",
+	"pair": "BTC-SP$",
+	"strike": "7000",
+	"amount": "0.8",
+	"unitPremium": "1",
+	"expiryDate": "2019-03-10T08:00:00.000Z",
+	"skipBidding": true
+}'
+```
+
+```javascript
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+myHeaders.append("Authorization", "Your Authorization Token");
+myHeaders.append("api-key", "Your API Key ID");
+
+var raw = JSON.stringify({"action":"BUY","type":"PUT","lifetime":"GTD","txFeeCoin":"SP$","pair":"BTC-SP$","strike":"7000","amount":"0.8","unitPremium":"1","expiryDate":"2019-03-10T08:00:00.000Z","skipBidding":true});
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("https://api.sparrowsandbox.com/trades/book/create", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+```
+
+```python
+import http.client
+import mimetypes
+conn = http.client.HTTPSConnection("api.sparrowsandbox.com")
+payload = "{\n\t\"action\": \"BUY\",\n\t\"type\": \"PUT\",\n\t\"lifetime\": \"GTD\",\n\t\"txFeeCoin\": \"SP$\",\n\t\"pair\": \"BTC-SP$\",\n\t\"strike\": \"7000\",\n\t\"amount\": \"0.8\",\n\t\"unitPremium\": \"1\",\n\t\"expiryDate\": \"2019-03-10T08:00:00.000Z\",\n\t\"skipBidding\": true\n}"
+headers = {
+  'Content-Type': 'application/json',
+  'Authorization': 'Your Authorization Token',
+  'api-key': 'Your API Key ID'
+}
+conn.request("POST", "/trades/book/create", payload, headers)
+res = conn.getresponse()
+data = res.read()
+print(data.decode("utf-8"))
+```
+
+```ruby
+require "uri"
+require "net/http"
+
+url = URI("https://api.sparrowsandbox.com/trades/book/create")
+
+https = Net::HTTP.new(url.host, url.port);
+https.use_ssl = true
+
+request = Net::HTTP::Post.new(url)
+request["Content-Type"] = "application/json"
+request["Authorization"] = "Your Authorization Token"
+request["api-key"] = "Your API Key ID"
+request.body = "{\n\t\"action\": \"BUY\",\n\t\"type\": \"PUT\",\n\t\"lifetime\": \"GTD\",\n\t\"txFeeCoin\": \"SP$\",\n\t\"pair\": \"BTC-SP$\",\n\t\"strike\": \"7000\",\n\t\"amount\": \"0.8\",\n\t\"unitPremium\": \"1\",\n\t\"expiryDate\": \"2019-03-10T08:00:00.000Z\",\n\t\"skipBidding\": true\n}"
+
+response = https.request(request)
+puts response.read_body
+```
+
+```go
+package main
+
+import (
+  "fmt"
+  "strings"
+  "net/http"
+  "io/ioutil"
+)
+
+func main() {
+
+  url := "https://api.sparrowsandbox.com/trades/book/create"
+  method := "POST"
+
+  payload := strings.NewReader("{\n	\"action\": \"BUY\",\n	\"type\": \"PUT\",\n	\"lifetime\": \"GTD\",\n	\"txFeeCoin\": \"SP$\",\n	\"pair\": \"BTC-SP$\",\n	\"strike\": \"7000\",\n	\"amount\": \"0.8\",\n	\"unitPremium\": \"1\",\n	\"expiryDate\": \"2019-03-10T08:00:00.000Z\",\n	\"skipBidding\": true\n}")
+
+  client := &http.Client {
+  }
+  req, err := http.NewRequest(method, url, payload)
+
+  if err != nil {
+    fmt.Println(err)
+  }
+  req.Header.Add("Content-Type", "application/json")
+  req.Header.Add("Authorization", "Your Authorization Token")
+  req.Header.Add("api-key", "Your API Key ID")
+
+  res, err := client.Do(req)
+  defer res.Body.Close()
+  body, err := ioutil.ReadAll(res.Body)
+
+  fmt.Println(string(body))
+}
+```
+> Example Body
+
+```json
+{
+	"action": "BUY",
+	"type": "PUT",
+	"lifetime": "GTD",
+	"txFeeCoin": "SP$",
+	"pair": "BTC-SP$",
+	"strike": "7000",
+	"amount": "0.8",
+	"unitPremium": "1",
+	"expiryDate": "2019-10-04T08:00:00.000Z",
+	"skipBidding": true
+}
+```
+
+> Example Response
+
+```json
+{
+  "result": {
+    "expiry_date": "11/10/2019",
+    "iv": 1.1939,
+    "option_price": 0.01,
+    "quantity": 0.1,
+    "spot": 7803,
+    "strike": 80000
+  },
+  "status": "success"
+}
+```
+
+### URL Endpoint
+`https://api.sparrowsandbox.com/trades/book/create`
+
+### HEADERS
+Parameter | Default 
+--------- | ------- 
+Content-Type | application/json
+Authorization | Your Authorization Token
+api-key | Your API KEY ID
+
+
+<!-- END POST - Create new trade order with tradeUnitPremium -->
+
 
 # Public Endpoints
