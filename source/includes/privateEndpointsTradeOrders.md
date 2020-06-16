@@ -2683,7 +2683,7 @@ curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?st
 > Example Response
 
 ```json
-[[
+[
   {
     "id": "73148dac-ebb7-4c65-85a2-cb37e2e88679",
     "action": "SELL",
@@ -2742,6 +2742,84 @@ api-key | Your API Key ID
 Parameter |  value
 --------- | ------- 
 status | closed
+
+
+
+<!-- END GET - Order Book depth Filter by Action-->
+
+
+## GET - Display own canceled & expired trade orders - custom 
+
+```shell
+curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?status=closed&orderby=expiry&order=asc' \
+--header 'Authorization: Your Authorization Token' \
+--header 'api-key: Your API Key ID'
+```
+
+> Example Response
+
+```json
+[
+  {
+    "id": "49c95251-6182-436e-9631-d39bf93ae225",
+    "action": "BUY",
+    "type": "CALL",
+    "lifetime": "GTC",
+    "strike": "11000",
+    "amount": {
+      "coin": "BTC",
+      "amount": "0.1"
+    },
+    "unfilled": {
+      "coin": "BTC",
+      "amount": "0.1"
+    },
+    "premium": {
+      "unitPremium": "46.72",
+      "tradeUnitPremium": "4.672",
+      "totalPremium": "4.672"
+    },
+    "asset": "BTC",
+    "currency": "SP$",
+    "createdAt": "2019-09-24T16:19:48.520Z",
+    "expiry": "2019-10-04T08:00:00.000Z",
+    "status": "CANCELED",
+    "locked": {
+      "txFee": null,
+      "tradeLock": null,
+      "premium": null
+    },
+    "matched": {
+      "amount": null,
+      "payoff": null,
+      "tradeLock": null,
+      "tradeRelease": null,
+      "premium": null
+    },
+    "contracts": [],
+    "orderType": "PREMIUM",
+    "impliedVolatility": "0.66075075"
+  },
+  ...
+]
+```
+
+
+### URL Endpoint
+`https://api.sparrowsandbox.com/trades/book/own?status=closed&orderby=expiry&order=asc`
+
+### HEADERS
+Parameter |  value
+--------- | ------- 
+Authorization | Your authorization key
+api-key | Your API Key ID
+
+### PARAMS
+Parameter |  value
+--------- | ------- 
+status | closed
+orderby | expiry
+order | asc
 
 
 
