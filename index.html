@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>Sparrow API Documentation</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -432,6 +432,9 @@
               </ul>
           </li>
       </ul>
+        <ul class="toc-footer">
+            <li><a href='https://sparrowexchange.com/'>Sparrow Exchange</a></li>
+        </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
@@ -537,114 +540,124 @@ Think of your API RSA Private key like a password:</p>
 
 <p>You can sign and generate the token with any programming languages such as <code>Python</code> and <code>Go</code>. Below are some samples for your reference. </p>
 <h2 id='python'>Python</h2>
-<p><strong>1. Step 1: Import dependencies</strong>
-<code>python
-import jwt
-from datetime import datetime, timedelta
-</code>
-<strong>2. Step 2: Initialize the required variables</strong>
-<code>python
-userId = Your User ID
-apiKeyId = {{api_key_id}}
-privateKey = Your RSA Private Key
-expSec = Token expiry in seconds (max 5 minutes)
-</code>
-<strong>3. Step 3: Sign jwt and generate token</strong>
-<code>python
-expiryTime = int((datetime.now() + timedelta(seconds=expSec)).timestamp())
-currentTime = int((datetime.now().timestamp()))
-tokenPayload = {&#39;userId&#39;: userId, &#39;exp&#39;: expiryTime, &#39;iat&#39;: currentTime}
-signedJwt = jwt.encode(tokenPayload, privateKey, algorithm=&#39;RS256&#39;)
-signedJwt = signedJwt.decode(&#39;UTF-8&#39;)
-</code>
-The value you obtained from <code>signedJwt</code> will be {{auth_token}} for each API request to Sparrow Private API and WebSocket endpoints. Below is a sample of the Authorization token for your reference:
-<code>
-eyJhbGciOiJSUzI1NiIsInR5cCI6
-... ... 
-thjybpTcmmoalGz_9EHG048pCBCA
-</code></p>
+<blockquote>
+<p>Step 1: Import dependencies</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code>
+<span class="kn">import</span> <span class="nn">jwt</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+</code></pre></div>
+<blockquote>
+<p>Step 2: Initialize the required variables</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="n">userId</span> <span class="o">=</span> <span class="n">Your</span> <span class="n">User</span> <span class="n">ID</span>
+<span class="n">apiKeyId</span> <span class="o">=</span> <span class="p">{{</span><span class="n">api_key_id</span><span class="p">}}</span>
+<span class="n">privateKey</span> <span class="o">=</span> <span class="n">Your</span> <span class="n">RSA</span> <span class="n">Private</span> <span class="n">Key</span>
+<span class="n">expSec</span> <span class="o">=</span> <span class="n">Token</span> <span class="n">expiry</span> <span class="ow">in</span> <span class="n">seconds</span> <span class="p">(</span><span class="nb">max</span> <span class="mi">5</span> <span class="n">minutes</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>Step 3: Sign jwt and generate token</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="n">expiryTime</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="n">expSec</span><span class="p">))</span><span class="o">.</span><span class="n">timestamp</span><span class="p">())</span>
+<span class="n">currentTime</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()))</span>
+<span class="n">tokenPayload</span> <span class="o">=</span> <span class="p">{</span><span class="s">'userId'</span><span class="p">:</span> <span class="n">userId</span><span class="p">,</span> <span class="s">'exp'</span><span class="p">:</span> <span class="n">expiryTime</span><span class="p">,</span> <span class="s">'iat'</span><span class="p">:</span> <span class="n">currentTime</span><span class="p">}</span>
+<span class="n">signedJwt</span> <span class="o">=</span> <span class="n">jwt</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">tokenPayload</span><span class="p">,</span> <span class="n">privateKey</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s">'RS256'</span><span class="p">)</span>
+<span class="n">signedJwt</span> <span class="o">=</span> <span class="n">signedJwt</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'UTF-8'</span><span class="p">)</span>
 
-<p><strong>4. Step 4: Construct Your API Request Headers</strong>
+<span class="c1"># The value you obtained from `signedJwt` will be {{auth_token}} 
+# for each API request to Sparrow Private API and WebSocket endpoints. 
+# Below is a sample of the Authorization token for your reference:
+</span><span class="n">eyJhbGciOiJSUzI1NiIsInR5cCI6</span>
+<span class="o">...</span> <span class="o">...</span>
+<span class="n">thjybpTcmmoalGz_9EHG048pCBCA</span>
+</code></pre></div>
+<blockquote>
+<p>Step 4: Construct Your API Request Headers**
 <code>python
 &quot;Content-Type&quot;: &quot;application/json&quot;,
 &quot;Authorization&quot;: signedJwt,
 &quot;api-key&quot;: {{api_key_id}}
 </code></p>
-<h2 id='go'>Go</h2><div class="highlight"><pre class="highlight plaintext"><code>**1. Step 1: Import dependencies**
-```Go
-import {
-    "bufio"
-    "crypto/rsa"
-    "crypto/x509"
-    "os"
-    jwt "github.com/dgrijalva/jwt-go"
-    "encoding/pem"
-}
+</blockquote>
+<h2 id='go'>Go</h2>
+<blockquote>
+<p>Step 1: Import dependencies</p>
+</blockquote>
+<div class="highlight"><pre class="highlight go"><code><span class="k">import</span> <span class="p">{</span>
+    <span class="s">"bufio"</span>
+    <span class="s">"crypto/rsa"</span>
+    <span class="s">"crypto/x509"</span>
+    <span class="s">"os"</span>
+    <span class="n">jwt</span> <span class="s">"github.com/dgrijalva/jwt-go"</span>
+    <span class="s">"encoding/pem"</span>
+<span class="p">}</span>
 </code></pre></div>
-<p><strong>2. Step 2: Read private key from file</strong>
-```Go
-func readPrivateKey(keyPath string) *rsa.PrivateKey {
-    privateKeyFile, err := os.Open(keyPath)
-    defer privateKeyFile.Close()
-    if err != nil {
-        log.Errorln(err)
-        panic(err)
-    }
-    pemfileinfo, _ := privateKeyFile.Stat()
-    var size = pemfileinfo.Size()
-    pembytes := make([]byte, size)</p>
+<blockquote>
+<p>Step 2: Read private key from file</p>
+</blockquote>
+<div class="highlight"><pre class="highlight go"><code><span class="k">func</span> <span class="n">readPrivateKey</span><span class="p">(</span><span class="n">keyPath</span> <span class="kt">string</span><span class="p">)</span> <span class="o">*</span><span class="n">rsa</span><span class="o">.</span><span class="n">PrivateKey</span> <span class="p">{</span>
+    <span class="n">privateKeyFile</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">os</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="n">keyPath</span><span class="p">)</span>
+    <span class="k">defer</span> <span class="n">privateKeyFile</span><span class="o">.</span><span class="n">Close</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">Errorln</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+        <span class="nb">panic</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="n">pemfileinfo</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">privateKeyFile</span><span class="o">.</span><span class="n">Stat</span><span class="p">()</span>
+    <span class="k">var</span> <span class="n">size</span> <span class="o">=</span> <span class="n">pemfileinfo</span><span class="o">.</span><span class="n">Size</span><span class="p">()</span>
+    <span class="n">pembytes</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
 
-<p>buffer := bufio.NewReader(privateKeyFile)
-    _, err = buffer.Read(pembytes)</p>
+    <span class="n">buffer</span> <span class="o">:=</span> <span class="n">bufio</span><span class="o">.</span><span class="n">NewReader</span><span class="p">(</span><span class="n">privateKeyFile</span><span class="p">)</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">buffer</span><span class="o">.</span><span class="n">Read</span><span class="p">(</span><span class="n">pembytes</span><span class="p">)</span>
 
-<p>data, _ := pem.Decode([]byte(pembytes))</p>
+    <span class="n">data</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">pem</span><span class="o">.</span><span class="n">Decode</span><span class="p">([]</span><span class="kt">byte</span><span class="p">(</span><span class="n">pembytes</span><span class="p">))</span>
 
-<p>privateKeyImported, err := x509.ParsePKCS1PrivateKey(data.Bytes)</p>
+    <span class="n">privateKeyImported</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">x509</span><span class="o">.</span><span class="n">ParsePKCS1PrivateKey</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">Bytes</span><span class="p">)</span>
 
-<p>if err != nil {
-        panic(err)
-    }</p>
+    <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+        <span class="nb">panic</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+    <span class="p">}</span>
 
-<p>return privateKeyImported
-}
-<code>
-**3. Step 3: Initialize the required variables**
-</code>Go
-userId = Your User ID
-apiKeyId = {{api_key_id}}
-privateKey = Your RSA Private Key
-expSec = Token expiry in seconds (max 5 minutes)
-<code>
-**Step 4: Sign jwt and generate token**
-</code>Go
-func newAuth(userID string, privateKey *rsa.PrivateKey, expSec int64) string {
-    token := jwt.New(jwt.SigningMethodRS256)
-    var payload = jwt.MapClaims{&quot;exp&quot;: time.Now().Add(time.Second * time.Duration(expSec)).Unix(),
-        &quot;userId&quot;: userID, &quot;iat&quot;: time.Now().Unix()}
-    token.Claims = payload
-    tokenString, err := token.SignedString(privateKey)</p>
+    <span class="k">return</span> <span class="n">privateKeyImported</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>Step 3: Initialize the required variables</p>
+</blockquote>
+<div class="highlight"><pre class="highlight go"><code><span class="n">userId</span> <span class="o">=</span> <span class="n">Your</span> <span class="n">User</span> <span class="n">ID</span>
+<span class="n">apiKeyId</span> <span class="o">=</span> <span class="p">{{</span><span class="n">api_key_id</span><span class="p">}}</span>
+<span class="n">privateKey</span> <span class="o">=</span> <span class="n">Your</span> <span class="n">RSA</span> <span class="n">Private</span> <span class="n">Key</span>
+<span class="n">expSec</span> <span class="o">=</span> <span class="n">Token</span> <span class="n">expiry</span> <span class="n">in</span> <span class="n">seconds</span> <span class="p">(</span><span class="n">max</span> <span class="m">5</span> <span class="n">minutes</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>Step 4: Sign jwt and generate token</p>
+</blockquote>
+<div class="highlight"><pre class="highlight go"><code><span class="k">func</span> <span class="n">newAuth</span><span class="p">(</span><span class="n">userID</span> <span class="kt">string</span><span class="p">,</span> <span class="n">privateKey</span> <span class="o">*</span><span class="n">rsa</span><span class="o">.</span><span class="n">PrivateKey</span><span class="p">,</span> <span class="n">expSec</span> <span class="kt">int64</span><span class="p">)</span> <span class="kt">string</span> <span class="p">{</span>
+    <span class="n">token</span> <span class="o">:=</span> <span class="n">jwt</span><span class="o">.</span><span class="n">New</span><span class="p">(</span><span class="n">jwt</span><span class="o">.</span><span class="n">SigningMethodRS256</span><span class="p">)</span>
+    <span class="k">var</span> <span class="n">payload</span> <span class="o">=</span> <span class="n">jwt</span><span class="o">.</span><span class="n">MapClaims</span><span class="p">{</span><span class="s">"exp"</span><span class="o">:</span> <span class="n">time</span><span class="o">.</span><span class="n">Now</span><span class="p">()</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">Second</span> <span class="o">*</span> <span class="n">time</span><span class="o">.</span><span class="n">Duration</span><span class="p">(</span><span class="n">expSec</span><span class="p">))</span><span class="o">.</span><span class="n">Unix</span><span class="p">(),</span>
+        <span class="s">"userId"</span><span class="o">:</span> <span class="n">userID</span><span class="p">,</span> <span class="s">"iat"</span><span class="o">:</span> <span class="n">time</span><span class="o">.</span><span class="n">Now</span><span class="p">()</span><span class="o">.</span><span class="n">Unix</span><span class="p">()}</span>
+    <span class="n">token</span><span class="o">.</span><span class="n">Claims</span> <span class="o">=</span> <span class="n">payload</span>
+    <span class="n">tokenString</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">token</span><span class="o">.</span><span class="n">SignedString</span><span class="p">(</span><span class="n">privateKey</span><span class="p">)</span>
 
-<p>if err != nil {
-        log.Errorln(err)
-        return &quot;&quot;
-    }
-    return tokenString
-}
-<code>
-The value you obtained from `tokenString` will be {{auth_token}} for each API request to Sparrow Private API and WebSocket endpoints. Below is a sample of the Authorization token for your reference:
-</code>
-eyJhbGciOiJSUzI1NiIsInR5cCI6
-... ... 
-thjybpTcmmoalGz_9EHG048pCBCA
-```</p>
+    <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">Errorln</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s">""</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">tokenString</span>
+<span class="p">}</span>
+<span class="c">// The value you obtained from `tokenString` will be {{auth_token}} </span>
+<span class="c">// for each API request to Sparrow Private API and WebSocket endpoints. Below is a sample of the Authorization token for your reference:</span>
 
-<p><strong>5. Step 5: Construct Your API Request Headers</strong>
-<code>Go
-&quot;Content-Type&quot;: &quot;application/json&quot;,
-&quot;Authorization&quot;: tokenString,
-&quot;api-key&quot;: {{api_key_id}}
-</code></p>
-<h1 id='making-your-first-call'>Making Your First Call</h1>
+<span class="n">eyJhbGciOiJSUzI1NiIsInR5cCI6</span>
+<span class="o">...</span> <span class="o">...</span> 
+<span class="n">thjybpTcmmoalGz_9EHG048pCBCA</span>
+</code></pre></div>
+<blockquote>
+<p>Step 5: Construct Your API Request Headers</p>
+</blockquote>
+<div class="highlight"><pre class="highlight go"><code><span class="s">"Content-Type"</span><span class="o">:</span> <span class="s">"application/json"</span><span class="p">,</span>
+<span class="s">"Authorization"</span><span class="o">:</span> <span class="n">tokenString</span><span class="p">,</span>
+<span class="s">"api-key"</span><span class="o">:</span> <span class="p">{{</span><span class="n">api_key_id</span><span class="p">}}</span>
+</code></pre></div><h1 id='making-your-first-call'>Making Your First Call</h1>
 <p>Test that you have the headers setup by making a <code>GET</code> request to <code>&quot;wallets/balance&quot;</code> with the above API Request Headers obtained from the Authentication session. You should get a <code>HTTP 200 OK</code> response if your keys are correct.</p>
 
 <p><strong>NOTE:</strong> </p>
