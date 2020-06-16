@@ -1157,5 +1157,172 @@ api-key | Your API KEY ID
 
 <!-- END POST - Create new trade order without matching process -->
 
+<!-- START POST - Bulk Create new trade orders with unitPremium -->
+## [TRADE] POST - (Orders) - Bulk Create new trade order with unitPremium
+```shell
+curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/bulkCreate' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Your Authorization Token' \
+--header 'api-key: Your API Key ID' \
+--data-raw '[
+	{
+		"action": "BUY",
+		"type": "PUT",
+		"lifetime": "GTD",
+		"txFeeCoin": "SP$",
+		"pair": "BTC-SP$",
+		"strike": "7000",
+		"amount": "1",
+		"unitPremium": "2",
+		"expiryDate": "2019-10-04T08:00:00.000Z"
+	},
+	{
+		"action": "SELL",
+		"type": "PUT",
+		"lifetime": "GTD",
+		"txFeeCoin": "SPO",
+		"pair": "BTC-SP$",
+		"strike": "6000",
+		"amount": "2",
+		"unitPremium": "2.5",
+		"expiryDate": "2019-12-01T08:00:00.000Z"
+	}
+]'
+```
+
+```javascript
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+myHeaders.append("Authorization", "Your Authorization Token");
+myHeaders.append("api-key", "Your API Key ID");
+
+var raw = JSON.stringify([{"action":"BUY","type":"PUT","lifetime":"GTD","txFeeCoin":"SP$","pair":"BTC-SP$","strike":"7000","amount":"1","unitPremium":"2","expiryDate":"2019-10-04T08:00:00.000Z"},{"action":"SELL","type":"PUT","lifetime":"GTD","txFeeCoin":"SPO","pair":"BTC-SP$","strike":"6000","amount":"2","unitPremium":"2.5","expiryDate":"2019-12-01T08:00:00.000Z"}]);
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("https://api.sparrowsandbox.com/trades/book/bulkCreate", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error))
+```
+
+```python
+import http.client
+import mimetypes
+conn = http.client.HTTPSConnection("https://api.sparrowsandbox.com/trades")
+payload = "[\n\t{\n\t\t\"action\": \"BUY\",\n\t\t\"type\": \"PUT\",\n\t\t\"lifetime\": \"GTD\",\n\t\t\"txFeeCoin\": \"SP$\",\n\t\t\"pair\": \"BTC-SP$\",\n\t\t\"strike\": \"7000\",\n\t\t\"amount\": \"1\",\n\t\t\"unitPremium\": \"2\",\n\t\t\"expiryDate\": \"2019-10-04T08:00:00.000Z\"\n\t},\n\t{\n\t\t\"action\": \"SELL\",\n\t\t\"type\": \"PUT\",\n\t\t\"lifetime\": \"GTD\",\n\t\t\"txFeeCoin\": \"SPO\",\n\t\t\"pair\": \"BTC-SP$\",\n\t\t\"strike\": \"6000\",\n\t\t\"amount\": \"2\",\n\t\t\"unitPremium\": \"2.5\",\n\t\t\"expiryDate\": \"2019-12-01T08:00:00.000Z\"\n\t}\n]"
+headers = {
+  'Content-Type': 'application/json',
+  'Authorization': 'Your Authorization Token',
+  'api-key': 'Your API Key ID'
+}
+conn.request("POST", "/book/bulkCreate", payload, headers)
+res = conn.getresponse()
+data = res.read()
+print(data.decode("utf-8"))
+```
+
+```ruby
+require "uri"
+require "net/http"
+
+url = URI("https://api.sparrowsandbox.com/trades/book/bulkCreate")
+
+https = Net::HTTP.new(url.host, url.port);
+https.use_ssl = true
+
+request = Net::HTTP::Post.new(url)
+request["Content-Type"] = "application/json"
+request["Authorization"] = "Your Authorization Token"
+request["api-key"] = "Your API Key ID"
+request.body = "[\n\t{\n\t\t\"action\": \"BUY\",\n\t\t\"type\": \"PUT\",\n\t\t\"lifetime\": \"GTD\",\n\t\t\"txFeeCoin\": \"SP$\",\n\t\t\"pair\": \"BTC-SP$\",\n\t\t\"strike\": \"7000\",\n\t\t\"amount\": \"1\",\n\t\t\"unitPremium\": \"2\",\n\t\t\"expiryDate\": \"2019-10-04T08:00:00.000Z\"\n\t},\n\t{\n\t\t\"action\": \"SELL\",\n\t\t\"type\": \"PUT\",\n\t\t\"lifetime\": \"GTD\",\n\t\t\"txFeeCoin\": \"SPO\",\n\t\t\"pair\": \"BTC-SP$\",\n\t\t\"strike\": \"6000\",\n\t\t\"amount\": \"2\",\n\t\t\"unitPremium\": \"2.5\",\n\t\t\"expiryDate\": \"2019-12-01T08:00:00.000Z\"\n\t}\n]"
+
+response = https.request(request)
+puts response.read_body
+```
+
+```go
+package main
+
+import (
+  "fmt"
+  "strings"
+  "net/http"
+  "io/ioutil"
+)
+
+func main() {
+
+  url := "https://api.sparrowsandbox.com/trades/book/bulkCreate"
+  method := "POST"
+
+  payload := strings.NewReader("[\n	{\n		\"action\": \"BUY\",\n		\"type\": \"PUT\",\n		\"lifetime\": \"GTD\",\n		\"txFeeCoin\": \"SP$\",\n		\"pair\": \"BTC-SP$\",\n		\"strike\": \"7000\",\n		\"amount\": \"1\",\n		\"unitPremium\": \"2\",\n		\"expiryDate\": \"2019-10-04T08:00:00.000Z\"\n	},\n	{\n		\"action\": \"SELL\",\n		\"type\": \"PUT\",\n		\"lifetime\": \"GTD\",\n		\"txFeeCoin\": \"SPO\",\n		\"pair\": \"BTC-SP$\",\n		\"strike\": \"6000\",\n		\"amount\": \"2\",\n		\"unitPremium\": \"2.5\",\n		\"expiryDate\": \"2019-12-01T08:00:00.000Z\"\n	}\n]")
+
+  client := &http.Client {
+  }
+  req, err := http.NewRequest(method, url, payload)
+
+  if err != nil {
+    fmt.Println(err)
+  }
+  req.Header.Add("Content-Type", "application/json")
+  req.Header.Add("Authorization", "Your Authorization Token")
+  req.Header.Add("api-key", "Your API Key ID")
+
+  res, err := client.Do(req)
+  defer res.Body.Close()
+  body, err := ioutil.ReadAll(res.Body)
+
+  fmt.Println(string(body))
+}
+```
+> Example Body
+
+```json
+[
+	{
+		"action": "BUY",
+		"type": "PUT",
+		"lifetime": "GTD",
+		"txFeeCoin": "SP$",
+		"pair": "BTC-SP$",
+		"strike": "7000",
+		"amount": "1",
+		"unitPremium": "2",
+		"expiryDate": "2019-10-04T08:00:00.000Z"
+	},
+	{
+		"action": "SELL",
+		"type": "PUT",
+		"lifetime": "GTD",
+		"txFeeCoin": "SPO",
+		"pair": "BTC-SP$",
+		"strike": "6000",
+		"amount": "2",
+		"unitPremium": "2.5",
+		"expiryDate": "2019-12-01T08:00:00.000Z"
+	}
+]
+```
+
+
+### URL Endpoint
+`https://api.sparrowsandbox.com/trades/book/bulkCreate`
+
+### HEADERS
+Parameter | Default 
+--------- | ------- 
+Content-Type | application/json
+Authorization | Your Authorization Token
+api-key | Your API KEY ID
+
+
+<!-- END POST - Bulk Create new trade orders with unitPremium -->
+
 
 # Public Endpoints
