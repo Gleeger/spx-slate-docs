@@ -17,10 +17,7 @@ includes:
 
 search: true
 ---
-
-![Sparrow API Documentation](https://sparrowexchange.com/img/logo.png)
-
-Welcome to Sparrow's API. 
+# Welcome to Sparrow's API. 
 
 This documentation will list all available API endpoints for Sparrow users to interact with the platform.
 
