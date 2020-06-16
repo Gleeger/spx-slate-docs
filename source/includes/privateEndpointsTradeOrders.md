@@ -2408,11 +2408,96 @@ curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own' \
 ### URL Endpoint
 `https://api.sparrowsandbox.com/trades/book/own`
 
-### PARAMS
+### HEADERS
 Parameter |  value
 --------- | ------- 
 Authorization | Your authorization key
 api-key | Your API Key ID
+
+
+
+<!-- END GET - Order Book depth Filter by Action-->
+
+
+## GET - Display all own trades - custom
+```shell
+curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?orderby=expiry&order=asc' \
+--header 'Authorization: Your Authorization Token' \
+--header 'api-key: Your API Key ID'
+```
+
+> Example Response
+
+```json
+[
+  {
+    "id": "bd3335ea-90a4-4958-86a0-5ac800b2f767",
+    "action": "BUY",
+    "type": "CALL",
+    "lifetime": "GTD",
+    "strike": "8500",
+    "amount": {
+      "coin": "BTC",
+      "amount": "0.1"
+    },
+    "unfilled": {
+      "coin": "BTC",
+      "amount": "0.1"
+    },
+    "premium": {
+      "unitPremium": "244.3",
+      "tradeUnitPremium": "24.43",
+      "totalPremium": "24.43"
+    },
+    "asset": "BTC",
+    "currency": "SP$",
+    "createdAt": "2019-09-30T05:54:04.687Z",
+    "expiry": "2019-10-11T08:00:00.000Z",
+    "status": "BOOKED",
+    "locked": {
+      "txFee": {
+        "coin": "SP$",
+        "amount": "0.780946",
+        "sp$Equivalent": "0.780946"
+      },
+      "tradeLock": null,
+      "premium": {
+        "unitPremium": "244.3",
+        "tradeUnitPremium": "24.43",
+        "totalPremium": "24.43"
+      }
+    },
+    "matched": {
+      "amount": null,
+      "payoff": null,
+      "tradeLock": null,
+      "tradeRelease": null,
+      "premium": null
+    },
+    "contracts": [],
+    "orderType": "PREMIUM",
+    "impliedVolatility": "0.92686728"
+  },
+  ...
+]
+
+```
+
+
+### URL Endpoint
+`https://api.sparrowsandbox.com/trades/book/own?orderby=expiry&order=asc`
+
+### HEADERS
+Parameter |  value
+--------- | ------- 
+Authorization | Your authorization key
+api-key | Your API Key ID
+
+### PARAMS
+Parameter |  value
+--------- | ------- 
+orderby | expiry
+order | asc
 
 
 
