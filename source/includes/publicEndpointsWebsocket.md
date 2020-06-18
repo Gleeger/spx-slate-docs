@@ -55,3 +55,33 @@ nil
 ```
 
 <!-- END -->
+
+## CNF - Indicative Price for all pairs
+
+Channel url : `/price`
+
+Event name : `cnf_price`
+
+Servers push updates to clients
+
+<!-- END -->
+
+## CNF - Pairs including trading limits and decimals
+
+Channel url : `/price`
+
+Event name : `cnf_pairs`
+
+Servers push updates to clients
+
+<!-- END -->
+
+## CNF - Status indicating the market maker is online or offline
+
+Channel url : `/price`
+
+Event name : `cnf_status`
+
+Servers push updates to clients
+
+<!-- END -->
