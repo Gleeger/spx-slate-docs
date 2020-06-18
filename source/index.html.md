@@ -18,6 +18,7 @@ includes:
   - publicEndpoints
   - publicEndpointsTicker
   - publicEndpointsOptions
+  - publicEndpointsWebsocket
 
 search: true
 ---
