@@ -1,1 +1,316 @@
-<h1 id='public-endpoints'>Public Endpoints</h1>
+<h1 id='public-endpoints'>Public Endpoints</h1><h2 id='ticker-check-system-heartbeat'>Ticker - Check system heartbeat</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowsandbox.com/v1/heartbeat'</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"connection"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='url-endpoint'>URL Endpoint</h3>
+<p><code>GET https://pricing.sparrowsandbox.com/v1/heartbeat</code></p>
+
+<p>Return system status</p>
+
+<!-- END -->
+<h2 id='ticker-check-system-timestamp'>Ticker - Check system timestamp</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowsandbox.com/v1/time'</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"serverTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1569549768803</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='url-endpoint-2'>URL Endpoint</h3>
+<p><code>GET https://pricing.sparrowsandbox.com/v1/time</code></p>
+
+<p>Return the current timestamp in millseconds on server</p>
+
+<!-- END -->
+<h2 id='ticker-list-of-symbols'>Ticker - List of symbols</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowsandbox.com/v1/symbols'</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"symbols"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"BTC-SP$"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ETH-SP$"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='url-endpoint-3'>URL Endpoint</h3>
+<p><code>GET https://pricing.sparrowsandbox.com/v1/tick/:symbol</code></p>
+
+<p>Retrieves available trading symbols. This method can be used to see which symbols are available for trading.</p>
+
+<!-- END -->
+<h2 id='ticker-price-range-within-last-24-hours'>Ticker - Price range within last 24 hours</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowsandbox.com/v1/tick/price_range'</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">8462.76</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">7731.83</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-SP$"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">170.98</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">152.37</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH-SP$"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='url-endpoint-4'>URL Endpoint</h3>
+<p><code>GET https://pricing.sparrowsandbox.com/v1/tick/price_range</code></p>
+
+<p>Return ticker price and change comparing to price at 24 hour ago by number and percentage</p>
+<h2 id='options-last-settlement-price'>Options - Last Settlement Price</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowsandbox.com/v1/settlement'</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"pricings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"BTC-SP$"</span><span class="p">:</span><span class="w"> </span><span class="mf">7802.57</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ETH-SP$"</span><span class="p">:</span><span class="w"> </span><span class="mf">166.88</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"settlementTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-30T08:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"signature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"iQEcBAABAgAGBQJdkwD6AAoJEOhpe7MWsGgSrtcH/2s3n7BZUDzTLSwCz4EDk7c265pzciDJKMpxZSIFQfLTpQ52xTmbt+MSfvWlnrVBXlJWF5zTN7egjDrZCqqLiT6EXOg+xGdlJY51exoi9cJoI0VJatWA5sjANLje3QCl8xbpXWluwVeZqw159NM42U0Z01uH94DcidzkxXr4JL5WCmVbVN/RU9TmrZXS7F7FQ+IblMPEPYRCwsOYbAts4+FJ5B/Fxk3zXNOLEBxQrNatrSbTpxY/JxucXP/bxkT4s3RqOV1p2S0DSm0x9cA3gg5RpmWwFaX109lo5y9BEuzn0/zzCZ/tRI9lSH/gZr9MjcM84kqOjHOAhq0KiarOMFE==5wq6"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='url-endpoint-5'>URL Endpoint</h3>
+<p><code>GET https://pricing.sparrowsandbox.com/v1/settlement</code></p>
+
+<p>Return last settlement price. It refreshes on fixed time(currently 8AM UTC) on daily basis.</p>
+
+<!-- END -->
+<h2 id='options-historical-settlement-prices'>Options - Historical settlement prices</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowsandbox.com/v1/settlement_hist/:days'</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"settlement_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-26T08:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"BTC-USD"</span><span class="p">:</span><span class="w"> </span><span class="mf">8376.68</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ETH-USD"</span><span class="p">:</span><span class="w"> </span><span class="mf">169.15</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"settlement_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-25T08:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"BTC-USD"</span><span class="p">:</span><span class="w"> </span><span class="mf">8357.81</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ETH-USD"</span><span class="p">:</span><span class="w"> </span><span class="mf">164.96</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"settlement_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-24T08:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"BTC-USD"</span><span class="p">:</span><span class="w"> </span><span class="mf">9736.85</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ETH-USD"</span><span class="p">:</span><span class="w"> </span><span class="mf">198.74</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"settlement_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-23T08:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"BTC-USD"</span><span class="p">:</span><span class="w"> </span><span class="mf">9894.95</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ETH-USD"</span><span class="p">:</span><span class="w"> </span><span class="mf">208.5</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"settlement_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-22T08:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"BTC-USD"</span><span class="p">:</span><span class="w"> </span><span class="mf">10001.7</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ETH-USD"</span><span class="p">:</span><span class="w"> </span><span class="mf">212.17</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h3 id='url-endpoint-6'>URL Endpoint</h3>
+<p><code>GET https://pricing.sparrowsandbox.com/v1/settlement_hist/:days</code></p>
+
+<p>Retrieve historical settlement prices up to 31 days</p>
+<h3 id='params'>PARAMS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>days</td>
+<td>1 (up to 31)</td>
+</tr>
+</tbody></table>
+
+<!-- END -->
+<h2 id='options-upcoming-settlement-dates'>Options - Upcoming settlement dates</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowsandbox.com/v1/settlement_dates'</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"settlement_dates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"27/09/2019"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"04/10/2019"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"11/10/2019"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"18/10/2019"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"settlement_time"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"2019-09-27T08:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"2019-10-04T08:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"2019-10-11T08:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"2019-10-18T08:00"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='url-endpoint-7'>URL Endpoint</h3>
+<p><code>GET https://pricing.sparrowsandbox.com/v1/settlement_dates</code></p>
+
+<p>Return upcoming settlement datetime</p>
+
+<!-- END -->
+<h2 id='options-options-price'>Options - Options Price</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowsandbox.com/v1/option/price?symbol=BTC-SP$&amp;strike=8500&amp;expiry_date=11/10/2019&amp;quantity=1.1&amp;action=buy&amp;type=call'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"expiry_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11/10/2019"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"iv"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0393</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"option_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">505.93</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"spot"</span><span class="p">:</span><span class="w"> </span><span class="mf">8018.15</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"strike"</span><span class="p">:</span><span class="w"> </span><span class="mi">8500</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='url-endpoint-8'>URL Endpoint</h3>
+<p><code>GET https://pricing.sparrowsandbox.com/v1/option/price?symbol=:symbol&amp;strike=:strike&amp;expiry_date=:expiry_date&amp;quantity=:quantity&amp;action=:action&amp;type=:type</code></p>
+
+<p>Return option price. The strike and quantity should follow step size which vary from time and time.The unit for option price is SP$.iv is implied volatility at which price is calculated.</p>
+<h3 id='headers'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Content-Type</td>
+<td>application/json</td>
+</tr>
+</tbody></table>
+<h3 id='params-2'>PARAMS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>:symbol (symbol for option trading. symbol supported can be retrieved from /symbols)</td>
+</tr>
+<tr>
+<td>strike</td>
+<td>:strike (strike price)</td>
+</tr>
+<tr>
+<td>expiry_date</td>
+<td>:expiry_date (option expiry date in DD/MM/YYYY format)</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>:quantity (option size)</td>
+</tr>
+<tr>
+<td>action</td>
+<td>:action (buy or sell)</td>
+</tr>
+<tr>
+<td>type</td>
+<td>:type (call or put)</td>
+</tr>
+</tbody></table>
+
+<!-- END -->
+<h2 id='options-current-market-iv'>Options - Current market iv</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowsandbox.com/v1/option/iv?symbol=BTC-SP$&amp;strike=8500&amp;expiry_days=4&amp;action=buy&amp;type=call'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
+</code></pre></div>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"expiry_days"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"iv"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.6643</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"strike"</span><span class="p">:</span><span class="w"> </span><span class="mi">8500</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-SP$"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"call"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='url-endpoint-9'>URL Endpoint</h3>
+<p><code>GET https://pricing.sparrowsandbox.com/v1/option/iv?symbol=:symbol&amp;strike=:strike&amp;expiry_days=:expiry_days&amp;action=:action&amp;type=:type</code></p>
+
+<p>Return current implied volatility</p>
+<h3 id='headers-2'>HEADERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Content-Type</td>
+<td>application/json</td>
+</tr>
+</tbody></table>
+<h3 id='params-3'>PARAMS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>:symbol (symbol for option trading. symbol supported can be retrieved from /symbols)</td>
+</tr>
+<tr>
+<td>strike</td>
+<td>:strike (strike price)</td>
+</tr>
+<tr>
+<td>expiry_days</td>
+<td>:expiry_days (number of days from now to expiry date)</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>:quantity (option size)</td>
+</tr>
+<tr>
+<td>action</td>
+<td>:action (buy or sell)</td>
+</tr>
+<tr>
+<td>type</td>
+<td>:type (call or put)</td>
+</tr>
+</tbody></table>
+
+<!-- END -->
