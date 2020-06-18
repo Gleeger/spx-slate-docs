@@ -439,6 +439,20 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#public-endpoints-websocket" class="toc-h1 toc-link" data-title="Public Endpoints - Websocket">Public Endpoints - Websocket</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#options-trading-get_premium" class="toc-h2 toc-link" data-title="Options Trading - get_premium">Options Trading - get_premium</a>
+                  </li>
+                  <li>
+                    <a href="#options-trading-list_quick_pick" class="toc-h2 toc-link" data-title="Options Trading - list_quick_pick">Options Trading - list_quick_pick</a>
+                  </li>
+                  <li>
+                    <a href="#options-trading-get_next_settlement" class="toc-h2 toc-link" data-title="Options Trading - get_next_settlement">Options Trading - get_next_settlement</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='https://sparrowexchange.com/'>Sparrow Exchange</a></li>
@@ -5104,6 +5118,53 @@ Think of your API RSA Private key like a password:</p>
 </tr>
 </tbody></table>
 
+<!-- END -->
+<h1 id='public-endpoints-websocket'>Public Endpoints - Websocket</h1>
+<p>The base endpoint is: </p>
+
+<p>Production : <code>https://pricing.sparrowexchange.com/v1/ws</code> </p>
+
+<p>Sandbox : <code>https://pricing.sparrowsandbox.com/v1/ws</code></p>
+<h2 id='options-trading-get_premium'>Options Trading - get_premium</h2>
+<p>Channel url : <code>/premium</code></p>
+
+<p>Calculate premium for options with specific symbol, strike, expiry date, quantity, buy/sell and call/put</p>
+
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"BTC-SP$"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"strike"</span><span class="p">:</span><span class="mi">10000</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"expiry_date"</span><span class="p">:</span><span class="s2">"06/03/2020"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"quantity"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"action"</span><span class="p">:</span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"CALL"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<!-- END -->
+<h2 id='options-trading-list_quick_pick'>Options Trading - list_quick_pick</h2>
+<p>Channel url : <code>/premium</code></p>
+
+<p>For specific symbol and settlement date, list down a few choices of options for which strike, settlement price,profit return are fixed</p>
+
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">   
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"BTC-SP$"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"expiry_date"</span><span class="p">:</span><span class="s2">"03/04/2020"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='options-trading-get_next_settlement'>Options Trading - get_next_settlement</h2>
+<p>Channel url : <code>/premium</code></p>
+
+<p>Return how long it is from now to next weekly settlement and next daily settlemen</p>
+
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="err">nil</span><span class="w">
+</span></code></pre></div>
 <!-- END -->
 
       </div>
