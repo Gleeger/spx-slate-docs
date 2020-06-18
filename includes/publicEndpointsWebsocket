@@ -45,3 +45,27 @@
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="err">nil</span><span class="w">
 </span></code></pre></div>
 <!-- END -->
+<h2 id='cnf-indicative-price-for-all-pairs'>CNF - Indicative Price for all pairs</h2>
+<p>Channel url : <code>/price</code></p>
+
+<p>Event name : <code>cnf_price</code></p>
+
+<p>Servers push updates to clients</p>
+
+<!-- END -->
+<h2 id='cnf-pairs-including-trading-limits-and-decimals'>CNF - Pairs including trading limits and decimals</h2>
+<p>Channel url : <code>/price</code></p>
+
+<p>Event name : <code>cnf_pairs</code></p>
+
+<p>Servers push updates to clients</p>
+
+<!-- END -->
+<h2 id='cnf-status-indicating-the-market-maker-is-online-or-offline'>CNF - Status indicating the market maker is online or offline</h2>
+<p>Channel url : <code>/price</code></p>
+
+<p>Event name : <code>cnf_status</code></p>
+
+<p>Servers push updates to clients</p>
+
+<!-- END -->
