@@ -355,8 +355,10 @@ html, body {
     margin-top: 2em;
     border-top: 1px;
     border-bottom: 1px ;
-    background-color:#FFB90A;
-    color: #FFFFFF;
+    background-image: linear-gradient(to bottom, rgba(#fff, 0.2), rgba(#fff, 0));
+    background-color: #0F75D4;
+    color:#FFB90A;
+    
   }
 
   h1:first-child, div:first-child + h1 {
@@ -373,8 +375,8 @@ html, body {
     padding-top: 1.2em;
     padding-bottom: 1.2em;
     background-image: linear-gradient(to bottom, rgba(#fff, 0.2), rgba(#fff, 0));
-    background-color:#0F75D4;
-    color: #FFFFFF;
+    background-color:#FFFFFF;
+    // color: #;
   }
 
   // h2s right after h1s should bump right up
