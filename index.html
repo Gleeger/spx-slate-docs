@@ -196,7 +196,7 @@
   color: #f92672;
 }
     </style>
-    <link href="stylesheets/screen-a9d2bd27.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/screen-5c3582d8.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-c427a123.css" rel="stylesheet" media="print" />
       <script src="javascripts/all-c5541673.js"></script>
   </head>
@@ -236,7 +236,42 @@
             <a href="#making-your-first-call" class="toc-h1 toc-link" data-title="Making Your First Call">Making Your First Call</a>
           </li>
           <li>
-            <a href="#questions-comments" class="toc-h1 toc-link" data-title="Questions/Comments">Questions/Comments</a>
+            <a href="#wallet" class="toc-h1 toc-link" data-title="Wallet">Wallet</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#account-balance-endpoint-will-be-here" class="toc-h2 toc-link" data-title="Account Balance Endpoint Will be here">Account Balance Endpoint Will be here</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#options-trade" class="toc-h1 toc-link" data-title="Options Trade">Options Trade</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#public-websocket" class="toc-h2 toc-link" data-title="Public WebSocket">Public WebSocket</a>
+                  </li>
+                  <li>
+                    <a href="#private-websocket" class="toc-h2 toc-link" data-title="Private WebSocket">Private WebSocket</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#conversions" class="toc-h1 toc-link" data-title="Conversions">Conversions</a>
+          </li>
+          <li>
+            <a href="#pricing-data-api" class="toc-h1 toc-link" data-title="Pricing Data(API)">Pricing Data(API)</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#more-api-will-be-here" class="toc-h2 toc-link" data-title="More api will be here">More api will be here</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#pricing-data-websocket" class="toc-h1 toc-link" data-title="Pricing Data(WebSocket)">Pricing Data(WebSocket)</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#more-api-will-be-here-2" class="toc-h2 toc-link" data-title="More api will be here">More api will be here</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#private-endpoints" class="toc-h1 toc-link" data-title="Private Endpoints">Private Endpoints</a>
@@ -423,6 +458,9 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#questions-comments" class="toc-h1 toc-link" data-title="Questions/Comments">Questions/Comments</a>
+          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='https://sparrowexchange.com/'>Sparrow</a></li>
@@ -438,49 +476,17 @@
 
 <table><thead>
 <tr>
-<th style="text-align: left">Endpoints URLs</th>
-<th style="text-align: left">Sandbox Environments</th>
+<th style="text-align: left">Environment</th>
+<th style="text-align: left">URL</th>
 </tr>
 </thead><tbody>
 <tr>
-<td style="text-align: left">Platform</td>
+<td style="text-align: left">Sandbox</td>
 <td style="text-align: left">https://sparrowsandbox.com/</td>
 </tr>
 <tr>
-<td style="text-align: left">Private API</td>
-<td style="text-align: left">https://api.sparrowsandbox.com/</td>
-</tr>
-<tr>
-<td style="text-align: left">Public API</td>
-<td style="text-align: left">https://pricing.sparrowsandbox.com/v1/</td>
-</tr>
-<tr>
-<td style="text-align: left">WebSocket</td>
-<td style="text-align: left">https://ws.sparrowsandbox.com/</td>
-</tr>
-</tbody></table>
-
-<table><thead>
-<tr>
-<th style="text-align: left">Endpoints URLs</th>
-<th style="text-align: left">Production Environments</th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">Platform</td>
+<td style="text-align: left">Production</td>
 <td style="text-align: left">https://sparrowexchange.com/</td>
-</tr>
-<tr>
-<td style="text-align: left">Private API</td>
-<td style="text-align: left">https://api.sparrowexchange.com/</td>
-</tr>
-<tr>
-<td style="text-align: left">Public API</td>
-<td style="text-align: left">https://pricing.sparrowexchange.com/v1/</td>
-</tr>
-<tr>
-<td style="text-align: left">WebSocket</td>
-<td style="text-align: left">https://ws.sparrowexchange.com/</td>
 </tr>
 </tbody></table>
 
@@ -492,6 +498,22 @@
 <li>Please <strong>DO NOT</strong> deposit any digital asset to Sparrow Sandbox environment. You may contact support@sparrowexchange.com if you need testing fund in your Sandbox account. </li>
 </ul>
 <h1 id='api-keys'>API Keys</h1>
+<table><thead>
+<tr>
+<th style="text-align: left">Environment</th>
+<th style="text-align: left">URL</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">Sandbox</td>
+<td style="text-align: left">https://api.sparrowsandbox.com/</td>
+</tr>
+<tr>
+<td style="text-align: left">Production</td>
+<td style="text-align: left">https://api.sparrowexchange.com/</td>
+</tr>
+</tbody></table>
+
 <p>Before you start using Sparrow API, you will need to enable your API access by creating {{api_key_id}} and download your API RSA Private key in PEM format (api.pem). </p>
 
 <p>In order to do so, you will need to login with your account and go to <strong>API Management</strong> &gt; <strong>New API</strong> to submit your API Key request with the necessary privileges. </p>
@@ -537,9 +559,61 @@ Think of your API RSA Private key like a password:</p>
 <p><strong>NOTE:</strong> </p>
 
 <p>You&#39;ll need to have the API Request Headers with Authorization token in all API requests to Sparrow Private API and WebSocket endpoints, except Public API endpoints where Authorization token is not required. </p>
-<h1 id='questions-comments'>Questions/Comments</h1>
-<p>If you have any questions or comments, please let us know at <a href="mailto:support@sparrowexchange.com">support@sparrowexchange.com</a>.</p>
-<h1 id='private-endpoints'>Private Endpoints</h1><h2 id='account-balance-wallet-balance'>Account Balance - Wallet Balance</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/wallets/balance'</span> <span class="se">\</span>
+<h1 id='wallet'>Wallet</h1>
+<p>... Account Balance Endpoint will be here ...</p>
+<h2 id='account-balance-endpoint-will-be-here'>Account Balance Endpoint Will be here</h2><h1 id='options-trade'>Options Trade</h1>
+<p>... Trade Orders Endpoint Will be here ...</p>
+<h2 id='public-websocket'>Public WebSocket</h2>
+<p>...</p>
+<h2 id='private-websocket'>Private WebSocket</h2>
+<table><thead>
+<tr>
+<th style="text-align: left">Environment</th>
+<th style="text-align: left">URL</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">Sandbox</td>
+<td style="text-align: left">https://ws.sparrowsandbox.com/</td>
+</tr>
+<tr>
+<td style="text-align: left">Production</td>
+<td style="text-align: left">https://ws.sparrowexchange.com/</td>
+</tr>
+</tbody></table>
+<h1 id='conversions'>Conversions</h1><h1 id='pricing-data-api'>Pricing Data(API)</h1>
+<table><thead>
+<tr>
+<th style="text-align: left">Environment</th>
+<th style="text-align: left">URL</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">Sandbox</td>
+<td style="text-align: left">https://pricing.sparrowsandbox.com/v1/</td>
+</tr>
+<tr>
+<td style="text-align: left">Production</td>
+<td style="text-align: left">https://pricing.sparrowexchange.com/v1/</td>
+</tr>
+</tbody></table>
+<h2 id='more-api-will-be-here'>More api will be here</h2><h1 id='pricing-data-websocket'>Pricing Data(WebSocket)</h1>
+<table><thead>
+<tr>
+<th style="text-align: left">Environment</th>
+<th style="text-align: left">URL</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">Sandbox</td>
+<td style="text-align: left">https://api.sparrowsandbox.com/v1/ws</td>
+</tr>
+<tr>
+<td style="text-align: left">Production</td>
+<td style="text-align: left">https://api.sparrowexchange.com/v1/ws</td>
+</tr>
+</tbody></table>
+<h2 id='more-api-will-be-here-2'>More api will be here</h2><h1 id='private-endpoints'>Private Endpoints</h1><h2 id='account-balance-wallet-balance'>Account Balance - Wallet Balance</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/wallets/balance'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -5040,6 +5114,8 @@ Think of your API RSA Private key like a password:</p>
 <p>Servers push updates to clients</p>
 
 <!-- END -->
+<h1 id='questions-comments'>Questions/Comments</h1>
+<p>If you have any questions or comments, please let us know at <a href="mailto:support@sparrowexchange.com">support@sparrowexchange.com</a>.</p>
 
       </div>
       <div class="dark-box">
