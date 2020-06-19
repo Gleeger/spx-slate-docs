@@ -12,6 +12,7 @@ includes:
   - privateEndpointsWebsocket
   - publicEndpoints
   - publicEndpointsWebsocket
+  - questionsOrComments
 
 search: true
 ---
@@ -23,20 +24,11 @@ This documentation will list all available API endpoints for Sparrow users to in
 
 Sparrow have two API environments, Sparrow Sandbox and Sparrow Production. Sparrow Sandbox can be used for users to test their API before deploying the application to Sparrow Production. 
 
-|Endpoints URLs| Sandbox Environments 
+|Environment| URL
 |:----------- | :------- 
-|Platform  | https://sparrowsandbox.com/ 
-|Private API | https://api.sparrowsandbox.com/ 
-|Public API | https://pricing.sparrowsandbox.com/v1/ 
-|WebSocket | https://ws.sparrowsandbox.com/ 
+|Sandbox| https://sparrowsandbox.com/ 
+|Production| https://sparrowexchange.com/ 
 
-
-|Endpoints URLs| Production Environments
-|:----------- | :------- 
-|Platform  | https://sparrowexchange.com/ 
-|Private API |  https://api.sparrowexchange.com/
-|Public API | https://pricing.sparrowexchange.com/v1/
-|WebSocket | https://ws.sparrowexchange.com/
 
 **Note:**
 
@@ -46,6 +38,11 @@ Sparrow have two API environments, Sparrow Sandbox and Sparrow Production. Sparr
 
 
 # API Keys
+
+|Environment| URL
+|:----------- | :------- 
+|Sandbox| https://api.sparrowsandbox.com/ 
+|Production| https://api.sparrowexchange.com/ 
 
 Before you start using Sparrow API, you will need to enable your API access by creating {{api_key_id}} and download your API RSA Private key in PEM format (api.pem). 
 
@@ -95,10 +92,39 @@ Test that you have the headers setup by making a `GET` request to `"wallets/bala
 
 You'll need to have the API Request Headers with Authorization token in all API requests to Sparrow Private API and WebSocket endpoints, except Public API endpoints where Authorization token is not required. 
 
-# Questions/Comments
+# Wallet 
+... Account Balance Endpoint will be here ...
+## Account Balance Endpoint Will be here
 
-If you have any questions or comments, please let us know at [support@sparrowexchange.com](mailto:support@sparrowexchange.com).
+# Options Trade
+... Trade Orders Endpoint Will be here ...
+
+## Public WebSocket
+
+...
+
+## Private WebSocket
+|Environment| URL
+|:----------- | :------- 
+|Sandbox| https://ws.sparrowsandbox.com/ 
+|Production| https://ws.sparrowexchange.com/ 
 
 
+# Conversions
+
+# Pricing Data(API)
+|Environment| URL
+|:----------- | :------- 
+|Sandbox| https://pricing.sparrowsandbox.com/v1/
+|Production| https://pricing.sparrowexchange.com/v1/
+
+## More api will be here
 
 
+# Pricing Data(WebSocket)
+|Environment| URL
+|:----------- | :------- 
+|Sandbox| https://api.sparrowsandbox.com/v1/ws
+|Production| https://api.sparrowexchange.com/v1/ws
+
+## More api will be here
