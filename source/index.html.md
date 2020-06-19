@@ -5,7 +5,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - shell
 
 toc_footers:
-  - <a href='https://sparrowexchange.com/'>Sparrow Exchange</a>
+  - <a href='https://sparrowexchange.com/'>Sparrow</a>
 
 includes:
   - privateEndpoints
