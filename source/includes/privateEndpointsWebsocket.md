@@ -1,3 +1,4 @@
+<!-- This docs has been moved to optionsTradeEndpoints -->
 # Private Endpoints - Websocket
 When connected to the websocket, it will receives two types of messages: (1)all new orders created via sparrow options web platform (2)new contracts when your order matched
 

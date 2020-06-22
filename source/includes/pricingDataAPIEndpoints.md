@@ -1,4 +1,9 @@
-# Public Endpoints
+# Pricing Data (API)
+
+|Environment| URL
+|:----------- | :------- 
+|Sandbox| https://pricing.sparrowsandbox.com/v1/
+|Production| https://pricing.sparrowexchange.com/v1/
 
 ## Ticker - Check system heartbeat
 
@@ -308,5 +313,3 @@ quantity | :quantity (option size)
 action | :action (buy or sell)
 type | :type (call or put)
 
-
-<!-- END -->

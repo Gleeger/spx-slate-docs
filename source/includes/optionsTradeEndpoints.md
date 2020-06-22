@@ -1,204 +1,4 @@
-# Private Endpoints
-
-## Account Balance - Wallet Balance
-```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/wallets/balance' \
---header 'Authorization: Your Authorization Token' \
---header 'api-key: Your API Key ID' \
---header 'Content-Type: application/json'
-```
-
-> Example Response
-
-```json
-[
-  {
-    "coin": "BTC",
-    "coinName": "Bitcoin",
-    "available": "2.35415896",
-    "on_trade": "0",
-    "total": "2.35415896",
-    "withdrawable": true,
-    "depositable": true,
-    "market": "CRYPTO"
-  },
-  {
-    "coin": "SP$",
-    "coinName": "Sparrow Dollar",
-    "available": "1.99",
-    "on_trade": "0",
-    "total": "1.999",
-    "withdrawable": false,
-    "depositable": false,
-    "market": "CASH"
-  },
-  {
-    "coin": "SPO",
-    "coinName": "Sparrow Token",
-    "available": "666.038320158102766833",
-    "on_trade": "0",
-    "total": "666.038320158102766833",
-    "withdrawable": true,
-    "depositable": true,
-    "market": "CRYPTO"
-  },
-  {
-    "coin": "ETH",
-    "coinName": "Ethereum",
-    "available": "0",
-    "on_trade": "0",
-    "total": "0",
-    "withdrawable": true,
-    "depositable": true,
-    "market": "CRYPTO"
-  },
-  {
-    "coin": "USDT",
-    "coinName": "Tether",
-    "available": "0",
-    "on_trade": "0",
-    "total": "0",
-    "withdrawable": true,
-    "depositable": true,
-    "market": "CRYPTO"
-  },
-  {
-    "coin": "PAX",
-    "coinName": "Paxos Standard",
-    "available": "0",
-    "on_trade": "0",
-    "total": "0",
-    "withdrawable": true,
-    "depositable": true,
-    "market": "CRYPTO"
-  },
-  {
-    "coin": "TUSD",
-    "coinName": "TrueUSD",
-    "available": "0",
-    "on_trade": "0",
-    "total": "0",
-    "withdrawable": true,
-    "depositable": true,
-    "market": "CRYPTO"
-  },
-  {
-    "coin": "USDC",
-    "coinName": "USD Coin",
-    "available": "0",
-    "on_trade": "0",
-    "total": "0",
-    "withdrawable": true,
-    "depositable": true,
-    "market": "CRYPTO"
-  },
-  {
-    "coin": "XRP",
-    "coinName": "Ripple",
-    "available": "0",
-    "on_trade": "0",
-    "total": "0",
-    "withdrawable": true,
-    "depositable": true,
-    "market": "CRYPTO"
-  },
-  {
-    "coin": "XLM",
-    "coinName": "Stellar",
-    "available": "0",
-    "on_trade": "0",
-    "total": "0",
-    "withdrawable": true,
-    "depositable": true,
-    "market": "CRYPTO"
-  }
-]
-```
-
-### URL Endpoint
-`GET https://api.sparrowsandbox.com/wallets/balance`
-
-### HEADERS
-Parameter | Default 
---------- | ------- 
-Authorization | Your Authorization Token
-api-key | Your API KEY ID
-Content-Type | application/json
-
-<!-- END GET - WALLET BALANCE -->
-<!-- ------ -->
-
-<!-- START GET - WALLET BALANCE (ONLY OPTIONS TRADING PAIRS) -->
-## Account Balance - Wallet Balance (Only Options Trading Pairs)
-
-```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/wallets/balance?filter=optionsTrading' \
---header 'Authorization: Your Authorization Token' \
---header 'api-key: Your API Key ID'
-```
-
-> Example Response
-
-```json
-[
-  {
-    "coin": "BTC",
-    "coinName": "Bitcoin",
-    "available": "2.35415896",
-    "on_trade": "0",
-    "total": "2.35415896",
-    "withdrawable": true,
-    "depositable": true,
-    "market": "CRYPTO"
-  },
-  {
-    "coin": "SP$",
-    "coinName": "Sparrow Dollar",
-    "available": "1.99",
-    "on_trade": "0",
-    "total": "1.99",
-    "withdrawable": false,
-    "depositable": false,
-    "market": "CASH"
-  },
-  {
-    "coin": "SPO",
-    "coinName": "Sparrow Token",
-    "available": "666.038320158102766833",
-    "on_trade": "0",
-    "total": "666.038320158102766833",
-    "withdrawable": true,
-    "depositable": true,
-    "market": "CRYPTO"
-  },
-  {
-    "coin": "ETH",
-    "coinName": "Ethereum",
-    "available": "0",
-    "on_trade": "0",
-    "total": "0",
-    "withdrawable": true,
-    "depositable": true,
-    "market": "CRYPTO"
-  }
-]
-```
-
-### URL Endpoint
-`GET https://api.sparrowsandbox.com/wallets/balance?filter=optionsTrading`
-
-### HEADERS
-Parameter | Default 
---------- | ------- 
-Authorization | Your Authorization Token
-api-key | Your API KEY ID
-Content-Type | application/json
-
-### PARAMS
-Parameter | Default 
---------- | ------- 
-filter | optionsTrading
-<!-- END GET - WALLET BALANCE (ONLY OPTIONS TRADING PAIRS) -->
+# Options Trade
 
 ## Trade - Option Pairs - Display Options Trading Pairs
 ```shell
@@ -237,7 +37,7 @@ api-key | Your API KEY ID
 
 <!-- END  GET - (Option Pairs) Display Options Trading Pairs -->
 
-## Trade Orders - Create new trade order with unitPremium
+## Book - Create new trade order with unitPremium
 ```shell
 curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/create' \
 --header 'Content-Type: application/json' \
@@ -305,7 +105,7 @@ api-key | Your API KEY ID
 
 <!-- START POST - Create new trade order with totalPremium -->
 
-## Trade Orders - Create new trade order with totalPremium
+## Book - Create new trade order with totalPremium
 ```shell
 curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/create' \
 --header 'Content-Type: application/json' \
@@ -371,7 +171,7 @@ api-key | Your API KEY ID
 
 
 <!-- START POST - Create new trade order with tradeUnitPremium -->
-## Trade Orders - Create new trade order with tradeUnitPremium
+## Book - Create new trade order with tradeUnitPremium
 ```shell
 curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/create' \
 --header 'Content-Type: application/json' \
@@ -436,7 +236,7 @@ api-key | Your API KEY ID
 <!-- END POST - Create new trade order with tradeUnitPremium -->
 
 <!-- START POST - Create new trade order without matching process -->
-## Trade Orders - Create new trade order without matching process
+## Book - Create new trade order without matching process
 ```shell
 curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/create' \
 --header 'Content-Type: application/json' \
@@ -503,7 +303,7 @@ api-key | Your API KEY ID
 <!-- END POST - Create new trade order without matching process -->
 
 <!-- START POST - Bulk Create new trade orders with unitPremium -->
-## Trade Orders - Bulk Create new trade order with unitPremium
+## Book - Bulk Create new trade order with unitPremium
 ```shell
 curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/bulkCreate' \
 --header 'Content-Type: application/json' \
@@ -808,7 +608,7 @@ api-key | Your API KEY ID
 
 
 
-## Trade Orders - Order Book
+## Book - Order Book
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book'
 ```
@@ -1052,7 +852,7 @@ api-key | Your API KEY ID
 
 <!-- END GET - Order Book-->
 
-## Trade Orders - Order Book For Pair
+## Book - Order Book For Pair
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/BTC-SP$'
 ```
@@ -1289,7 +1089,7 @@ curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/BTC-SP
 
 <!-- END GET - Order Book For Pair-->
 
-## Trade Orders - Order Book Filter By Type
+## Book - Order Book Filter By Type
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/BTC-SP$?type=call'
 ```
@@ -1536,7 +1336,7 @@ pair | BTC/SP$
 
 <!-- END GET - Order Book Filter By Type-->
 
-## Trade Orders - Order Book Filter By Strike
+## Book - Order Book Filter By Strike
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/BTC-SP$?minStrike=8000&maxStrike=10000'
 
@@ -1785,7 +1585,7 @@ pair | BTC/SP$
 
 <!-- END GET - Order Book For Strike-->
 
-## Trade Orders - Order Book Filter By Expiry
+## Book - Order Book Filter By Expiry
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/BTC-SP$?minExpiry=2019-10-02T02:00:00.000Z&maxExpiry=2019-11-11T08:00:00.000Z'
 ```
@@ -2034,7 +1834,7 @@ pair | BTC/SP$
 
 <!-- END GET - Order Book filter by Expiry -->
 
-## Trade Orders - Order Book Depth
+## Book - Order Book Depth
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/depth/:pair?type=call&strike=8000&expiry=2019-10-11T08:00:00.000Z'
 ```
@@ -2284,7 +2084,7 @@ pair | BTC/SP$
 
 <!-- END GET - Order Book depth -->
 
-## Trade Orders - Order Book Depth - Filter By Action
+## Book - Order Book Depth - Filter By Action
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/BTC-SP$?action=BUY'
 ```
@@ -2533,7 +2333,7 @@ pair | BTC/SP$
 <!-- END GET - Order Book depth Filter by Action-->
 
 
-## Trade Orders - Display all own trades
+## Book - Display all own trades
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own' \
 --header 'Authorization: Your Authorization Token' \
@@ -2651,7 +2451,7 @@ api-key | Your API Key ID
 <!-- END GET - Order Book depth Filter by Action-->
 
 
-## Trade Orders - Display all own trades - custom
+## Book - Display all own trades - custom
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?orderby=expiry&order=asc' \
 --header 'Authorization: Your Authorization Token' \
@@ -2736,7 +2536,7 @@ order | asc
 <!-- END GET - Order Book depth Filter by Action-->
 
 
-## Trade Orders - Display own bidding and processing trade orders
+## Book - Display own bidding and processing trade orders
 
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?status=open' \
@@ -2819,7 +2619,7 @@ status | open
 <!-- END GET - Order Book depth Filter by Action-->
 
 
-## Trade Orders - Display own bidding and processing trade orders - custom
+## Book - Display own bidding and processing trade orders - custom
 
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?status=open&orderby=expiry&order=asc' \
@@ -2904,7 +2704,7 @@ order | asc
 <!-- END GET - Order Book depth Filter by Action-->
 
 
-## Trade Orders - Display own canceled & expired trade orders 
+## Book - Display own canceled & expired trade orders 
 
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?status=closed' \
@@ -2979,7 +2779,7 @@ status | closed
 
 <!-- END GET - Order Book depth Filter by Action-->
 
-## Trade Orders - Display own canceled & expired trade orders - custom 
+## Book - Display own canceled & expired trade orders - custom 
 
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?status=closed&orderby=expiry&order=asc' \
@@ -3057,7 +2857,7 @@ order | asc
 <!-- END GET - Order Book depth Filter by Action-->
 
 
-## Trade Orders - Display own buy trades
+## Book - Display own buy trades
 
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?filter=buy' \
@@ -3140,7 +2940,7 @@ filter | buy
 
 <!-- END GET - Order Book depth Filter by Action-->
 
-## Trade Orders - Display own buy trades - custom
+## Book - Display own buy trades - custom
 
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?filter=buy&status=closed&orderby=expiry&order=asc' \
@@ -3226,7 +3026,7 @@ order | asc
 
 <!-- END GET - Order Book depth Filter by Action-->
 
-## Trade Orders - Display own sell trades
+## Book - Display own sell trades
 
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?filter=sell' \
@@ -3309,7 +3109,7 @@ filter | sell
 
 <!-- END GET - Order Book depth Filter by Action-->
 
-## Trade Orders - Display own sell trades (Custom)
+## Book - Display own sell trades (Custom)
 
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?filter=sell&orderby=expiry&order=asc' \
@@ -3394,7 +3194,7 @@ order | asc
 
 <!-- END GET - Order Book depth Filter by Action-->
 
-## Trade Orders - Display single trade order with detail
+## Book - Display single trade order with detail
 
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own/bd3335ea-90a4-4958-86a0-5ac800b2f767' \
@@ -3471,7 +3271,7 @@ Parameter |  value
 tradeOrderId | bd3335ea-90a4-4958-86a0-5ac800b2f767
 
 
-## Trade Cancel Orders - Cancel an order
+## Book - Cancel an order
 
 ```shell
 curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/cancel/c7f68417-839c-4c60-abdf-162e66327e48' \
@@ -3497,7 +3297,7 @@ trade | c7f68417-839c-4c60-abdf-162e66327e48
 
 <!-- ----- -->
 
-## Trade Cancel Orders - Bulk Cancel Order
+## Book - Bulk Cancel Order
 
 ```shell
 curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/bulkCancel' \
@@ -3815,3 +3615,27 @@ type | put
 
 
 <!-- END -->
+
+## Private WebSocket
+|Environment| URL
+|:----------- | :------- 
+|Sandbox| https://ws.sparrowsandbox.com/ 
+|Production| https://ws.sparrowexchange.com/ 
+
+### HEAD - Streaming URL
+```shell
+curl --location --head 'https://ws.sparrowsandbox.com/stream?api-key=Your%20API%20Key%20ID&authorization=Your%20Authorization%20Token'
+```
+
+This is the URL of websocket to connect to. stream?api-key={{apiKeyId}}&authorization={{token}} api-key is user's api key authorization is the token signed with private key See API key section for details on how to generate authorization
+
+### URL Endpoint
+`https://ws.sparrowsandbox.com/stream?api-key=Your API Key ID&authorization=Your Authorization Token`
+
+### HEADERS
+Parameter | Default 
+--------- | ------- 
+Content-Type | application/json
+Authorization | Your Authorization Token
+
+<!-- END  POST - Create new trade order with unitPremium -->

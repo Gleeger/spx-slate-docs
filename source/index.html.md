@@ -8,10 +8,11 @@ toc_footers:
   - <a href='https://sparrowexchange.com/'>Sparrow</a>
 
 includes:
-  - privateEndpoints
-  - privateEndpointsWebsocket
-  - publicEndpoints
-  - publicEndpointsWebsocket
+  # - privateEndpointsWebsocket
+  - walletEndpoints
+  - optionsTradeEndpoints
+  - pricingDataAPIEndpoints
+  - pricingDataWSEndpoints
   - questionsOrComments
 
 search: true
@@ -91,40 +92,3 @@ Test that you have the headers setup by making a `GET` request to `"wallets/bala
 **NOTE:** 
 
 You'll need to have the API Request Headers with Authorization token in all API requests to Sparrow Private API and WebSocket endpoints, except Public API endpoints where Authorization token is not required. 
-
-# Wallet 
-... Account Balance Endpoint will be here ...
-## Account Balance Endpoint Will be here
-
-# Options Trade
-... Trade Orders Endpoint Will be here ...
-
-## Public WebSocket
-
-...
-
-## Private WebSocket
-|Environment| URL
-|:----------- | :------- 
-|Sandbox| https://ws.sparrowsandbox.com/ 
-|Production| https://ws.sparrowexchange.com/ 
-
-
-# Conversions
-
-# Pricing Data(API)
-|Environment| URL
-|:----------- | :------- 
-|Sandbox| https://pricing.sparrowsandbox.com/v1/
-|Production| https://pricing.sparrowexchange.com/v1/
-
-## More api will be here
-
-
-# Pricing Data(WebSocket)
-|Environment| URL
-|:----------- | :------- 
-|Sandbox| https://api.sparrowsandbox.com/v1/ws
-|Production| https://api.sparrowexchange.com/v1/ws
-
-## More api will be here
