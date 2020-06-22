@@ -1,6 +1,6 @@
 # Options Trade
 
-## Trade - Option Pairs - Display Options Trading Pairs
+## Display Options Trading Pairs
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/pairs' \
 --header 'Authorization: Your Authorization Token' \
@@ -37,7 +37,7 @@ api-key | Your API KEY ID
 
 <!-- END  GET - (Option Pairs) Display Options Trading Pairs -->
 
-## Book - Create new trade order with unitPremium
+## Create new order with unitPremium
 ```shell
 curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/create' \
 --header 'Content-Type: application/json' \
@@ -105,7 +105,7 @@ api-key | Your API KEY ID
 
 <!-- START POST - Create new trade order with totalPremium -->
 
-## Book - Create new trade order with totalPremium
+## Create new order with totalPremium
 ```shell
 curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/create' \
 --header 'Content-Type: application/json' \
@@ -171,7 +171,7 @@ api-key | Your API KEY ID
 
 
 <!-- START POST - Create new trade order with tradeUnitPremium -->
-## Book - Create new trade order with tradeUnitPremium
+## Create new order with tradeUnitPremium
 ```shell
 curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/create' \
 --header 'Content-Type: application/json' \
@@ -236,7 +236,7 @@ api-key | Your API KEY ID
 <!-- END POST - Create new trade order with tradeUnitPremium -->
 
 <!-- START POST - Create new trade order without matching process -->
-## Book - Create new trade order without matching process
+## Create new order without matching process
 ```shell
 curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/create' \
 --header 'Content-Type: application/json' \
@@ -303,7 +303,7 @@ api-key | Your API KEY ID
 <!-- END POST - Create new trade order without matching process -->
 
 <!-- START POST - Bulk Create new trade orders with unitPremium -->
-## Book - Bulk Create new trade order with unitPremium
+## Create new bulk order with unitPremium
 ```shell
 curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/bulkCreate' \
 --header 'Content-Type: application/json' \
@@ -608,7 +608,7 @@ api-key | Your API KEY ID
 
 
 
-## Book - Order Book
+## Display Order Book
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book'
 ```
@@ -852,7 +852,7 @@ api-key | Your API KEY ID
 
 <!-- END GET - Order Book-->
 
-## Book - Order Book For Pair
+## Display Order Book By Pair
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/BTC-SP$'
 ```
@@ -1089,7 +1089,7 @@ curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/BTC-SP
 
 <!-- END GET - Order Book For Pair-->
 
-## Book - Order Book Filter By Type
+## Display Order Book - Filter By Type
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/BTC-SP$?type=call'
 ```
@@ -1336,7 +1336,7 @@ pair | BTC/SP$
 
 <!-- END GET - Order Book Filter By Type-->
 
-## Book - Order Book Filter By Strike
+## Display Order Book - Filter By Strike
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/BTC-SP$?minStrike=8000&maxStrike=10000'
 
@@ -1585,7 +1585,7 @@ pair | BTC/SP$
 
 <!-- END GET - Order Book For Strike-->
 
-## Book - Order Book Filter By Expiry
+## Display Order Book - Filter By Expiry
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/BTC-SP$?minExpiry=2019-10-02T02:00:00.000Z&maxExpiry=2019-11-11T08:00:00.000Z'
 ```
@@ -1834,7 +1834,7 @@ pair | BTC/SP$
 
 <!-- END GET - Order Book filter by Expiry -->
 
-## Book - Order Book Depth
+## Display Order Book Depth
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/depth/:pair?type=call&strike=8000&expiry=2019-10-11T08:00:00.000Z'
 ```
@@ -2084,7 +2084,7 @@ pair | BTC/SP$
 
 <!-- END GET - Order Book depth -->
 
-## Book - Order Book Depth - Filter By Action
+## Display Order Book Depth - Filter By Action
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/BTC-SP$?action=BUY'
 ```
@@ -2333,7 +2333,7 @@ pair | BTC/SP$
 <!-- END GET - Order Book depth Filter by Action-->
 
 
-## Book - Display all own trades
+## Display user trades history 
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own' \
 --header 'Authorization: Your Authorization Token' \
@@ -2451,7 +2451,7 @@ api-key | Your API Key ID
 <!-- END GET - Order Book depth Filter by Action-->
 
 
-## Book - Display all own trades - custom
+## Display user trades history - custom
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?orderby=expiry&order=asc' \
 --header 'Authorization: Your Authorization Token' \
@@ -2536,7 +2536,7 @@ order | asc
 <!-- END GET - Order Book depth Filter by Action-->
 
 
-## Book - Display own bidding and processing trade orders
+## Display user's bidding and processing trade orders
 
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?status=open' \
@@ -2619,7 +2619,7 @@ status | open
 <!-- END GET - Order Book depth Filter by Action-->
 
 
-## Book - Display own bidding and processing trade orders - custom
+## Display user's bidding and processing trade orders - custom
 
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?status=open&orderby=expiry&order=asc' \
@@ -2704,7 +2704,7 @@ order | asc
 <!-- END GET - Order Book depth Filter by Action-->
 
 
-## Book - Display own canceled & expired trade orders 
+## Display user's canceled & expired trade orders 
 
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?status=closed' \
@@ -2779,7 +2779,7 @@ status | closed
 
 <!-- END GET - Order Book depth Filter by Action-->
 
-## Book - Display own canceled & expired trade orders - custom 
+## Display user's canceled & expired trade orders - custom 
 
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?status=closed&orderby=expiry&order=asc' \
@@ -2857,7 +2857,7 @@ order | asc
 <!-- END GET - Order Book depth Filter by Action-->
 
 
-## Book - Display own buy trades
+## Display user's buy trade orders
 
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?filter=buy' \
@@ -2940,7 +2940,7 @@ filter | buy
 
 <!-- END GET - Order Book depth Filter by Action-->
 
-## Book - Display own buy trades - custom
+## Display user's buy trade orders - custom
 
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?filter=buy&status=closed&orderby=expiry&order=asc' \
@@ -3026,7 +3026,7 @@ order | asc
 
 <!-- END GET - Order Book depth Filter by Action-->
 
-## Book - Display own sell trades
+## Display user's sell trade orders
 
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?filter=sell' \
@@ -3109,7 +3109,7 @@ filter | sell
 
 <!-- END GET - Order Book depth Filter by Action-->
 
-## Book - Display own sell trades (Custom)
+## Display user's buy trade orders - custom
 
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?filter=sell&orderby=expiry&order=asc' \
@@ -3194,7 +3194,7 @@ order | asc
 
 <!-- END GET - Order Book depth Filter by Action-->
 
-## Book - Display single trade order with detail
+## Display user's single trade order with detail
 
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own/bd3335ea-90a4-4958-86a0-5ac800b2f767' \
@@ -3271,7 +3271,7 @@ Parameter |  value
 tradeOrderId | bd3335ea-90a4-4958-86a0-5ac800b2f767
 
 
-## Book - Cancel an order
+## Cancel an order
 
 ```shell
 curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/cancel/c7f68417-839c-4c60-abdf-162e66327e48' \
@@ -3297,7 +3297,7 @@ trade | c7f68417-839c-4c60-abdf-162e66327e48
 
 <!-- ----- -->
 
-## Book - Bulk Cancel Order
+## Bulk Cancel Order
 
 ```shell
 curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/bulkCancel' \
@@ -3333,7 +3333,7 @@ Parameter |  value
 Authorization | Your authorization key
 api-key | Your API Key ID
 
-## Contract - Display own trade contracts
+## Display user's trade contracts
 
 
 ```shell
@@ -3355,7 +3355,7 @@ api-key | Your API Key ID
 
 <!-- END -->
 
-## Contract - Display own active trade contracts
+## Display user's active trade contracts
 
 
 ```shell
@@ -3382,7 +3382,7 @@ status | active
 
 <!-- END -->
 
-## Contract - Display own settled trade contracts
+## Display user's settled trade contracts
 
 
 ```shell
@@ -3409,7 +3409,7 @@ status | settled
 
 <!-- END -->
 
-## Contract - Display own buy trade contracts
+## Display user's buy trade contracts
 
 
 ```shell
@@ -3435,7 +3435,7 @@ filter | buy
 
 <!-- END -->
 
-## Contract - Display own sell trade contracts
+## Display user's sell trade contracts
 
 
 ```shell
@@ -3461,7 +3461,7 @@ filter | sell
 
 <!-- END -->
 
-## Contract - Display own trade contracts - custom
+## Display user's trade contracts - custom
 
 
 ```shell
@@ -3488,7 +3488,7 @@ status | settled
 
 <!-- END -->
 
-## Contract - Display own trade contracts (group by market)
+## Display user's trade contracts (group by market)
 
 
 ```shell
@@ -3514,7 +3514,7 @@ format | grouped (list / grouped (default is list) refer to TRD-CN-1a)
 
 <!-- END -->
 
-## Contract - Display all trade contracts
+## Display all trade contracts
 
 
 ```shell
@@ -3538,7 +3538,7 @@ api-key | Your API Key ID
 
 <!-- END -->
 
-## Contract - Display all settled trade contracts
+## Display all settled trade contracts
 
 
 ```shell
@@ -3564,7 +3564,7 @@ status | settled
 
 <!-- END -->
 
-## Contract - Display all put trade contracts
+## Display all put trade contracts
 
 
 ```shell
@@ -3590,7 +3590,7 @@ type | put
 
 <!-- END -->
 
-## Contract - Display all call trade contracts
+## Display all call trade contracts
 
 
 ```shell
