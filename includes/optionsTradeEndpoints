@@ -1,4 +1,4 @@
-<h1 id='options-trade'>Options Trade</h1><h2 id='trade-option-pairs-display-options-trading-pairs'>Trade - Option Pairs - Display Options Trading Pairs</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/pairs'</span> <span class="se">\</span>
+<h1 id='options-trade'>Options Trade</h1><h2 id='display-options-trading-pairs'>Display Options Trading Pairs</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/pairs'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div>
@@ -39,7 +39,7 @@
 </tbody></table>
 
 <!-- END  GET - (Option Pairs) Display Options Trading Pairs -->
-<h2 id='book-create-new-trade-order-with-unitpremium'>Book - Create new trade order with unitPremium</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowsandbox.com/trades/book/create'</span> <span class="se">\</span>
+<h2 id='create-new-order-with-unitpremium'>Create new order with unitPremium</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowsandbox.com/trades/book/create'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span> <span class="se">\</span>
@@ -110,7 +110,7 @@
 <!-- END  POST - Create new trade order with unitPremium -->
 
 <!-- START POST - Create new trade order with totalPremium -->
-<h2 id='book-create-new-trade-order-with-totalpremium'>Book - Create new trade order with totalPremium</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowsandbox.com/trades/book/create'</span> <span class="se">\</span>
+<h2 id='create-new-order-with-totalpremium'>Create new order with totalPremium</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowsandbox.com/trades/book/create'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span> <span class="se">\</span>
@@ -181,7 +181,7 @@
 <!-- END  POST - Create new trade order with totalPremium -->
 
 <!-- START POST - Create new trade order with tradeUnitPremium -->
-<h2 id='book-create-new-trade-order-with-tradeunitpremium'>Book - Create new trade order with tradeUnitPremium</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowsandbox.com/trades/book/create'</span> <span class="se">\</span>
+<h2 id='create-new-order-with-tradeunitpremium'>Create new order with tradeUnitPremium</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowsandbox.com/trades/book/create'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span> <span class="se">\</span>
@@ -252,7 +252,7 @@
 <!-- END POST - Create new trade order with tradeUnitPremium -->
 
 <!-- START POST - Create new trade order without matching process -->
-<h2 id='book-create-new-trade-order-without-matching-process'>Book - Create new trade order without matching process</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowsandbox.com/trades/book/create'</span> <span class="se">\</span>
+<h2 id='create-new-order-without-matching-process'>Create new order without matching process</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowsandbox.com/trades/book/create'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span> <span class="se">\</span>
@@ -325,7 +325,7 @@
 <!-- END POST - Create new trade order without matching process -->
 
 <!-- START POST - Bulk Create new trade orders with unitPremium -->
-<h2 id='book-bulk-create-new-trade-order-with-unitpremium'>Book - Bulk Create new trade order with unitPremium</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowsandbox.com/trades/book/bulkCreate'</span> <span class="se">\</span>
+<h2 id='create-new-bulk-order-with-unitpremium'>Create new bulk order with unitPremium</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowsandbox.com/trades/book/bulkCreate'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span> <span class="se">\</span>
@@ -631,7 +631,7 @@
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <!-- END POST - Bulk Create new trade orders with unitPremium -->
-<h2 id='book-order-book'>Book - Order Book</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book'</span>
+<h2 id='display-order-book'>Display Order Book</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book'</span>
 </code></pre></div>
 <blockquote>
 <p>Example Response</p>
@@ -876,7 +876,7 @@
 </tbody></table>
 
 <!-- END GET - Order Book-->
-<h2 id='book-order-book-for-pair'>Book - Order Book For Pair</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/BTC-SP$'</span>
+<h2 id='display-order-book-by-pair'>Display Order Book By Pair</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/BTC-SP$'</span>
 </code></pre></div>
 <blockquote>
 <p>Example Response</p>
@@ -1105,7 +1105,7 @@
 <p><code>GET https://api.sparrowsandbox.com/trades/book/BTC-SP$</code></p>
 
 <!-- END GET - Order Book For Pair-->
-<h2 id='book-order-book-filter-by-type'>Book - Order Book Filter By Type</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/BTC-SP$?type=call'</span>
+<h2 id='display-order-book-filter-by-type'>Display Order Book - Filter By Type</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/BTC-SP$?type=call'</span>
 </code></pre></div>
 <blockquote>
 <p>Example Response</p>
@@ -1358,7 +1358,7 @@
 </tbody></table>
 
 <!-- END GET - Order Book Filter By Type-->
-<h2 id='book-order-book-filter-by-strike'>Book - Order Book Filter By Strike</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/BTC-SP$?minStrike=8000&amp;maxStrike=10000'</span>
+<h2 id='display-order-book-filter-by-strike'>Display Order Book - Filter By Strike</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/BTC-SP$?minStrike=8000&amp;maxStrike=10000'</span>
 
 </code></pre></div>
 <blockquote>
@@ -1616,7 +1616,7 @@
 </tbody></table>
 
 <!-- END GET - Order Book For Strike-->
-<h2 id='book-order-book-filter-by-expiry'>Book - Order Book Filter By Expiry</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/BTC-SP$?minExpiry=2019-10-02T02:00:00.000Z&amp;maxExpiry=2019-11-11T08:00:00.000Z'</span>
+<h2 id='display-order-book-filter-by-expiry'>Display Order Book - Filter By Expiry</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/BTC-SP$?minExpiry=2019-10-02T02:00:00.000Z&amp;maxExpiry=2019-11-11T08:00:00.000Z'</span>
 </code></pre></div>
 <blockquote>
 <p>Example Response</p>
@@ -1873,7 +1873,7 @@
 </tbody></table>
 
 <!-- END GET - Order Book filter by Expiry -->
-<h2 id='book-order-book-depth'>Book - Order Book Depth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/depth/:pair?type=call&amp;strike=8000&amp;expiry=2019-10-11T08:00:00.000Z'</span>
+<h2 id='display-order-book-depth'>Display Order Book Depth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/depth/:pair?type=call&amp;strike=8000&amp;expiry=2019-10-11T08:00:00.000Z'</span>
 </code></pre></div>
 <blockquote>
 <p>Example Response</p>
@@ -2134,7 +2134,7 @@
 </tbody></table>
 
 <!-- END GET - Order Book depth -->
-<h2 id='book-order-book-depth-filter-by-action'>Book - Order Book Depth - Filter By Action</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/BTC-SP$?action=BUY'</span>
+<h2 id='display-order-book-depth-filter-by-action'>Display Order Book Depth - Filter By Action</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/BTC-SP$?action=BUY'</span>
 </code></pre></div>
 <blockquote>
 <p>Example Response</p>
@@ -2387,7 +2387,7 @@
 </tbody></table>
 
 <!-- END GET - Order Book depth Filter by Action-->
-<h2 id='book-display-all-own-trades'>Book - Display all own trades</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own'</span> <span class="se">\</span>
+<h2 id='display-user-trades-history'>Display user trades history</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div>
@@ -2505,7 +2505,7 @@
 </tbody></table>
 
 <!-- END GET - Order Book depth Filter by Action-->
-<h2 id='book-display-all-own-trades-custom'>Book - Display all own trades - custom</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?orderby=expiry&amp;order=asc'</span> <span class="se">\</span>
+<h2 id='display-user-trades-history-custom'>Display user trades history - custom</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?orderby=expiry&amp;order=asc'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div>
@@ -2600,7 +2600,7 @@
 </tbody></table>
 
 <!-- END GET - Order Book depth Filter by Action-->
-<h2 id='book-display-own-bidding-and-processing-trade-orders'>Book - Display own bidding and processing trade orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?status=open'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-bidding-and-processing-trade-orders'>Display user&#39;s bidding and processing trade orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?status=open'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div>
@@ -2689,7 +2689,7 @@
 </tbody></table>
 
 <!-- END GET - Order Book depth Filter by Action-->
-<h2 id='book-display-own-bidding-and-processing-trade-orders-custom'>Book - Display own bidding and processing trade orders - custom</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?status=open&amp;orderby=expiry&amp;order=asc'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-bidding-and-processing-trade-orders-custom'>Display user&#39;s bidding and processing trade orders - custom</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?status=open&amp;orderby=expiry&amp;order=asc'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID
 </span></code></pre></div>
@@ -2786,7 +2786,7 @@
 </tbody></table>
 
 <!-- END GET - Order Book depth Filter by Action-->
-<h2 id='book-display-own-canceled-amp-expired-trade-orders'>Book - Display own canceled &amp; expired trade orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?status=closed'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-canceled-amp-expired-trade-orders'>Display user&#39;s canceled &amp; expired trade orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?status=closed'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div>
@@ -2868,7 +2868,7 @@
 </tbody></table>
 
 <!-- END GET - Order Book depth Filter by Action-->
-<h2 id='book-display-own-canceled-amp-expired-trade-orders-custom'>Book - Display own canceled &amp; expired trade orders - custom</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?status=closed&amp;orderby=expiry&amp;order=asc'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-canceled-amp-expired-trade-orders-custom'>Display user&#39;s canceled &amp; expired trade orders - custom</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?status=closed&amp;orderby=expiry&amp;order=asc'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div>
@@ -2958,7 +2958,7 @@
 </tbody></table>
 
 <!-- END GET - Order Book depth Filter by Action-->
-<h2 id='book-display-own-buy-trades'>Book - Display own buy trades</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?filter=buy'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-buy-trade-orders'>Display user&#39;s buy trade orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?filter=buy'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div>
@@ -3048,7 +3048,7 @@
 </tbody></table>
 
 <!-- END GET - Order Book depth Filter by Action-->
-<h2 id='book-display-own-buy-trades-custom'>Book - Display own buy trades - custom</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?filter=buy&amp;status=closed&amp;orderby=expiry&amp;order=asc'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-buy-trade-orders-custom'>Display user&#39;s buy trade orders - custom</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?filter=buy&amp;status=closed&amp;orderby=expiry&amp;order=asc'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div>
@@ -3150,7 +3150,7 @@
 </tbody></table>
 
 <!-- END GET - Order Book depth Filter by Action-->
-<h2 id='book-display-own-sell-trades'>Book - Display own sell trades</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?filter=sell'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-sell-trade-orders'>Display user&#39;s sell trade orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?filter=sell'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID''
 </span></code></pre></div>
@@ -3240,7 +3240,7 @@
 </tbody></table>
 
 <!-- END GET - Order Book depth Filter by Action-->
-<h2 id='book-display-own-sell-trades-custom'>Book - Display own sell trades (Custom)</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?filter=sell&amp;orderby=expiry&amp;order=asc'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-buy-trade-orders-custom-2'>Display user&#39;s buy trade orders - custom</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?filter=sell&amp;orderby=expiry&amp;order=asc'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div>
@@ -3338,7 +3338,7 @@
 </tbody></table>
 
 <!-- END GET - Order Book depth Filter by Action-->
-<h2 id='book-display-single-trade-order-with-detail'>Book - Display single trade order with detail</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own/bd3335ea-90a4-4958-86a0-5ac800b2f767'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-single-trade-order-with-detail'>Display user&#39;s single trade order with detail</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own/bd3335ea-90a4-4958-86a0-5ac800b2f767'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div>
@@ -3423,7 +3423,7 @@
 <td>bd3335ea-90a4-4958-86a0-5ac800b2f767</td>
 </tr>
 </tbody></table>
-<h2 id='book-cancel-an-order'>Book - Cancel an order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowsandbox.com/trades/book/cancel/c7f68417-839c-4c60-abdf-162e66327e48'</span> <span class="se">\</span>
+<h2 id='cancel-an-order'>Cancel an order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowsandbox.com/trades/book/cancel/c7f68417-839c-4c60-abdf-162e66327e48'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span> <span class="se">\</span>
 <span class="nt">--data-raw</span> <span class="s1">''</span>
@@ -3459,7 +3459,7 @@
 </tbody></table>
 
 <!-- ----- -->
-<h2 id='book-bulk-cancel-order'>Book - Bulk Cancel Order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowsandbox.com/trades/book/bulkCancel'</span> <span class="se">\</span>
+<h2 id='bulk-cancel-order'>Bulk Cancel Order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowsandbox.com/trades/book/bulkCancel'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span> <span class="se">\</span>
@@ -3497,7 +3497,7 @@
 <td>Your API Key ID</td>
 </tr>
 </tbody></table>
-<h2 id='contract-display-own-trade-contracts'>Contract - Display own trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-trade-contracts'>Display user&#39;s trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div><h3 id='url-endpoint-27'>URL Endpoint</h3>
@@ -3520,7 +3520,7 @@
 </tbody></table>
 
 <!-- END -->
-<h2 id='contract-display-own-active-trade-contracts'>Contract - Display own active trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own?status=active'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-active-trade-contracts'>Display user&#39;s active trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own?status=active'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div><h3 id='url-endpoint-28'>URL Endpoint</h3>
@@ -3555,7 +3555,7 @@
 </tbody></table>
 
 <!-- END -->
-<h2 id='contract-display-own-settled-trade-contracts'>Contract - Display own settled trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own?status=settled'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-settled-trade-contracts'>Display user&#39;s settled trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own?status=settled'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div><h3 id='url-endpoint-29'>URL Endpoint</h3>
@@ -3590,7 +3590,7 @@
 </tbody></table>
 
 <!-- END -->
-<h2 id='contract-display-own-buy-trade-contracts'>Contract - Display own buy trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own?filter=buy'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-buy-trade-contracts'>Display user&#39;s buy trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own?filter=buy'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div><h3 id='url-endpoint-30'>URL Endpoint</h3>
@@ -3625,7 +3625,7 @@
 </tbody></table>
 
 <!-- END -->
-<h2 id='contract-display-own-sell-trade-contracts'>Contract - Display own sell trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own?filter=sell'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-sell-trade-contracts'>Display user&#39;s sell trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own?filter=sell'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div><h3 id='url-endpoint-31'>URL Endpoint</h3>
@@ -3660,7 +3660,7 @@
 </tbody></table>
 
 <!-- END -->
-<h2 id='contract-display-own-trade-contracts-custom'>Contract - Display own trade contracts - custom</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own?filter=sell&amp;status=settled'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-trade-contracts-custom'>Display user&#39;s trade contracts - custom</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own?filter=sell&amp;status=settled'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div><h3 id='url-endpoint-32'>URL Endpoint</h3>
@@ -3699,7 +3699,7 @@
 </tbody></table>
 
 <!-- END -->
-<h2 id='contract-display-own-trade-contracts-group-by-market'>Contract - Display own trade contracts (group by market)</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own?format=grouped'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-trade-contracts-group-by-market'>Display user&#39;s trade contracts (group by market)</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own?format=grouped'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div><h3 id='url-endpoint-33'>URL Endpoint</h3>
@@ -3734,7 +3734,7 @@
 </tbody></table>
 
 <!-- END -->
-<h2 id='contract-display-all-trade-contracts'>Contract - Display all trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts'</span> <span class="se">\</span>
+<h2 id='display-all-trade-contracts'>Display all trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div>
@@ -3759,7 +3759,7 @@
 </tbody></table>
 
 <!-- END -->
-<h2 id='contract-display-all-settled-trade-contracts'>Contract - Display all settled trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts?status=settled'</span> <span class="se">\</span>
+<h2 id='display-all-settled-trade-contracts'>Display all settled trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts?status=settled'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div><h3 id='url-endpoint-35'>URL Endpoint</h3>
@@ -3794,7 +3794,7 @@
 </tbody></table>
 
 <!-- END -->
-<h2 id='contract-display-all-put-trade-contracts'>Contract - Display all put trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts?type=put'</span> <span class="se">\</span>
+<h2 id='display-all-put-trade-contracts'>Display all put trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts?type=put'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div><h3 id='url-endpoint-36'>URL Endpoint</h3>
@@ -3829,7 +3829,7 @@
 </tbody></table>
 
 <!-- END -->
-<h2 id='contract-display-all-call-trade-contracts'>Contract - Display all call trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts?type=call'</span> <span class="se">\</span>
+<h2 id='display-all-call-trade-contracts'>Display all call trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts?type=call'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div><h3 id='url-endpoint-37'>URL Endpoint</h3>
