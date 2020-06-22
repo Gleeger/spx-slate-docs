@@ -1,0 +1,142 @@
+<h1 id='pricing-data-websocket'>Pricing Data (Websocket)</h1>
+<p>The base endpoint is: </p>
+
+<p>Production : <code>https://pricing.sparrowexchange.com/v1/ws</code> </p>
+
+<p>Sandbox : <code>https://pricing.sparrowsandbox.com/v1/ws</code></p>
+
+<p>All symbols for streams are uppercase</p>
+
+<p>Please find sample scripts below with socket.io client library</p>
+
+<blockquote>
+<p>Sample Scripts with socket.io client library</p>
+</blockquote>
+<div class="highlight"><pre class="highlight html tab-html"><code><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">host</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://pricing.sparrowexchange.com</span><span class="dl">"</span><span class="p">;</span>
+
+            <span class="c1">// tick price and price change</span>
+            <span class="kd">var</span> <span class="nx">ws_tick</span> <span class="o">=</span> <span class="nx">host</span><span class="o">+</span><span class="dl">"</span><span class="s2">/v1/ws/tick</span><span class="dl">"</span>  
+            <span class="kd">var</span> <span class="nx">tick_socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">ws_tick</span><span class="p">,{</span><span class="na">transports</span><span class="p">:[</span><span class="dl">"</span><span class="s2">websocket</span><span class="dl">"</span><span class="p">]});</span> 
+            <span class="nx">tick_socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">tick_change</span><span class="dl">'</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">message1</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message1</span><span class="p">);</span>
+                    <span class="p">});</span>
+
+            <span class="c1">// all OHLC data with identifier 'interval': 1T 5T 15T 30T 1H 4H 1D</span>
+            <span class="c1">// ohlc_BTC-SP$ received messages for BTC. </span>
+            <span class="c1">// ohlc_ETH-SP$ eceived messages for ETH</span>
+            <span class="nx">tick_socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">ohlc_BTC-SP$</span><span class="dl">'</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">message1</span><span class="p">)</span> <span class="p">{</span>
+                         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">ohlc</span><span class="dl">'</span><span class="p">)</span>
+                         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message1</span><span class="p">);</span>
+            <span class="c1">//             // filter message by interval for further prcocess</span>
+                     <span class="p">});</span>
+
+             <span class="nx">tick_socket</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">settlement_datetime</span><span class="dl">'</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">message1</span><span class="p">)</span> <span class="p">{</span>
+                         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">settlement_datetime</span><span class="dl">'</span><span class="p">)</span>
+                         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message1</span><span class="p">);</span>
+                     <span class="p">});</span>
+
+             <span class="nx">tick_socket</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="dl">'</span><span class="s1">get_server_time</span><span class="dl">'</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">message1</span><span class="p">)</span> <span class="p">{</span>
+                             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">get_server_time</span><span class="dl">"</span><span class="p">);</span>
+                             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message1</span><span class="p">)</span>
+                         <span class="p">});</span>
+
+            <span class="nx">ohlc_hist_req</span> <span class="o">=</span> <span class="p">{</span><span class="dl">"</span><span class="s2">symbol</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">BTC-SP$</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">candle_no</span><span class="dl">"</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="dl">"</span><span class="s2">period</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">1D</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">base_timestamp</span><span class="dl">"</span><span class="p">:</span><span class="mi">1584682466823</span><span class="p">}</span>
+             <span class="nx">tick_socket</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="dl">'</span><span class="s1">load_ohlc_hist</span><span class="dl">'</span><span class="p">,</span><span class="nx">ohlc_hist_req</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">message1</span><span class="p">)</span> <span class="p">{</span>
+                             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">load_ohlc_hist</span><span class="dl">"</span><span class="p">);</span>
+                             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message1</span><span class="p">)</span>
+                         <span class="p">});</span>
+
+            <span class="c1">// Get options premium  </span>
+            <span class="kd">var</span> <span class="nx">ws_option</span> <span class="o">=</span> <span class="nx">host</span><span class="o">+</span><span class="dl">"</span><span class="s2">/v1/ws/premium</span><span class="dl">"</span>  
+            <span class="kd">var</span> <span class="nx">option_socket</span> <span class="o">=</span> <span class="nx">io</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">ws_option</span><span class="p">,{</span><span class="na">transports</span><span class="p">:[</span><span class="dl">"</span><span class="s2">websocket</span><span class="dl">"</span><span class="p">]});</span> 
+            <span class="kd">var</span> <span class="nx">strike</span> <span class="o">=</span> <span class="mi">10000</span>
+            <span class="nx">req_json</span> <span class="o">=</span> <span class="p">{</span><span class="dl">"</span><span class="s2">symbol</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">BTC-SP$</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">strike</span><span class="dl">"</span><span class="p">:</span><span class="nx">strike</span><span class="p">,</span><span class="dl">"</span><span class="s2">expiry_date</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">01/08/2020</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">quantity</span><span class="dl">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="dl">"</span><span class="s2">action</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">BUY</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">CALL</span><span class="dl">"</span><span class="p">};</span>
+            <span class="nx">option_socket</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="dl">'</span><span class="s1">get_premium</span><span class="dl">'</span><span class="p">,</span> <span class="nx">req_json</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">message1</span><span class="p">)</span> <span class="p">{</span>
+                             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">premium_update</span><span class="dl">"</span><span class="p">);</span>
+                             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message1</span><span class="p">)</span>
+                         <span class="p">});</span>
+        <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div><h2 id='options-pricing'>Options Pricing</h2><h3 id='get_premium'>get_premium</h3>
+<p>Channel url : <code>/premium</code></p>
+
+<p>Events : <code>get_premium</code></p>
+
+<p>Update frequency: when emit get_premium event</p>
+
+<p>Calculate premium for options with specific symbol, strike, expiry date, quantity, buy/sell and call/put</p>
+
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"symbol"</span><span class="p">:</span><span class="s2">"BTC-SP$"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"strike"</span><span class="p">:</span><span class="mi">10000</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"expiry_date"</span><span class="p">:</span><span class="s2">"06/03/2020"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"quantity"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"action"</span><span class="p">:</span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"CALL"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<!-- END -->
+<h3 id='settlement_datetime'>settlement_datetime</h3>
+<p>Channel url : <code>/premium</code></p>
+
+<p>Events : <code>settlement_datetime</code></p>
+
+<p>Socket pushes all available settlement date and time to clients</p>
+
+<p>Update frequency: once a week after weekly settlement</p>
+<h3 id='get_next_settlement'>get_next_settlement</h3>
+<p>Channel url : <code>/premium</code></p>
+
+<p>Events : <code>get_next_settlement</code></p>
+
+<p>Socket pushes how long it is from now to next settlement </p>
+
+<p>Update frequency: when emit get_next_settlement event</p>
+
+<!-- END -->
+<h2 id='spot-pricing'>Spot Pricing</h2><h3 id='tick_change'>tick_change</h3>
+<p>Channel url : <code>/tick</code></p>
+
+<p>Events : <code>tick_change</code></p>
+
+<p>Socket pushes tick price updates to clients</p>
+<h3 id='ohlc_withsymbol'>OHLC_withSymbol</h3>
+<p>Channel url : <code>/tick</code></p>
+
+<p>Events: <code>ohlc_&lt;symbol&gt;</code> following by symbol. Eg. <code>ohlc_BTC-SP$</code></p>
+
+<p>Socket pushes Kline/Candlestick ohlc updates to clients</p>
+
+<p>Update frequency: push updates every 3 seconds</p>
+
+<p>Supported intervals: 1T, 5T, 15T, 30T, 1H, 4H, 1D</p>
+
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC-SP$"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"candle_no"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"period"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"1D"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"base_timestamp"</span><span class="p">:</span><span class="mi">1584682466823</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='get_server_time'>get_server_time</h3>
+<p>Channel url : <code>/tick</code></p>
+
+<p>Socket pushes server time to clients</p>
+
+<p>Update frequency: when emit get_server_time event</p>
