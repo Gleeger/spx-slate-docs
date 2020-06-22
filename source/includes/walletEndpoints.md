@@ -1,6 +1,6 @@
 # Wallet
 
-## Account Balance - Wallet Balance
+## Wallet Balance
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/wallets/balance' \
 --header 'Authorization: Your Authorization Token' \
@@ -129,7 +129,7 @@ Content-Type | application/json
 <!-- ------ -->
 
 <!-- START GET - WALLET BALANCE (ONLY OPTIONS TRADING PAIRS) -->
-## Account Balance - Wallet Balance (Only Options Trading Pairs)
+## Wallet Balance (Options Trading Pairs Only)
 
 ```shell
 curl --location --request GET 'https://api.sparrowsandbox.com/wallets/balance?filter=optionsTrading' \
