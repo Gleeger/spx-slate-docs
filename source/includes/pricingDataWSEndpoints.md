@@ -136,6 +136,8 @@ Events : `tick_change`
 
 Socket pushes tick price updates to clients
 
+Update frequency: push updates every 3 seconds
+
 ### OHLC_withSymbol
 
 Channel url : `/tick`
@@ -143,8 +145,6 @@ Channel url : `/tick`
 Events: `ohlc_<symbol>` following by symbol. Eg. `ohlc_BTC-SP$`
 
 Socket pushes Kline/Candlestick ohlc updates to clients
-
-Update frequency: push updates every 3 seconds
 
 Supported intervals: 1T, 5T, 15T, 30T, 1H, 4H, 1D
 
