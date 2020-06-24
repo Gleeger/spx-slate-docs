@@ -101,28 +101,6 @@ Calculate premium for options with specific symbol, strike, expiry date, quantit
 
 <!-- END -->
 
-### settlement_datetime
-
-Channel url : `/premium`
-
-Events : `settlement_datetime`
-
-Socket pushes all available settlement date and time to clients
-
-Update frequency: once a week after weekly settlement
-
-
-### get_next_settlement
-
-Channel url : `/premium`
-
-Events : `get_next_settlement`
-
-Socket pushes how long it is from now to next settlement 
-
-Update frequency: when emit get_next_settlement event
-
-
 
 <!-- END -->
 
@@ -137,6 +115,16 @@ Events : `tick_change`
 Socket pushes tick price updates to clients
 
 Update frequency: push updates every 3 seconds
+
+### settlement_datetime
+
+Channel url : `/tick`
+
+Events : `settlement_datetime`
+
+Socket pushes all available settlement date and time to clients
+
+Update frequency: once a week after weekly settlement
 
 ### OHLC_withSymbol
 
