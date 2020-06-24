@@ -2,7 +2,7 @@
 
 ## Display Options Trading Pairs
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/pairs' \
+curl --location --request GET 'https://api.sparrowexchange.com/trades/pairs' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID'
 ```
@@ -27,7 +27,7 @@ curl --location --request GET 'https://api.sparrowsandbox.com/trades/pairs' \
 ```
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/trades/pairs`
+`GET https://api.sparrowexchange.com/trades/pairs`
 
 ### HEADERS
 Parameter | Default 
@@ -39,7 +39,7 @@ api-key | Your API KEY ID
 
 ## Create new order with unitPremium
 ```shell
-curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/create' \
+curl --location --request POST 'https://api.sparrowexchange.com/trades/book/create' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID' \
@@ -89,7 +89,7 @@ curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/creat
 ```
 
 ### URL Endpoint
-`POST https://api.sparrowsandbox.com/trades/book/create`
+`POST https://api.sparrowexchange.com/trades/book/create`
 
 ### HEADERS
 Parameter | Default 
@@ -107,7 +107,7 @@ api-key | Your API KEY ID
 
 ## Create new order with totalPremium
 ```shell
-curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/create' \
+curl --location --request POST 'https://api.sparrowexchange.com/trades/book/create' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID' \
@@ -157,7 +157,7 @@ curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/creat
 ```
 
 ### URL Endpoint
-`POST https://api.sparrowsandbox.com/trades/book/create`
+`POST https://api.sparrowexchange.com/trades/book/create`
 
 ### HEADERS
 Parameter | Default 
@@ -173,7 +173,7 @@ api-key | Your API KEY ID
 <!-- START POST - Create new trade order with tradeUnitPremium -->
 ## Create new order with tradeUnitPremium
 ```shell
-curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/create' \
+curl --location --request POST 'https://api.sparrowexchange.com/trades/book/create' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID' \
@@ -223,7 +223,7 @@ curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/creat
 ```
 
 ### URL Endpoint
-`POST https://api.sparrowsandbox.com/trades/book/create`
+`POST https://api.sparrowexchange.com/trades/book/create`
 
 ### HEADERS
 Parameter | Default 
@@ -238,7 +238,7 @@ api-key | Your API KEY ID
 <!-- START POST - Create new trade order without matching process -->
 ## Create new order without matching process
 ```shell
-curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/create' \
+curl --location --request POST 'https://api.sparrowexchange.com/trades/book/create' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID' \
@@ -290,7 +290,7 @@ curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/creat
 ```
 
 ### URL Endpoint
-`POST https://api.sparrowsandbox.com/trades/book/create`
+`POST https://api.sparrowexchange.com/trades/book/create`
 
 ### HEADERS
 Parameter | Default 
@@ -305,7 +305,7 @@ api-key | Your API KEY ID
 <!-- START POST - Bulk Create new trade orders with unitPremium -->
 ## Create new bulk order with unitPremium
 ```shell
-curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/bulkCreate' \
+curl --location --request POST 'https://api.sparrowexchange.com/trades/book/bulkCreate' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID' \
@@ -366,7 +366,7 @@ curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/bulkC
 
 
 ### URL Endpoint
-`POST https://api.sparrowsandbox.com/trades/book/bulkCreate`
+`POST https://api.sparrowexchange.com/trades/book/bulkCreate`
 
 ### HEADERS
 Parameter | Default 
@@ -610,7 +610,7 @@ api-key | Your API KEY ID
 
 ## Display Order Book
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/book'
+curl --location --request GET 'https://api.sparrowexchange.com/trades/book'
 ```
 
 > Example Response
@@ -840,7 +840,7 @@ curl --location --request GET 'https://api.sparrowsandbox.com/trades/book'
 
 
 ### URL Endpoint
-`GET - https://api.sparrowsandbox.com/trades/book`
+`GET - https://api.sparrowexchange.com/trades/book`
 
 
 ### HEADERS
@@ -854,7 +854,7 @@ api-key | Your API KEY ID
 
 ## Display Order Book By Pair
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/BTC-SP$'
+curl --location --request GET 'https://api.sparrowexchange.com/trades/book/BTC-SP$'
 ```
 > Example Response
 
@@ -1083,7 +1083,7 @@ curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/BTC-SP
 
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/trades/book/BTC-SP$`
+`GET https://api.sparrowexchange.com/trades/book/BTC-SP$`
 
 
 
@@ -1091,7 +1091,7 @@ curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/BTC-SP
 
 ## Display Order Book - Filter By Type
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/BTC-SP$?type=call'
+curl --location --request GET 'https://api.sparrowexchange.com/trades/book/BTC-SP$?type=call'
 ```
 
 > Example Response
@@ -1321,7 +1321,7 @@ curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/BTC-SP
 
 
 ### URL Endpoint
-`GET - https://api.sparrowsandbox.com/trades/book/:pair?type={{type}}`
+`GET - https://api.sparrowexchange.com/trades/book/:pair?type={{type}}`
 
 ### PARAMS
 Parameter |  type
@@ -1338,7 +1338,7 @@ pair | BTC/SP$
 
 ## Display Order Book - Filter By Strike
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/BTC-SP$?minStrike=8000&maxStrike=10000'
+curl --location --request GET 'https://api.sparrowexchange.com/trades/book/BTC-SP$?minStrike=8000&maxStrike=10000'
 
 ```
 
@@ -1569,7 +1569,7 @@ curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/BTC-SP
 
 
 ### URL Endpoint
-`GET - https://api.sparrowsandbox.com/trades/book/:pair?minStrike=8000&maxStrike=10000`
+`GET - https://api.sparrowexchange.com/trades/book/:pair?minStrike=8000&maxStrike=10000`
 
 ### PARAMS
 Parameter |  value
@@ -1587,7 +1587,7 @@ pair | BTC/SP$
 
 ## Display Order Book - Filter By Expiry
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/BTC-SP$?minExpiry=2019-10-02T02:00:00.000Z&maxExpiry=2019-11-11T08:00:00.000Z'
+curl --location --request GET 'https://api.sparrowexchange.com/trades/book/BTC-SP$?minExpiry=2019-10-02T02:00:00.000Z&maxExpiry=2019-11-11T08:00:00.000Z'
 ```
 
 > Example Response
@@ -1817,7 +1817,7 @@ curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/BTC-SP
 
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/trades/book/:pair?minStrike=8000&maxStrike=10000`
+`GET https://api.sparrowexchange.com/trades/book/:pair?minStrike=8000&maxStrike=10000`
 
 ### PARAMS
 Parameter |  value
@@ -1836,7 +1836,7 @@ pair | BTC/SP$
 
 ## Display Order Book Depth
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/depth/:pair?type=call&strike=8000&expiry=2019-10-11T08:00:00.000Z'
+curl --location --request GET 'https://api.sparrowexchange.com/trades/book/depth/:pair?type=call&strike=8000&expiry=2019-10-11T08:00:00.000Z'
 ```
 
 > Example Response
@@ -2066,7 +2066,7 @@ curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/depth/
 
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/trades/book/depth/:pair?type=call&strike=8000&expiry=2019-10-11T08:00:00.000Z`
+`GET https://api.sparrowexchange.com/trades/book/depth/:pair?type=call&strike=8000&expiry=2019-10-11T08:00:00.000Z`
 
 ### PARAMS
 Parameter |  value
@@ -2086,7 +2086,7 @@ pair | BTC/SP$
 
 ## Display Order Book Depth - Filter By Action
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/BTC-SP$?action=BUY'
+curl --location --request GET 'https://api.sparrowexchange.com/trades/book/BTC-SP$?action=BUY'
 ```
 
 > Example Response
@@ -2316,7 +2316,7 @@ curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/BTC-SP
 
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/trades/book/:pair?action=BUY`
+`GET https://api.sparrowexchange.com/trades/book/:pair?action=BUY`
 
 ### PARAMS
 Parameter |  value
@@ -2335,7 +2335,7 @@ pair | BTC/SP$
 
 ## Display user trades history 
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own' \
+curl --location --request GET 'https://api.sparrowexchange.com/trades/book/own' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID'
 ```
@@ -2438,7 +2438,7 @@ curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own' \
 
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/trades/book/own`
+`GET https://api.sparrowexchange.com/trades/book/own`
 
 ### HEADERS
 Parameter |  value
@@ -2453,7 +2453,7 @@ api-key | Your API Key ID
 
 ## Display user trades history - custom
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?orderby=expiry&order=asc' \
+curl --location --request GET 'https://api.sparrowexchange.com/trades/book/own?orderby=expiry&order=asc' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID'
 ```
@@ -2517,7 +2517,7 @@ curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?or
 
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/trades/book/own?orderby=expiry&order=asc`
+`GET https://api.sparrowexchange.com/trades/book/own?orderby=expiry&order=asc`
 
 ### HEADERS
 Parameter |  value
@@ -2539,7 +2539,7 @@ order | asc
 ## Display user's bidding and processing trade orders
 
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?status=open' \
+curl --location --request GET 'https://api.sparrowexchange.com/trades/book/own?status=open' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID'
 ```
@@ -2601,7 +2601,7 @@ curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?st
 
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/trades/book/own?status=open`
+`GET https://api.sparrowexchange.com/trades/book/own?status=open`
 
 ### HEADERS
 Parameter |  value
@@ -2622,7 +2622,7 @@ status | open
 ## Display user's bidding and processing trade orders - custom
 
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?status=open&orderby=expiry&order=asc' \
+curl --location --request GET 'https://api.sparrowexchange.com/trades/book/own?status=open&orderby=expiry&order=asc' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID
 ```
@@ -2684,7 +2684,7 @@ curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?st
 
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/trades/book/own?status=open&orderby=expiry&order=asc`
+`GET https://api.sparrowexchange.com/trades/book/own?status=open&orderby=expiry&order=asc`
 
 ### HEADERS
 Parameter |  value
@@ -2707,7 +2707,7 @@ order | asc
 ## Display user's canceled & expired trade orders 
 
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?status=closed' \
+curl --location --request GET 'https://api.sparrowexchange.com/trades/book/own?status=closed' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID'
 ```
@@ -2762,7 +2762,7 @@ curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?st
 
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/trades/book/own?status=closed`
+`GET https://api.sparrowexchange.com/trades/book/own?status=closed`
 
 ### HEADERS
 Parameter |  value
@@ -2782,7 +2782,7 @@ status | closed
 ## Display user's canceled & expired trade orders - custom 
 
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?status=closed&orderby=expiry&order=asc' \
+curl --location --request GET 'https://api.sparrowexchange.com/trades/book/own?status=closed&orderby=expiry&order=asc' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID'
 ```
@@ -2837,7 +2837,7 @@ curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?st
 
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/trades/book/own?status=closed&orderby=expiry&order=asc`
+`GET https://api.sparrowexchange.com/trades/book/own?status=closed&orderby=expiry&order=asc`
 
 ### HEADERS
 Parameter |  value
@@ -2860,7 +2860,7 @@ order | asc
 ## Display user's buy trade orders
 
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?filter=buy' \
+curl --location --request GET 'https://api.sparrowexchange.com/trades/book/own?filter=buy' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID'
 ```
@@ -2923,7 +2923,7 @@ curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?fi
 
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/trades/book/own?filter=buy`
+`GET https://api.sparrowexchange.com/trades/book/own?filter=buy`
 
 ### HEADERS
 Parameter |  value
@@ -2943,7 +2943,7 @@ filter | buy
 ## Display user's buy trade orders - custom
 
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?filter=buy&status=closed&orderby=expiry&order=asc' \
+curl --location --request GET 'https://api.sparrowexchange.com/trades/book/own?filter=buy&status=closed&orderby=expiry&order=asc' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID'
 ```
@@ -3006,7 +3006,7 @@ curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?fi
 
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/trades/book/own?filter=buy&status=closed&orderby=expiry&order=asc`
+`GET https://api.sparrowexchange.com/trades/book/own?filter=buy&status=closed&orderby=expiry&order=asc`
 
 ### HEADERS
 Parameter |  value
@@ -3029,7 +3029,7 @@ order | asc
 ## Display user's sell trade orders
 
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?filter=sell' \
+curl --location --request GET 'https://api.sparrowexchange.com/trades/book/own?filter=sell' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID''
 ```
@@ -3092,7 +3092,7 @@ curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?fi
 
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/trades/book/own?filter=sell`
+`GET https://api.sparrowexchange.com/trades/book/own?filter=sell`
 
 ### HEADERS
 Parameter |  value
@@ -3112,7 +3112,7 @@ filter | sell
 ## Display user's buy trade orders - custom
 
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?filter=sell&orderby=expiry&order=asc' \
+curl --location --request GET 'https://api.sparrowexchange.com/trades/book/own?filter=sell&orderby=expiry&order=asc' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID'
 ```
@@ -3175,7 +3175,7 @@ curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own?fi
 
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/trades/book/own?filter=sell&orderby=expiry&order=asc`
+`GET https://api.sparrowexchange.com/trades/book/own?filter=sell&orderby=expiry&order=asc`
 
 ### HEADERS
 Parameter |  value
@@ -3197,7 +3197,7 @@ order | asc
 ## Display user's single trade order with detail
 
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own/bd3335ea-90a4-4958-86a0-5ac800b2f767' \
+curl --location --request GET 'https://api.sparrowexchange.com/trades/book/own/bd3335ea-90a4-4958-86a0-5ac800b2f767' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID'
 ```
@@ -3257,7 +3257,7 @@ curl --location --request GET 'https://api.sparrowsandbox.com/trades/book/own/bd
 
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/trades/book/own/:tradeOrderId`
+`GET https://api.sparrowexchange.com/trades/book/own/:tradeOrderId`
 
 ### HEADERS
 Parameter |  value
@@ -3274,7 +3274,7 @@ tradeOrderId | bd3335ea-90a4-4958-86a0-5ac800b2f767
 ## Cancel an order
 
 ```shell
-curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/cancel/c7f68417-839c-4c60-abdf-162e66327e48' \
+curl --location --request POST 'https://api.sparrowexchange.com/trades/book/cancel/c7f68417-839c-4c60-abdf-162e66327e48' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID' \
 --data-raw ''
@@ -3282,7 +3282,7 @@ curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/cance
 
 
 ### URL Endpoint
-`POST https://api.sparrowsandbox.com/trades/book/cancel/:trade`
+`POST https://api.sparrowexchange.com/trades/book/cancel/:trade`
 
 ### HEADERS
 Parameter |  value
@@ -3300,7 +3300,7 @@ trade | c7f68417-839c-4c60-abdf-162e66327e48
 ## Bulk Cancel Order
 
 ```shell
-curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/bulkCancel' \
+curl --location --request POST 'https://api.sparrowexchange.com/trades/book/bulkCancel' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID' \
@@ -3325,7 +3325,7 @@ curl --location --request POST 'https://api.sparrowsandbox.com/trades/book/bulkC
 
 
 ### URL Endpoint
-`POST https://api.sparrowsandbox.com/trades/book/bulkCancel`
+`POST https://api.sparrowexchange.com/trades/book/bulkCancel`
 
 ### HEADERS
 Parameter |  value
@@ -3337,14 +3337,14 @@ api-key | Your API Key ID
 
 
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/contracts/own' \
+curl --location --request GET 'https://api.sparrowexchange.com/trades/contracts/own' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID'
 ```
 
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/trades/contracts/own`
+`GET https://api.sparrowexchange.com/trades/contracts/own`
 
 ### HEADERS
 Parameter |  value
@@ -3359,14 +3359,14 @@ api-key | Your API Key ID
 
 
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/contracts/own?status=active' \
+curl --location --request GET 'https://api.sparrowexchange.com/trades/contracts/own?status=active' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID'
 ```
 
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/trades/contracts/own?status=active`
+`GET https://api.sparrowexchange.com/trades/contracts/own?status=active`
 
 ### HEADERS
 Parameter |  value
@@ -3386,14 +3386,14 @@ status | active
 
 
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/contracts/own?status=settled' \
+curl --location --request GET 'https://api.sparrowexchange.com/trades/contracts/own?status=settled' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID'
 ```
 
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/trades/contracts/own?status=settled`
+`GET https://api.sparrowexchange.com/trades/contracts/own?status=settled`
 
 ### HEADERS
 Parameter |  value
@@ -3413,13 +3413,13 @@ status | settled
 
 
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/contracts/own?filter=buy' \
+curl --location --request GET 'https://api.sparrowexchange.com/trades/contracts/own?filter=buy' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID'
 ```
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/trades/contracts/own?filter=buy`
+`GET https://api.sparrowexchange.com/trades/contracts/own?filter=buy`
 
 ### HEADERS
 Parameter |  value
@@ -3439,13 +3439,13 @@ filter | buy
 
 
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/contracts/own?filter=sell' \
+curl --location --request GET 'https://api.sparrowexchange.com/trades/contracts/own?filter=sell' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID'
 ```
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/trades/contracts/own?filter=sell`
+`GET https://api.sparrowexchange.com/trades/contracts/own?filter=sell`
 
 ### HEADERS
 Parameter |  value
@@ -3465,13 +3465,13 @@ filter | sell
 
 
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/contracts/own?filter=sell&status=settled' \
+curl --location --request GET 'https://api.sparrowexchange.com/trades/contracts/own?filter=sell&status=settled' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID'
 ```
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/trades/contracts/own?filter=sell&status=settled`
+`GET https://api.sparrowexchange.com/trades/contracts/own?filter=sell&status=settled`
 
 ### HEADERS
 Parameter |  value
@@ -3492,13 +3492,13 @@ status | settled
 
 
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/contracts/own?format=grouped' \
+curl --location --request GET 'https://api.sparrowexchange.com/trades/contracts/own?format=grouped' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID'
 ```
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/trades/contracts/own?format=grouped`
+`GET https://api.sparrowexchange.com/trades/contracts/own?format=grouped`
 
 ### HEADERS
 Parameter |  value
@@ -3518,7 +3518,7 @@ format | grouped (list / grouped (default is list) refer to TRD-CN-1a)
 
 
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/contracts' \
+curl --location --request GET 'https://api.sparrowexchange.com/trades/contracts' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID'
 ```
@@ -3527,7 +3527,7 @@ By default, sorted by createdAt and status is ACTIVE
 
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/trades/contracts`
+`GET https://api.sparrowexchange.com/trades/contracts`
 
 ### HEADERS
 Parameter |  value
@@ -3542,13 +3542,13 @@ api-key | Your API Key ID
 
 
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/contracts?status=settled' \
+curl --location --request GET 'https://api.sparrowexchange.com/trades/contracts?status=settled' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID'
 ```
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/trades/contracts?status=settled`
+`GET https://api.sparrowexchange.com/trades/contracts?status=settled`
 
 ### HEADERS
 Parameter |  value
@@ -3568,13 +3568,13 @@ status | settled
 
 
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/contracts?type=put' \
+curl --location --request GET 'https://api.sparrowexchange.com/trades/contracts?type=put' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID'
 ```
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/trades/contracts?type=put`
+`GET https://api.sparrowexchange.com/trades/contracts?type=put`
 
 ### HEADERS
 Parameter |  value
@@ -3594,13 +3594,13 @@ type | put
 
 
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/trades/contracts?type=call' \
+curl --location --request GET 'https://api.sparrowexchange.com/trades/contracts?type=call' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID'
 ```
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/trades/contracts?type=put`
+`GET https://api.sparrowexchange.com/trades/contracts?type=put`
 
 ### HEADERS
 Parameter |  value

@@ -8,7 +8,7 @@
 ## Ticker - Check system heartbeat
 
 ```shell
-curl --location --request GET 'https://pricing.sparrowsandbox.com/v1/heartbeat'
+curl --location --request GET 'https://pricing.sparrowexchange.com/v1/heartbeat'
 ```
 > Example Response
 
@@ -22,7 +22,7 @@ curl --location --request GET 'https://pricing.sparrowsandbox.com/v1/heartbeat'
 ```
 
 ### URL Endpoint
-`GET https://pricing.sparrowsandbox.com/v1/heartbeat`
+`GET https://pricing.sparrowexchange.com/v1/heartbeat`
 
 Return system status
 
@@ -32,7 +32,7 @@ Return system status
 ## Ticker - Check system timestamp
 
 ```shell
-curl --location --request GET 'https://pricing.sparrowsandbox.com/v1/time'
+curl --location --request GET 'https://pricing.sparrowexchange.com/v1/time'
 ```
 > Example Response
 
@@ -46,7 +46,7 @@ curl --location --request GET 'https://pricing.sparrowsandbox.com/v1/time'
 ```
 
 ### URL Endpoint
-`GET https://pricing.sparrowsandbox.com/v1/time`
+`GET https://pricing.sparrowexchange.com/v1/time`
 
 Return the current timestamp in millseconds on server
 
@@ -57,7 +57,7 @@ Return the current timestamp in millseconds on server
 ## Ticker - List of symbols
 
 ```shell
-curl --location --request GET 'https://pricing.sparrowsandbox.com/v1/symbols'
+curl --location --request GET 'https://pricing.sparrowexchange.com/v1/symbols'
 ```
 > Example Response
 
@@ -74,7 +74,7 @@ curl --location --request GET 'https://pricing.sparrowsandbox.com/v1/symbols'
 ```
 
 ### URL Endpoint
-`GET https://pricing.sparrowsandbox.com/v1/tick/:symbol`
+`GET https://pricing.sparrowexchange.com/v1/tick/:symbol`
 
 Retrieves available trading symbols. This method can be used to see which symbols are available for trading.
 
@@ -83,7 +83,7 @@ Retrieves available trading symbols. This method can be used to see which symbol
 ## Ticker - Price range within last 24 hours
 
 ```shell
-curl --location --request GET 'https://pricing.sparrowsandbox.com/v1/tick/price_range'
+curl --location --request GET 'https://pricing.sparrowexchange.com/v1/tick/price_range'
 ```
 > Example Response
 
@@ -106,14 +106,14 @@ curl --location --request GET 'https://pricing.sparrowsandbox.com/v1/tick/price_
 ```
 
 ### URL Endpoint
-`GET https://pricing.sparrowsandbox.com/v1/tick/price_range`
+`GET https://pricing.sparrowexchange.com/v1/tick/price_range`
 
 Return ticker price and change comparing to price at 24 hour ago by number and percentage
 
 ## Options - Last Settlement Price
 
 ```shell
-curl --location --request GET 'https://pricing.sparrowsandbox.com/v1/settlement'
+curl --location --request GET 'https://pricing.sparrowexchange.com/v1/settlement'
 ```
 > Example Response
 
@@ -129,7 +129,7 @@ curl --location --request GET 'https://pricing.sparrowsandbox.com/v1/settlement'
 ```
 
 ### URL Endpoint
-`GET https://pricing.sparrowsandbox.com/v1/settlement`
+`GET https://pricing.sparrowexchange.com/v1/settlement`
 
 Return last settlement price. It refreshes on fixed time(currently 8AM UTC) on daily basis.
 
@@ -138,7 +138,7 @@ Return last settlement price. It refreshes on fixed time(currently 8AM UTC) on d
 ## Options - Historical settlement prices
 
 ```shell
-curl --location --request GET 'https://pricing.sparrowsandbox.com/v1/settlement_hist/:days'
+curl --location --request GET 'https://pricing.sparrowexchange.com/v1/settlement_hist/:days'
 ```
 > Example Response
 
@@ -183,7 +183,7 @@ curl --location --request GET 'https://pricing.sparrowsandbox.com/v1/settlement_
 ```
 
 ### URL Endpoint
-`GET https://pricing.sparrowsandbox.com/v1/settlement_hist/:days`
+`GET https://pricing.sparrowexchange.com/v1/settlement_hist/:days`
 
 Retrieve historical settlement prices up to 31 days
 
@@ -197,7 +197,7 @@ days | 1 (up to 31)
 ## Options - Upcoming settlement dates
 
 ```shell
-curl --location --request GET 'https://pricing.sparrowsandbox.com/v1/settlement_dates'
+curl --location --request GET 'https://pricing.sparrowexchange.com/v1/settlement_dates'
 ```
 > Example Response
 
@@ -222,7 +222,7 @@ curl --location --request GET 'https://pricing.sparrowsandbox.com/v1/settlement_
 ```
 
 ### URL Endpoint
-`GET https://pricing.sparrowsandbox.com/v1/settlement_dates`
+`GET https://pricing.sparrowexchange.com/v1/settlement_dates`
 
 Return upcoming settlement datetime
 
@@ -231,7 +231,7 @@ Return upcoming settlement datetime
 ## Options - Options Price
 
 ```shell
-curl --location --request GET 'https://pricing.sparrowsandbox.com/v1/option/price?symbol=BTC-SP$&strike=8500&expiry_date=11/10/2019&quantity=1.1&action=buy&type=call' \
+curl --location --request GET 'https://pricing.sparrowexchange.com/v1/option/price?symbol=BTC-SP$&strike=8500&expiry_date=11/10/2019&quantity=1.1&action=buy&type=call' \
 --header 'Content-Type: application/json'
 ```
 > Example Response
@@ -251,7 +251,7 @@ curl --location --request GET 'https://pricing.sparrowsandbox.com/v1/option/pric
 ```
 
 ### URL Endpoint
-`GET https://pricing.sparrowsandbox.com/v1/option/price?symbol=:symbol&strike=:strike&expiry_date=:expiry_date&quantity=:quantity&action=:action&type=:type`
+`GET https://pricing.sparrowexchange.com/v1/option/price?symbol=:symbol&strike=:strike&expiry_date=:expiry_date&quantity=:quantity&action=:action&type=:type`
 
 Return option price. The strike and quantity should follow step size which vary from time and time.The unit for option price is SP$.iv is implied volatility at which price is calculated.
 
@@ -276,7 +276,7 @@ type | :type (call or put)
 ## Options - Current market iv
 
 ```shell
-curl --location --request GET 'https://pricing.sparrowsandbox.com/v1/option/iv?symbol=BTC-SP$&strike=8500&expiry_days=4&action=buy&type=call' \
+curl --location --request GET 'https://pricing.sparrowexchange.com/v1/option/iv?symbol=BTC-SP$&strike=8500&expiry_days=4&action=buy&type=call' \
 --header 'Content-Type: application/json'
 ```
 > Example Response
@@ -293,7 +293,7 @@ curl --location --request GET 'https://pricing.sparrowsandbox.com/v1/option/iv?s
 ```
 
 ### URL Endpoint
-`GET https://pricing.sparrowsandbox.com/v1/option/iv?symbol=:symbol&strike=:strike&expiry_days=:expiry_days&action=:action&type=:type`
+`GET https://pricing.sparrowexchange.com/v1/option/iv?symbol=:symbol&strike=:strike&expiry_days=:expiry_days&action=:action&type=:type`
 
 Return current implied volatility
 

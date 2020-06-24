@@ -2,7 +2,7 @@
 
 ## Wallet Balance
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/wallets/balance' \
+curl --location --request GET 'https://api.sparrowexchange.com/wallets/balance' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID' \
 --header 'Content-Type: application/json'
@@ -116,7 +116,7 @@ curl --location --request GET 'https://api.sparrowsandbox.com/wallets/balance' \
 ```
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/wallets/balance`
+`GET https://api.sparrowexchange.com/wallets/balance`
 
 ### HEADERS
 Parameter | Default 
@@ -132,7 +132,7 @@ Content-Type | application/json
 ## Wallet Balance (Options Trading Pairs Only)
 
 ```shell
-curl --location --request GET 'https://api.sparrowsandbox.com/wallets/balance?filter=optionsTrading' \
+curl --location --request GET 'https://api.sparrowexchange.com/wallets/balance?filter=optionsTrading' \
 --header 'Authorization: Your Authorization Token' \
 --header 'api-key: Your API Key ID'
 ```
@@ -185,7 +185,7 @@ curl --location --request GET 'https://api.sparrowsandbox.com/wallets/balance?fi
 ```
 
 ### URL Endpoint
-`GET https://api.sparrowsandbox.com/wallets/balance?filter=optionsTrading`
+`GET https://api.sparrowexchange.com/wallets/balance?filter=optionsTrading`
 
 ### HEADERS
 Parameter | Default 
