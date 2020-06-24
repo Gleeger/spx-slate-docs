@@ -1,0 +1,20 @@
+<h1 id='authentication'>Authentication</h1>
+<p>All requests to Sparrow Private API and WebSocket endpoints are required to be signed with an API Key and JWT token. </p>
+
+<p>This section will provide you how to use the API Key ID and RSA Private Key (api.pem) to generate and sign JWT token for your application. </p>
+
+<p>To generate a signed JWT token, you will need:</p>
+
+<ol>
+<li>Your <strong>User ID</strong> (can be found under your Sparrow Dashboard <strong>Account</strong> tab)</li>
+<li>Your <strong>API Key ID</strong> (can be found under your Sparrow Dashboard <strong>API Management</strong> tab)</li>
+<li>Your <strong>RSA Private Key</strong> downloaded (api.pem)</li>
+</ol>
+
+<p>You can sign and generate the token with any programming languages such as <code>Python</code> and <code>Go</code>. Below are some samples for your reference. </p>
+<h1 id='making-your-first-call'>Making Your First Call</h1>
+<p>Test that you have the headers setup by making a <code>GET</code> request to <code>&quot;wallets/balance&quot;</code> with the above API Request Headers obtained from the Authentication session. You should get a <code>HTTP 200 OK</code> response if your keys are correct.</p>
+
+<p><strong>NOTE:</strong> </p>
+
+<p>You&#39;ll need to have the API Request Headers with Authorization token in all API requests to Sparrow Private API and WebSocket endpoints, except Public API endpoints where Authorization token is not required. </p>

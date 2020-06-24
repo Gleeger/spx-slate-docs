@@ -1,4 +1,4 @@
-<h1 id='wallet'>Wallet</h1><h2 id='wallet-balance'>Wallet Balance</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/wallets/balance'</span> <span class="se">\</span>
+<h1 id='wallet'>Wallet</h1><h2 id='wallet-balance'>Wallet Balance</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/wallets/balance'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -109,7 +109,7 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/wallets/balance</code></p>
+<p><code>GET https://api.sparrowexchange.com/wallets/balance</code></p>
 <h3 id='headers'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -136,7 +136,7 @@
 <!-- ------ -->
 
 <!-- START GET - WALLET BALANCE (ONLY OPTIONS TRADING PAIRS) -->
-<h2 id='wallet-balance-options-trading-pairs-only'>Wallet Balance (Options Trading Pairs Only)</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/wallets/balance?filter=optionsTrading'</span> <span class="se">\</span>
+<h2 id='wallet-balance-options-trading-pairs-only'>Wallet Balance (Options Trading Pairs Only)</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/wallets/balance?filter=optionsTrading'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div>
@@ -186,7 +186,7 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-2'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/wallets/balance?filter=optionsTrading</code></p>
+<p><code>GET https://api.sparrowexchange.com/wallets/balance?filter=optionsTrading</code></p>
 <h3 id='headers-2'>HEADERS</h3>
 <table><thead>
 <tr>

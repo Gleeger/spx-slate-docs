@@ -224,6 +224,9 @@
             <a href="#welcome-to-sparrow-39-s-api" class="toc-h1 toc-link" data-title="Welcome to Sparrow's API.">Welcome to Sparrow's API.</a>
           </li>
           <li>
+            <a href="#change-log" class="toc-h1 toc-link" data-title="Change Log">Change Log</a>
+          </li>
+          <li>
             <a href="#sparrow-environments" class="toc-h1 toc-link" data-title="Sparrow Environments">Sparrow Environments</a>
           </li>
           <li>
@@ -421,7 +424,7 @@
       <div class="content">
         <h1 id='welcome-to-sparrow-39-s-api'>Welcome to Sparrow&#39;s API.</h1>
 <p>This documentation will list all available API endpoints for Sparrow users to interact with the platform.</p>
-<h1 id='sparrow-environments'>Sparrow Environments</h1>
+<h1 id='change-log'>Change Log</h1><h1 id='sparrow-environments'>Sparrow Environments</h1>
 <p>Sparrow have two API environments, Sparrow Sandbox and Sparrow Production. Sparrow Sandbox can be used for users to test their API before deploying the application to Sparrow Production. </p>
 
 <table><thead>
@@ -509,7 +512,7 @@ Think of your API RSA Private key like a password:</p>
 <p><strong>NOTE:</strong> </p>
 
 <p>You&#39;ll need to have the API Request Headers with Authorization token in all API requests to Sparrow Private API and WebSocket endpoints, except Public API endpoints where Authorization token is not required. </p>
-<h1 id='wallet'>Wallet</h1><h2 id='wallet-balance'>Wallet Balance</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/wallets/balance'</span> <span class="se">\</span>
+<h1 id='wallet'>Wallet</h1><h2 id='wallet-balance'>Wallet Balance</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/wallets/balance'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
@@ -620,7 +623,7 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/wallets/balance</code></p>
+<p><code>GET https://api.sparrowexchange.com/wallets/balance</code></p>
 <h3 id='headers'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -647,7 +650,7 @@ Think of your API RSA Private key like a password:</p>
 <!-- ------ -->
 
 <!-- START GET - WALLET BALANCE (ONLY OPTIONS TRADING PAIRS) -->
-<h2 id='wallet-balance-options-trading-pairs-only'>Wallet Balance (Options Trading Pairs Only)</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/wallets/balance?filter=optionsTrading'</span> <span class="se">\</span>
+<h2 id='wallet-balance-options-trading-pairs-only'>Wallet Balance (Options Trading Pairs Only)</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/wallets/balance?filter=optionsTrading'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div>
@@ -697,7 +700,7 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-2'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/wallets/balance?filter=optionsTrading</code></p>
+<p><code>GET https://api.sparrowexchange.com/wallets/balance?filter=optionsTrading</code></p>
 <h3 id='headers-2'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -732,7 +735,7 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END GET - WALLET BALANCE (ONLY OPTIONS TRADING PAIRS) -->
-<h1 id='options-trade'>Options Trade</h1><h2 id='display-options-trading-pairs'>Display Options Trading Pairs</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/pairs'</span> <span class="se">\</span>
+<h1 id='options-trade'>Options Trade</h1><h2 id='display-options-trading-pairs'>Display Options Trading Pairs</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/pairs'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div>
@@ -754,7 +757,7 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/trades/pairs</code></p>
+<p><code>GET https://api.sparrowexchange.com/trades/pairs</code></p>
 <h3 id='headers'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -773,7 +776,7 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END  GET - (Option Pairs) Display Options Trading Pairs -->
-<h2 id='create-new-order-with-unitpremium'>Create new order with unitPremium</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowsandbox.com/trades/book/create'</span> <span class="se">\</span>
+<h2 id='create-new-order-with-unitpremium'>Create new order with unitPremium</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowexchange.com/trades/book/create'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span> <span class="se">\</span>
@@ -819,7 +822,7 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-2'>URL Endpoint</h3>
-<p><code>POST https://api.sparrowsandbox.com/trades/book/create</code></p>
+<p><code>POST https://api.sparrowexchange.com/trades/book/create</code></p>
 <h3 id='headers-2'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -844,7 +847,7 @@ Think of your API RSA Private key like a password:</p>
 <!-- END  POST - Create new trade order with unitPremium -->
 
 <!-- START POST - Create new trade order with totalPremium -->
-<h2 id='create-new-order-with-totalpremium'>Create new order with totalPremium</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowsandbox.com/trades/book/create'</span> <span class="se">\</span>
+<h2 id='create-new-order-with-totalpremium'>Create new order with totalPremium</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowexchange.com/trades/book/create'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span> <span class="se">\</span>
@@ -890,7 +893,7 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-3'>URL Endpoint</h3>
-<p><code>POST https://api.sparrowsandbox.com/trades/book/create</code></p>
+<p><code>POST https://api.sparrowexchange.com/trades/book/create</code></p>
 <h3 id='headers-3'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -915,7 +918,7 @@ Think of your API RSA Private key like a password:</p>
 <!-- END  POST - Create new trade order with totalPremium -->
 
 <!-- START POST - Create new trade order with tradeUnitPremium -->
-<h2 id='create-new-order-with-tradeunitpremium'>Create new order with tradeUnitPremium</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowsandbox.com/trades/book/create'</span> <span class="se">\</span>
+<h2 id='create-new-order-with-tradeunitpremium'>Create new order with tradeUnitPremium</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowexchange.com/trades/book/create'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span> <span class="se">\</span>
@@ -961,7 +964,7 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-4'>URL Endpoint</h3>
-<p><code>POST https://api.sparrowsandbox.com/trades/book/create</code></p>
+<p><code>POST https://api.sparrowexchange.com/trades/book/create</code></p>
 <h3 id='headers-4'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -986,7 +989,7 @@ Think of your API RSA Private key like a password:</p>
 <!-- END POST - Create new trade order with tradeUnitPremium -->
 
 <!-- START POST - Create new trade order without matching process -->
-<h2 id='create-new-order-without-matching-process'>Create new order without matching process</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowsandbox.com/trades/book/create'</span> <span class="se">\</span>
+<h2 id='create-new-order-without-matching-process'>Create new order without matching process</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowexchange.com/trades/book/create'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span> <span class="se">\</span>
@@ -1034,7 +1037,7 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-5'>URL Endpoint</h3>
-<p><code>POST https://api.sparrowsandbox.com/trades/book/create</code></p>
+<p><code>POST https://api.sparrowexchange.com/trades/book/create</code></p>
 <h3 id='headers-5'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -1059,7 +1062,7 @@ Think of your API RSA Private key like a password:</p>
 <!-- END POST - Create new trade order without matching process -->
 
 <!-- START POST - Bulk Create new trade orders with unitPremium -->
-<h2 id='create-new-bulk-order-with-unitpremium'>Create new bulk order with unitPremium</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowsandbox.com/trades/book/bulkCreate'</span> <span class="se">\</span>
+<h2 id='create-new-bulk-order-with-unitpremium'>Create new bulk order with unitPremium</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowexchange.com/trades/book/bulkCreate'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span> <span class="se">\</span>
@@ -1116,7 +1119,7 @@ Think of your API RSA Private key like a password:</p>
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-6'>URL Endpoint</h3>
-<p><code>POST https://api.sparrowsandbox.com/trades/book/bulkCreate</code></p>
+<p><code>POST https://api.sparrowexchange.com/trades/book/bulkCreate</code></p>
 <h3 id='headers-6'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -1365,7 +1368,7 @@ Think of your API RSA Private key like a password:</p>
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <!-- END POST - Bulk Create new trade orders with unitPremium -->
-<h2 id='display-order-book'>Display Order Book</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book'</span>
+<h2 id='display-order-book'>Display Order Book</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/book'</span>
 </code></pre></div>
 <blockquote>
 <p>Example Response</p>
@@ -1591,7 +1594,7 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-7'>URL Endpoint</h3>
-<p><code>GET - https://api.sparrowsandbox.com/trades/book</code></p>
+<p><code>GET - https://api.sparrowexchange.com/trades/book</code></p>
 <h3 id='headers-7'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -1610,7 +1613,7 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END GET - Order Book-->
-<h2 id='display-order-book-by-pair'>Display Order Book By Pair</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/BTC-SP$'</span>
+<h2 id='display-order-book-by-pair'>Display Order Book By Pair</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/book/BTC-SP$'</span>
 </code></pre></div>
 <blockquote>
 <p>Example Response</p>
@@ -1836,10 +1839,10 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-8'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/trades/book/BTC-SP$</code></p>
+<p><code>GET https://api.sparrowexchange.com/trades/book/BTC-SP$</code></p>
 
 <!-- END GET - Order Book For Pair-->
-<h2 id='display-order-book-filter-by-type'>Display Order Book - Filter By Type</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/BTC-SP$?type=call'</span>
+<h2 id='display-order-book-filter-by-type'>Display Order Book - Filter By Type</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/book/BTC-SP$?type=call'</span>
 </code></pre></div>
 <blockquote>
 <p>Example Response</p>
@@ -2065,7 +2068,7 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-9'>URL Endpoint</h3>
-<p><code>GET - https://api.sparrowsandbox.com/trades/book/:pair?type={{type}}</code></p>
+<p><code>GET - https://api.sparrowexchange.com/trades/book/:pair?type={{type}}</code></p>
 <h3 id='params'>PARAMS</h3>
 <table><thead>
 <tr>
@@ -2092,7 +2095,7 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END GET - Order Book Filter By Type-->
-<h2 id='display-order-book-filter-by-strike'>Display Order Book - Filter By Strike</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/BTC-SP$?minStrike=8000&amp;maxStrike=10000'</span>
+<h2 id='display-order-book-filter-by-strike'>Display Order Book - Filter By Strike</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/book/BTC-SP$?minStrike=8000&amp;maxStrike=10000'</span>
 
 </code></pre></div>
 <blockquote>
@@ -2319,7 +2322,7 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-10'>URL Endpoint</h3>
-<p><code>GET - https://api.sparrowsandbox.com/trades/book/:pair?minStrike=8000&amp;maxStrike=10000</code></p>
+<p><code>GET - https://api.sparrowexchange.com/trades/book/:pair?minStrike=8000&amp;maxStrike=10000</code></p>
 <h3 id='params-2'>PARAMS</h3>
 <table><thead>
 <tr>
@@ -2350,7 +2353,7 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END GET - Order Book For Strike-->
-<h2 id='display-order-book-filter-by-expiry'>Display Order Book - Filter By Expiry</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/BTC-SP$?minExpiry=2019-10-02T02:00:00.000Z&amp;maxExpiry=2019-11-11T08:00:00.000Z'</span>
+<h2 id='display-order-book-filter-by-expiry'>Display Order Book - Filter By Expiry</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/book/BTC-SP$?minExpiry=2019-10-02T02:00:00.000Z&amp;maxExpiry=2019-11-11T08:00:00.000Z'</span>
 </code></pre></div>
 <blockquote>
 <p>Example Response</p>
@@ -2576,7 +2579,7 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-11'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/trades/book/:pair?minStrike=8000&amp;maxStrike=10000</code></p>
+<p><code>GET https://api.sparrowexchange.com/trades/book/:pair?minStrike=8000&amp;maxStrike=10000</code></p>
 <h3 id='params-3'>PARAMS</h3>
 <table><thead>
 <tr>
@@ -2607,7 +2610,7 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END GET - Order Book filter by Expiry -->
-<h2 id='display-order-book-depth'>Display Order Book Depth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/depth/:pair?type=call&amp;strike=8000&amp;expiry=2019-10-11T08:00:00.000Z'</span>
+<h2 id='display-order-book-depth'>Display Order Book Depth</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/book/depth/:pair?type=call&amp;strike=8000&amp;expiry=2019-10-11T08:00:00.000Z'</span>
 </code></pre></div>
 <blockquote>
 <p>Example Response</p>
@@ -2833,7 +2836,7 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-12'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/trades/book/depth/:pair?type=call&amp;strike=8000&amp;expiry=2019-10-11T08:00:00.000Z</code></p>
+<p><code>GET https://api.sparrowexchange.com/trades/book/depth/:pair?type=call&amp;strike=8000&amp;expiry=2019-10-11T08:00:00.000Z</code></p>
 <h3 id='params-4'>PARAMS</h3>
 <table><thead>
 <tr>
@@ -2868,7 +2871,7 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END GET - Order Book depth -->
-<h2 id='display-order-book-depth-filter-by-action'>Display Order Book Depth - Filter By Action</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/BTC-SP$?action=BUY'</span>
+<h2 id='display-order-book-depth-filter-by-action'>Display Order Book Depth - Filter By Action</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/book/BTC-SP$?action=BUY'</span>
 </code></pre></div>
 <blockquote>
 <p>Example Response</p>
@@ -3094,7 +3097,7 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-13'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/trades/book/:pair?action=BUY</code></p>
+<p><code>GET https://api.sparrowexchange.com/trades/book/:pair?action=BUY</code></p>
 <h3 id='params-5'>PARAMS</h3>
 <table><thead>
 <tr>
@@ -3121,7 +3124,7 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END GET - Order Book depth Filter by Action-->
-<h2 id='display-user-trades-history'>Display user trades history</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own'</span> <span class="se">\</span>
+<h2 id='display-user-trades-history'>Display user trades history</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/book/own'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div>
@@ -3220,7 +3223,7 @@ Think of your API RSA Private key like a password:</p>
 </span><span class="p">]</span><span class="w">
 
 </span></code></pre></div><h3 id='url-endpoint-14'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/trades/book/own</code></p>
+<p><code>GET https://api.sparrowexchange.com/trades/book/own</code></p>
 <h3 id='headers-8'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -3239,7 +3242,7 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END GET - Order Book depth Filter by Action-->
-<h2 id='display-user-trades-history-custom'>Display user trades history - custom</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?orderby=expiry&amp;order=asc'</span> <span class="se">\</span>
+<h2 id='display-user-trades-history-custom'>Display user trades history - custom</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/book/own?orderby=expiry&amp;order=asc'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div>
@@ -3299,7 +3302,7 @@ Think of your API RSA Private key like a password:</p>
 </span><span class="p">]</span><span class="w">
 
 </span></code></pre></div><h3 id='url-endpoint-15'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/trades/book/own?orderby=expiry&amp;order=asc</code></p>
+<p><code>GET https://api.sparrowexchange.com/trades/book/own?orderby=expiry&amp;order=asc</code></p>
 <h3 id='headers-9'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -3334,7 +3337,7 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END GET - Order Book depth Filter by Action-->
-<h2 id='display-user-39-s-bidding-and-processing-trade-orders'>Display user&#39;s bidding and processing trade orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?status=open'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-bidding-and-processing-trade-orders'>Display user&#39;s bidding and processing trade orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/book/own?status=open'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div>
@@ -3392,7 +3395,7 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-16'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/trades/book/own?status=open</code></p>
+<p><code>GET https://api.sparrowexchange.com/trades/book/own?status=open</code></p>
 <h3 id='headers-10'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -3423,7 +3426,7 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END GET - Order Book depth Filter by Action-->
-<h2 id='display-user-39-s-bidding-and-processing-trade-orders-custom'>Display user&#39;s bidding and processing trade orders - custom</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?status=open&amp;orderby=expiry&amp;order=asc'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-bidding-and-processing-trade-orders-custom'>Display user&#39;s bidding and processing trade orders - custom</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/book/own?status=open&amp;orderby=expiry&amp;order=asc'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID
 </span></code></pre></div>
@@ -3481,7 +3484,7 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-17'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/trades/book/own?status=open&amp;orderby=expiry&amp;order=asc</code></p>
+<p><code>GET https://api.sparrowexchange.com/trades/book/own?status=open&amp;orderby=expiry&amp;order=asc</code></p>
 <h3 id='headers-11'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -3520,7 +3523,7 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END GET - Order Book depth Filter by Action-->
-<h2 id='display-user-39-s-canceled-amp-expired-trade-orders'>Display user&#39;s canceled &amp; expired trade orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?status=closed'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-canceled-amp-expired-trade-orders'>Display user&#39;s canceled &amp; expired trade orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/book/own?status=closed'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div>
@@ -3571,7 +3574,7 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-18'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/trades/book/own?status=closed</code></p>
+<p><code>GET https://api.sparrowexchange.com/trades/book/own?status=closed</code></p>
 <h3 id='headers-12'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -3602,7 +3605,7 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END GET - Order Book depth Filter by Action-->
-<h2 id='display-user-39-s-canceled-amp-expired-trade-orders-custom'>Display user&#39;s canceled &amp; expired trade orders - custom</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?status=closed&amp;orderby=expiry&amp;order=asc'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-canceled-amp-expired-trade-orders-custom'>Display user&#39;s canceled &amp; expired trade orders - custom</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/book/own?status=closed&amp;orderby=expiry&amp;order=asc'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div>
@@ -3653,7 +3656,7 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-19'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/trades/book/own?status=closed&amp;orderby=expiry&amp;order=asc</code></p>
+<p><code>GET https://api.sparrowexchange.com/trades/book/own?status=closed&amp;orderby=expiry&amp;order=asc</code></p>
 <h3 id='headers-13'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -3692,7 +3695,7 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END GET - Order Book depth Filter by Action-->
-<h2 id='display-user-39-s-buy-trade-orders'>Display user&#39;s buy trade orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?filter=buy'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-buy-trade-orders'>Display user&#39;s buy trade orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/book/own?filter=buy'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div>
@@ -3751,7 +3754,7 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-20'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/trades/book/own?filter=buy</code></p>
+<p><code>GET https://api.sparrowexchange.com/trades/book/own?filter=buy</code></p>
 <h3 id='headers-14'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -3782,7 +3785,7 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END GET - Order Book depth Filter by Action-->
-<h2 id='display-user-39-s-buy-trade-orders-custom'>Display user&#39;s buy trade orders - custom</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?filter=buy&amp;status=closed&amp;orderby=expiry&amp;order=asc'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-buy-trade-orders-custom'>Display user&#39;s buy trade orders - custom</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/book/own?filter=buy&amp;status=closed&amp;orderby=expiry&amp;order=asc'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div>
@@ -3841,7 +3844,7 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-21'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/trades/book/own?filter=buy&amp;status=closed&amp;orderby=expiry&amp;order=asc</code></p>
+<p><code>GET https://api.sparrowexchange.com/trades/book/own?filter=buy&amp;status=closed&amp;orderby=expiry&amp;order=asc</code></p>
 <h3 id='headers-15'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -3884,7 +3887,7 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END GET - Order Book depth Filter by Action-->
-<h2 id='display-user-39-s-sell-trade-orders'>Display user&#39;s sell trade orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?filter=sell'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-sell-trade-orders'>Display user&#39;s sell trade orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/book/own?filter=sell'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID''
 </span></code></pre></div>
@@ -3943,7 +3946,7 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-22'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/trades/book/own?filter=sell</code></p>
+<p><code>GET https://api.sparrowexchange.com/trades/book/own?filter=sell</code></p>
 <h3 id='headers-16'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -3974,7 +3977,7 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END GET - Order Book depth Filter by Action-->
-<h2 id='display-user-39-s-buy-trade-orders-custom-2'>Display user&#39;s buy trade orders - custom</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own?filter=sell&amp;orderby=expiry&amp;order=asc'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-buy-trade-orders-custom-2'>Display user&#39;s buy trade orders - custom</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/book/own?filter=sell&amp;orderby=expiry&amp;order=asc'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div>
@@ -4033,7 +4036,7 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-23'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/trades/book/own?filter=sell&amp;orderby=expiry&amp;order=asc</code></p>
+<p><code>GET https://api.sparrowexchange.com/trades/book/own?filter=sell&amp;orderby=expiry&amp;order=asc</code></p>
 <h3 id='headers-17'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -4072,7 +4075,7 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END GET - Order Book depth Filter by Action-->
-<h2 id='display-user-39-s-single-trade-order-with-detail'>Display user&#39;s single trade order with detail</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/book/own/bd3335ea-90a4-4958-86a0-5ac800b2f767'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-single-trade-order-with-detail'>Display user&#39;s single trade order with detail</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/book/own/bd3335ea-90a4-4958-86a0-5ac800b2f767'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div>
@@ -4128,7 +4131,7 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="nl">"impliedVolatility"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.92780481"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-24'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/trades/book/own/:tradeOrderId</code></p>
+<p><code>GET https://api.sparrowexchange.com/trades/book/own/:tradeOrderId</code></p>
 <h3 id='headers-18'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -4157,12 +4160,12 @@ Think of your API RSA Private key like a password:</p>
 <td>bd3335ea-90a4-4958-86a0-5ac800b2f767</td>
 </tr>
 </tbody></table>
-<h2 id='cancel-an-order'>Cancel an order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowsandbox.com/trades/book/cancel/c7f68417-839c-4c60-abdf-162e66327e48'</span> <span class="se">\</span>
+<h2 id='cancel-an-order'>Cancel an order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowexchange.com/trades/book/cancel/c7f68417-839c-4c60-abdf-162e66327e48'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span> <span class="se">\</span>
 <span class="nt">--data-raw</span> <span class="s1">''</span>
 </code></pre></div><h3 id='url-endpoint-25'>URL Endpoint</h3>
-<p><code>POST https://api.sparrowsandbox.com/trades/book/cancel/:trade</code></p>
+<p><code>POST https://api.sparrowexchange.com/trades/book/cancel/:trade</code></p>
 <h3 id='headers-19'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -4193,7 +4196,7 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- ----- -->
-<h2 id='bulk-cancel-order'>Bulk Cancel Order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowsandbox.com/trades/book/bulkCancel'</span> <span class="se">\</span>
+<h2 id='bulk-cancel-order'>Bulk Cancel Order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.sparrowexchange.com/trades/book/bulkCancel'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span> <span class="se">\</span>
@@ -4214,7 +4217,7 @@ Think of your API RSA Private key like a password:</p>
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-26'>URL Endpoint</h3>
-<p><code>POST https://api.sparrowsandbox.com/trades/book/bulkCancel</code></p>
+<p><code>POST https://api.sparrowexchange.com/trades/book/bulkCancel</code></p>
 <h3 id='headers-20'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -4231,11 +4234,11 @@ Think of your API RSA Private key like a password:</p>
 <td>Your API Key ID</td>
 </tr>
 </tbody></table>
-<h2 id='display-user-39-s-trade-contracts'>Display user&#39;s trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-trade-contracts'>Display user&#39;s trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/contracts/own'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div><h3 id='url-endpoint-27'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/trades/contracts/own</code></p>
+<p><code>GET https://api.sparrowexchange.com/trades/contracts/own</code></p>
 <h3 id='headers-21'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -4254,11 +4257,11 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END -->
-<h2 id='display-user-39-s-active-trade-contracts'>Display user&#39;s active trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own?status=active'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-active-trade-contracts'>Display user&#39;s active trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/contracts/own?status=active'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div><h3 id='url-endpoint-28'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/trades/contracts/own?status=active</code></p>
+<p><code>GET https://api.sparrowexchange.com/trades/contracts/own?status=active</code></p>
 <h3 id='headers-22'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -4289,11 +4292,11 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END -->
-<h2 id='display-user-39-s-settled-trade-contracts'>Display user&#39;s settled trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own?status=settled'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-settled-trade-contracts'>Display user&#39;s settled trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/contracts/own?status=settled'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div><h3 id='url-endpoint-29'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/trades/contracts/own?status=settled</code></p>
+<p><code>GET https://api.sparrowexchange.com/trades/contracts/own?status=settled</code></p>
 <h3 id='headers-23'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -4324,11 +4327,11 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END -->
-<h2 id='display-user-39-s-buy-trade-contracts'>Display user&#39;s buy trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own?filter=buy'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-buy-trade-contracts'>Display user&#39;s buy trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/contracts/own?filter=buy'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div><h3 id='url-endpoint-30'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/trades/contracts/own?filter=buy</code></p>
+<p><code>GET https://api.sparrowexchange.com/trades/contracts/own?filter=buy</code></p>
 <h3 id='headers-24'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -4359,11 +4362,11 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END -->
-<h2 id='display-user-39-s-sell-trade-contracts'>Display user&#39;s sell trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own?filter=sell'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-sell-trade-contracts'>Display user&#39;s sell trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/contracts/own?filter=sell'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div><h3 id='url-endpoint-31'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/trades/contracts/own?filter=sell</code></p>
+<p><code>GET https://api.sparrowexchange.com/trades/contracts/own?filter=sell</code></p>
 <h3 id='headers-25'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -4394,11 +4397,11 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END -->
-<h2 id='display-user-39-s-trade-contracts-custom'>Display user&#39;s trade contracts - custom</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own?filter=sell&amp;status=settled'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-trade-contracts-custom'>Display user&#39;s trade contracts - custom</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/contracts/own?filter=sell&amp;status=settled'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div><h3 id='url-endpoint-32'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/trades/contracts/own?filter=sell&amp;status=settled</code></p>
+<p><code>GET https://api.sparrowexchange.com/trades/contracts/own?filter=sell&amp;status=settled</code></p>
 <h3 id='headers-26'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -4433,11 +4436,11 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END -->
-<h2 id='display-user-39-s-trade-contracts-group-by-market'>Display user&#39;s trade contracts (group by market)</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts/own?format=grouped'</span> <span class="se">\</span>
+<h2 id='display-user-39-s-trade-contracts-group-by-market'>Display user&#39;s trade contracts (group by market)</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/contracts/own?format=grouped'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div><h3 id='url-endpoint-33'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/trades/contracts/own?format=grouped</code></p>
+<p><code>GET https://api.sparrowexchange.com/trades/contracts/own?format=grouped</code></p>
 <h3 id='headers-27'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -4468,13 +4471,13 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END -->
-<h2 id='display-all-trade-contracts'>Display all trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts'</span> <span class="se">\</span>
+<h2 id='display-all-trade-contracts'>Display all trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/contracts'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div>
 <p>By default, sorted by createdAt and status is ACTIVE</p>
 <h3 id='url-endpoint-34'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/trades/contracts</code></p>
+<p><code>GET https://api.sparrowexchange.com/trades/contracts</code></p>
 <h3 id='headers-28'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -4493,11 +4496,11 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END -->
-<h2 id='display-all-settled-trade-contracts'>Display all settled trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts?status=settled'</span> <span class="se">\</span>
+<h2 id='display-all-settled-trade-contracts'>Display all settled trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/contracts?status=settled'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div><h3 id='url-endpoint-35'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/trades/contracts?status=settled</code></p>
+<p><code>GET https://api.sparrowexchange.com/trades/contracts?status=settled</code></p>
 <h3 id='headers-29'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -4528,11 +4531,11 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END -->
-<h2 id='display-all-put-trade-contracts'>Display all put trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts?type=put'</span> <span class="se">\</span>
+<h2 id='display-all-put-trade-contracts'>Display all put trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/contracts?type=put'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div><h3 id='url-endpoint-36'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/trades/contracts?type=put</code></p>
+<p><code>GET https://api.sparrowexchange.com/trades/contracts?type=put</code></p>
 <h3 id='headers-30'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -4563,11 +4566,11 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END -->
-<h2 id='display-all-call-trade-contracts'>Display all call trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowsandbox.com/trades/contracts?type=call'</span> <span class="se">\</span>
+<h2 id='display-all-call-trade-contracts'>Display all call trade contracts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://api.sparrowexchange.com/trades/contracts?type=call'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Your Authorization Token'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'api-key: Your API Key ID'</span>
 </code></pre></div><h3 id='url-endpoint-37'>URL Endpoint</h3>
-<p><code>GET https://api.sparrowsandbox.com/trades/contracts?type=put</code></p>
+<p><code>GET https://api.sparrowexchange.com/trades/contracts?type=put</code></p>
 <h3 id='headers-31'>HEADERS</h3>
 <table><thead>
 <tr>
@@ -4653,7 +4656,7 @@ Think of your API RSA Private key like a password:</p>
 <td style="text-align: left">https://pricing.sparrowexchange.com/v1/</td>
 </tr>
 </tbody></table>
-<h2 id='ticker-check-system-heartbeat'>Ticker - Check system heartbeat</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowsandbox.com/v1/heartbeat'</span>
+<h2 id='ticker-check-system-heartbeat'>Ticker - Check system heartbeat</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowexchange.com/v1/heartbeat'</span>
 </code></pre></div>
 <blockquote>
 <p>Example Response</p>
@@ -4665,12 +4668,12 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint'>URL Endpoint</h3>
-<p><code>GET https://pricing.sparrowsandbox.com/v1/heartbeat</code></p>
+<p><code>GET https://pricing.sparrowexchange.com/v1/heartbeat</code></p>
 
 <p>Return system status</p>
 
 <!-- END -->
-<h2 id='ticker-check-system-timestamp'>Ticker - Check system timestamp</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowsandbox.com/v1/time'</span>
+<h2 id='ticker-check-system-timestamp'>Ticker - Check system timestamp</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowexchange.com/v1/time'</span>
 </code></pre></div>
 <blockquote>
 <p>Example Response</p>
@@ -4682,12 +4685,12 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-2'>URL Endpoint</h3>
-<p><code>GET https://pricing.sparrowsandbox.com/v1/time</code></p>
+<p><code>GET https://pricing.sparrowexchange.com/v1/time</code></p>
 
 <p>Return the current timestamp in millseconds on server</p>
 
 <!-- END -->
-<h2 id='ticker-list-of-symbols'>Ticker - List of symbols</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowsandbox.com/v1/symbols'</span>
+<h2 id='ticker-list-of-symbols'>Ticker - List of symbols</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowexchange.com/v1/symbols'</span>
 </code></pre></div>
 <blockquote>
 <p>Example Response</p>
@@ -4702,12 +4705,12 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-3'>URL Endpoint</h3>
-<p><code>GET https://pricing.sparrowsandbox.com/v1/tick/:symbol</code></p>
+<p><code>GET https://pricing.sparrowexchange.com/v1/tick/:symbol</code></p>
 
 <p>Retrieves available trading symbols. This method can be used to see which symbols are available for trading.</p>
 
 <!-- END -->
-<h2 id='ticker-price-range-within-last-24-hours'>Ticker - Price range within last 24 hours</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowsandbox.com/v1/tick/price_range'</span>
+<h2 id='ticker-price-range-within-last-24-hours'>Ticker - Price range within last 24 hours</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowexchange.com/v1/tick/price_range'</span>
 </code></pre></div>
 <blockquote>
 <p>Example Response</p>
@@ -4728,10 +4731,10 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-4'>URL Endpoint</h3>
-<p><code>GET https://pricing.sparrowsandbox.com/v1/tick/price_range</code></p>
+<p><code>GET https://pricing.sparrowexchange.com/v1/tick/price_range</code></p>
 
 <p>Return ticker price and change comparing to price at 24 hour ago by number and percentage</p>
-<h2 id='options-last-settlement-price'>Options - Last Settlement Price</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowsandbox.com/v1/settlement'</span>
+<h2 id='options-last-settlement-price'>Options - Last Settlement Price</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowexchange.com/v1/settlement'</span>
 </code></pre></div>
 <blockquote>
 <p>Example Response</p>
@@ -4745,12 +4748,12 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="nl">"signature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"iQEcBAABAgAGBQJdkwD6AAoJEOhpe7MWsGgSrtcH/2s3n7BZUDzTLSwCz4EDk7c265pzciDJKMpxZSIFQfLTpQ52xTmbt+MSfvWlnrVBXlJWF5zTN7egjDrZCqqLiT6EXOg+xGdlJY51exoi9cJoI0VJatWA5sjANLje3QCl8xbpXWluwVeZqw159NM42U0Z01uH94DcidzkxXr4JL5WCmVbVN/RU9TmrZXS7F7FQ+IblMPEPYRCwsOYbAts4+FJ5B/Fxk3zXNOLEBxQrNatrSbTpxY/JxucXP/bxkT4s3RqOV1p2S0DSm0x9cA3gg5RpmWwFaX109lo5y9BEuzn0/zzCZ/tRI9lSH/gZr9MjcM84kqOjHOAhq0KiarOMFE==5wq6"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-5'>URL Endpoint</h3>
-<p><code>GET https://pricing.sparrowsandbox.com/v1/settlement</code></p>
+<p><code>GET https://pricing.sparrowexchange.com/v1/settlement</code></p>
 
 <p>Return last settlement price. It refreshes on fixed time(currently 8AM UTC) on daily basis.</p>
 
 <!-- END -->
-<h2 id='options-historical-settlement-prices'>Options - Historical settlement prices</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowsandbox.com/v1/settlement_hist/:days'</span>
+<h2 id='options-historical-settlement-prices'>Options - Historical settlement prices</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowexchange.com/v1/settlement_hist/:days'</span>
 </code></pre></div>
 <blockquote>
 <p>Example Response</p>
@@ -4793,7 +4796,7 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-6'>URL Endpoint</h3>
-<p><code>GET https://pricing.sparrowsandbox.com/v1/settlement_hist/:days</code></p>
+<p><code>GET https://pricing.sparrowexchange.com/v1/settlement_hist/:days</code></p>
 
 <p>Retrieve historical settlement prices up to 31 days</p>
 <h3 id='params'>PARAMS</h3>
@@ -4810,7 +4813,7 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END -->
-<h2 id='options-upcoming-settlement-dates'>Options - Upcoming settlement dates</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowsandbox.com/v1/settlement_dates'</span>
+<h2 id='options-upcoming-settlement-dates'>Options - Upcoming settlement dates</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowexchange.com/v1/settlement_dates'</span>
 </code></pre></div>
 <blockquote>
 <p>Example Response</p>
@@ -4833,12 +4836,12 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-7'>URL Endpoint</h3>
-<p><code>GET https://pricing.sparrowsandbox.com/v1/settlement_dates</code></p>
+<p><code>GET https://pricing.sparrowexchange.com/v1/settlement_dates</code></p>
 
 <p>Return upcoming settlement datetime</p>
 
 <!-- END -->
-<h2 id='options-options-price'>Options - Options Price</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowsandbox.com/v1/option/price?symbol=BTC-SP$&amp;strike=8500&amp;expiry_date=11/10/2019&amp;quantity=1.1&amp;action=buy&amp;type=call'</span> <span class="se">\</span>
+<h2 id='options-options-price'>Options - Options Price</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowexchange.com/v1/option/price?symbol=BTC-SP$&amp;strike=8500&amp;expiry_date=11/10/2019&amp;quantity=1.1&amp;action=buy&amp;type=call'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
 </code></pre></div>
 <blockquote>
@@ -4856,7 +4859,7 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-8'>URL Endpoint</h3>
-<p><code>GET https://pricing.sparrowsandbox.com/v1/option/price?symbol=:symbol&amp;strike=:strike&amp;expiry_date=:expiry_date&amp;quantity=:quantity&amp;action=:action&amp;type=:type</code></p>
+<p><code>GET https://pricing.sparrowexchange.com/v1/option/price?symbol=:symbol&amp;strike=:strike&amp;expiry_date=:expiry_date&amp;quantity=:quantity&amp;action=:action&amp;type=:type</code></p>
 
 <p>Return option price. The strike and quantity should follow step size which vary from time and time.The unit for option price is SP$.iv is implied volatility at which price is calculated.</p>
 <h3 id='headers'>HEADERS</h3>
@@ -4905,7 +4908,7 @@ Think of your API RSA Private key like a password:</p>
 </tbody></table>
 
 <!-- END -->
-<h2 id='options-current-market-iv'>Options - Current market iv</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowsandbox.com/v1/option/iv?symbol=BTC-SP$&amp;strike=8500&amp;expiry_days=4&amp;action=buy&amp;type=call'</span> <span class="se">\</span>
+<h2 id='options-current-market-iv'>Options - Current market iv</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowexchange.com/v1/option/iv?symbol=BTC-SP$&amp;strike=8500&amp;expiry_days=4&amp;action=buy&amp;type=call'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
 </code></pre></div>
 <blockquote>
@@ -4920,7 +4923,7 @@ Think of your API RSA Private key like a password:</p>
   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"call"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-9'>URL Endpoint</h3>
-<p><code>GET https://pricing.sparrowsandbox.com/v1/option/iv?symbol=:symbol&amp;strike=:strike&amp;expiry_days=:expiry_days&amp;action=:action&amp;type=:type</code></p>
+<p><code>GET https://pricing.sparrowexchange.com/v1/option/iv?symbol=:symbol&amp;strike=:strike&amp;expiry_days=:expiry_days&amp;action=:action&amp;type=:type</code></p>
 
 <p>Return current implied volatility</p>
 <h3 id='headers-2'>HEADERS</h3>
@@ -5059,22 +5062,6 @@ Think of your API RSA Private key like a password:</p>
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <!-- END -->
-<h3 id='settlement_datetime'>settlement_datetime</h3>
-<p>Channel url : <code>/premium</code></p>
-
-<p>Events : <code>settlement_datetime</code></p>
-
-<p>Socket pushes all available settlement date and time to clients</p>
-
-<p>Update frequency: once a week after weekly settlement</p>
-<h3 id='get_next_settlement'>get_next_settlement</h3>
-<p>Channel url : <code>/premium</code></p>
-
-<p>Events : <code>get_next_settlement</code></p>
-
-<p>Socket pushes how long it is from now to next settlement </p>
-
-<p>Update frequency: when emit get_next_settlement event</p>
 
 <!-- END -->
 <h2 id='spot-pricing'>Spot Pricing</h2><h3 id='tick_change'>tick_change</h3>
@@ -5085,6 +5072,14 @@ Think of your API RSA Private key like a password:</p>
 <p>Socket pushes tick price updates to clients</p>
 
 <p>Update frequency: push updates every 3 seconds</p>
+<h3 id='settlement_datetime'>settlement_datetime</h3>
+<p>Channel url : <code>/tick</code></p>
+
+<p>Events : <code>settlement_datetime</code></p>
+
+<p>Socket pushes all available settlement date and time to clients</p>
+
+<p>Update frequency: once a week after weekly settlement</p>
 <h3 id='ohlc_withsymbol'>OHLC_withSymbol</h3>
 <p>Channel url : <code>/tick</code></p>
 

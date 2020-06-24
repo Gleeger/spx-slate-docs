@@ -1,0 +1,42 @@
+<h1 id='api-keys'>API Keys</h1>
+<table><thead>
+<tr>
+<th style="text-align: left">Environment</th>
+<th style="text-align: left">URL</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">Sandbox</td>
+<td style="text-align: left">https://api.sparrowsandbox.com/</td>
+</tr>
+<tr>
+<td style="text-align: left">Production</td>
+<td style="text-align: left">https://api.sparrowexchange.com/</td>
+</tr>
+</tbody></table>
+
+<p>Before you start using Sparrow API, you will need to enable your API access by creating {{api_key_id}} and download your API RSA Private key in PEM format (api.pem). </p>
+
+<p>In order to do so, you will need to login with your account and go to <strong>API Management</strong> &gt; <strong>New API</strong> to submit your API Key request with the necessary privileges. </p>
+
+<p><img src="https://spx-publicassets.s3-ap-southeast-1.amazonaws.com/img/1Keycreation.png" alt="Sparrow API Key Creations" /></p>
+
+<p>Once your API Key request has been submitted, you will receive an API Key Request confirmation email for you to confirm and download the API RSA Private key in PEM format (api.pem). </p>
+
+<p>The private key can be opened by any text editor with the content looks like below: 
+<code>
+-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEAv1oaYMFaXX/FRrlNyDloizH/1W7cKJAGac9G0PCEZsFgcGBi
+... ... 
+ZwPHzaUUtebC6ge9rboRaRsS+wFYVU6OkdEVJIDasm4XMf+etS8=
+-----END RSA PRIVATE KEY-----
+</code>
+Think of your API RSA Private key like a password:</p>
+
+<ul>
+<li>Store it <strong>securely</strong></li>
+<li><strong>Don&#39;t</strong> share it with anyone</li>
+<li><strong>Don&#39;t</strong> put it in any code that is publicly accessible </li>
+</ul>
+
+<p>You will also need {{api_key_id}}, which can be found in <strong>API Management</strong> &gt; <strong>API Key ID</strong>. This will also be used to generate and sign access token for your application. </p>

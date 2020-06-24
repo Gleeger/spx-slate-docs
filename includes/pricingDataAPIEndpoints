@@ -14,7 +14,7 @@
 <td style="text-align: left">https://pricing.sparrowexchange.com/v1/</td>
 </tr>
 </tbody></table>
-<h2 id='ticker-check-system-heartbeat'>Ticker - Check system heartbeat</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowsandbox.com/v1/heartbeat'</span>
+<h2 id='ticker-check-system-heartbeat'>Ticker - Check system heartbeat</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowexchange.com/v1/heartbeat'</span>
 </code></pre></div>
 <blockquote>
 <p>Example Response</p>
@@ -26,12 +26,12 @@
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint'>URL Endpoint</h3>
-<p><code>GET https://pricing.sparrowsandbox.com/v1/heartbeat</code></p>
+<p><code>GET https://pricing.sparrowexchange.com/v1/heartbeat</code></p>
 
 <p>Return system status</p>
 
 <!-- END -->
-<h2 id='ticker-check-system-timestamp'>Ticker - Check system timestamp</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowsandbox.com/v1/time'</span>
+<h2 id='ticker-check-system-timestamp'>Ticker - Check system timestamp</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowexchange.com/v1/time'</span>
 </code></pre></div>
 <blockquote>
 <p>Example Response</p>
@@ -43,12 +43,12 @@
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-2'>URL Endpoint</h3>
-<p><code>GET https://pricing.sparrowsandbox.com/v1/time</code></p>
+<p><code>GET https://pricing.sparrowexchange.com/v1/time</code></p>
 
 <p>Return the current timestamp in millseconds on server</p>
 
 <!-- END -->
-<h2 id='ticker-list-of-symbols'>Ticker - List of symbols</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowsandbox.com/v1/symbols'</span>
+<h2 id='ticker-list-of-symbols'>Ticker - List of symbols</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowexchange.com/v1/symbols'</span>
 </code></pre></div>
 <blockquote>
 <p>Example Response</p>
@@ -63,12 +63,12 @@
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-3'>URL Endpoint</h3>
-<p><code>GET https://pricing.sparrowsandbox.com/v1/tick/:symbol</code></p>
+<p><code>GET https://pricing.sparrowexchange.com/v1/tick/:symbol</code></p>
 
 <p>Retrieves available trading symbols. This method can be used to see which symbols are available for trading.</p>
 
 <!-- END -->
-<h2 id='ticker-price-range-within-last-24-hours'>Ticker - Price range within last 24 hours</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowsandbox.com/v1/tick/price_range'</span>
+<h2 id='ticker-price-range-within-last-24-hours'>Ticker - Price range within last 24 hours</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowexchange.com/v1/tick/price_range'</span>
 </code></pre></div>
 <blockquote>
 <p>Example Response</p>
@@ -89,10 +89,10 @@
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-4'>URL Endpoint</h3>
-<p><code>GET https://pricing.sparrowsandbox.com/v1/tick/price_range</code></p>
+<p><code>GET https://pricing.sparrowexchange.com/v1/tick/price_range</code></p>
 
 <p>Return ticker price and change comparing to price at 24 hour ago by number and percentage</p>
-<h2 id='options-last-settlement-price'>Options - Last Settlement Price</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowsandbox.com/v1/settlement'</span>
+<h2 id='options-last-settlement-price'>Options - Last Settlement Price</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowexchange.com/v1/settlement'</span>
 </code></pre></div>
 <blockquote>
 <p>Example Response</p>
@@ -106,12 +106,12 @@
   </span><span class="nl">"signature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"iQEcBAABAgAGBQJdkwD6AAoJEOhpe7MWsGgSrtcH/2s3n7BZUDzTLSwCz4EDk7c265pzciDJKMpxZSIFQfLTpQ52xTmbt+MSfvWlnrVBXlJWF5zTN7egjDrZCqqLiT6EXOg+xGdlJY51exoi9cJoI0VJatWA5sjANLje3QCl8xbpXWluwVeZqw159NM42U0Z01uH94DcidzkxXr4JL5WCmVbVN/RU9TmrZXS7F7FQ+IblMPEPYRCwsOYbAts4+FJ5B/Fxk3zXNOLEBxQrNatrSbTpxY/JxucXP/bxkT4s3RqOV1p2S0DSm0x9cA3gg5RpmWwFaX109lo5y9BEuzn0/zzCZ/tRI9lSH/gZr9MjcM84kqOjHOAhq0KiarOMFE==5wq6"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-5'>URL Endpoint</h3>
-<p><code>GET https://pricing.sparrowsandbox.com/v1/settlement</code></p>
+<p><code>GET https://pricing.sparrowexchange.com/v1/settlement</code></p>
 
 <p>Return last settlement price. It refreshes on fixed time(currently 8AM UTC) on daily basis.</p>
 
 <!-- END -->
-<h2 id='options-historical-settlement-prices'>Options - Historical settlement prices</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowsandbox.com/v1/settlement_hist/:days'</span>
+<h2 id='options-historical-settlement-prices'>Options - Historical settlement prices</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowexchange.com/v1/settlement_hist/:days'</span>
 </code></pre></div>
 <blockquote>
 <p>Example Response</p>
@@ -154,7 +154,7 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-6'>URL Endpoint</h3>
-<p><code>GET https://pricing.sparrowsandbox.com/v1/settlement_hist/:days</code></p>
+<p><code>GET https://pricing.sparrowexchange.com/v1/settlement_hist/:days</code></p>
 
 <p>Retrieve historical settlement prices up to 31 days</p>
 <h3 id='params'>PARAMS</h3>
@@ -171,7 +171,7 @@
 </tbody></table>
 
 <!-- END -->
-<h2 id='options-upcoming-settlement-dates'>Options - Upcoming settlement dates</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowsandbox.com/v1/settlement_dates'</span>
+<h2 id='options-upcoming-settlement-dates'>Options - Upcoming settlement dates</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowexchange.com/v1/settlement_dates'</span>
 </code></pre></div>
 <blockquote>
 <p>Example Response</p>
@@ -194,12 +194,12 @@
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-7'>URL Endpoint</h3>
-<p><code>GET https://pricing.sparrowsandbox.com/v1/settlement_dates</code></p>
+<p><code>GET https://pricing.sparrowexchange.com/v1/settlement_dates</code></p>
 
 <p>Return upcoming settlement datetime</p>
 
 <!-- END -->
-<h2 id='options-options-price'>Options - Options Price</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowsandbox.com/v1/option/price?symbol=BTC-SP$&amp;strike=8500&amp;expiry_date=11/10/2019&amp;quantity=1.1&amp;action=buy&amp;type=call'</span> <span class="se">\</span>
+<h2 id='options-options-price'>Options - Options Price</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowexchange.com/v1/option/price?symbol=BTC-SP$&amp;strike=8500&amp;expiry_date=11/10/2019&amp;quantity=1.1&amp;action=buy&amp;type=call'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
 </code></pre></div>
 <blockquote>
@@ -217,7 +217,7 @@
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-8'>URL Endpoint</h3>
-<p><code>GET https://pricing.sparrowsandbox.com/v1/option/price?symbol=:symbol&amp;strike=:strike&amp;expiry_date=:expiry_date&amp;quantity=:quantity&amp;action=:action&amp;type=:type</code></p>
+<p><code>GET https://pricing.sparrowexchange.com/v1/option/price?symbol=:symbol&amp;strike=:strike&amp;expiry_date=:expiry_date&amp;quantity=:quantity&amp;action=:action&amp;type=:type</code></p>
 
 <p>Return option price. The strike and quantity should follow step size which vary from time and time.The unit for option price is SP$.iv is implied volatility at which price is calculated.</p>
 <h3 id='headers'>HEADERS</h3>
@@ -266,7 +266,7 @@
 </tbody></table>
 
 <!-- END -->
-<h2 id='options-current-market-iv'>Options - Current market iv</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowsandbox.com/v1/option/iv?symbol=BTC-SP$&amp;strike=8500&amp;expiry_days=4&amp;action=buy&amp;type=call'</span> <span class="se">\</span>
+<h2 id='options-current-market-iv'>Options - Current market iv</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">--location</span> <span class="nt">--request</span> GET <span class="s1">'https://pricing.sparrowexchange.com/v1/option/iv?symbol=BTC-SP$&amp;strike=8500&amp;expiry_days=4&amp;action=buy&amp;type=call'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span>
 </code></pre></div>
 <blockquote>
@@ -281,7 +281,7 @@
   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"call"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='url-endpoint-9'>URL Endpoint</h3>
-<p><code>GET https://pricing.sparrowsandbox.com/v1/option/iv?symbol=:symbol&amp;strike=:strike&amp;expiry_days=:expiry_days&amp;action=:action&amp;type=:type</code></p>
+<p><code>GET https://pricing.sparrowexchange.com/v1/option/iv?symbol=:symbol&amp;strike=:strike&amp;expiry_days=:expiry_days&amp;action=:action&amp;type=:type</code></p>
 
 <p>Return current implied volatility</p>
 <h3 id='headers-2'>HEADERS</h3>

@@ -90,22 +90,6 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <!-- END -->
-<h3 id='settlement_datetime'>settlement_datetime</h3>
-<p>Channel url : <code>/premium</code></p>
-
-<p>Events : <code>settlement_datetime</code></p>
-
-<p>Socket pushes all available settlement date and time to clients</p>
-
-<p>Update frequency: once a week after weekly settlement</p>
-<h3 id='get_next_settlement'>get_next_settlement</h3>
-<p>Channel url : <code>/premium</code></p>
-
-<p>Events : <code>get_next_settlement</code></p>
-
-<p>Socket pushes how long it is from now to next settlement </p>
-
-<p>Update frequency: when emit get_next_settlement event</p>
 
 <!-- END -->
 <h2 id='spot-pricing'>Spot Pricing</h2><h3 id='tick_change'>tick_change</h3>
@@ -116,6 +100,14 @@
 <p>Socket pushes tick price updates to clients</p>
 
 <p>Update frequency: push updates every 3 seconds</p>
+<h3 id='settlement_datetime'>settlement_datetime</h3>
+<p>Channel url : <code>/tick</code></p>
+
+<p>Events : <code>settlement_datetime</code></p>
+
+<p>Socket pushes all available settlement date and time to clients</p>
+
+<p>Update frequency: once a week after weekly settlement</p>
 <h3 id='ohlc_withsymbol'>OHLC_withSymbol</h3>
 <p>Channel url : <code>/tick</code></p>
 
