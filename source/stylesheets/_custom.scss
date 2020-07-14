@@ -223,3 +223,25 @@ body{
 	   	}
 	}
 }
+
+@media (max-width: 930px){
+	.toc-wrapper {
+		width: 230px;
+		.search input{
+			margin: 15px 20px 15px 20px;
+		}
+		
+		.search:before {
+	    	top: 25px;
+	    	left: 35px;
+	    }
+
+	    .search-results.visible{
+	    	margin: -15px 20px 15px 20px;
+	    }
+    }
+
+	.page-wrapper {
+	    margin-left: 0;
+	}
+}
