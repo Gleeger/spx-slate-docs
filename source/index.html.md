@@ -5,7 +5,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - shell
 
 toc_footers:
-  - <a href='https://sparrowexchange.com/'>Sparrow</a>
+  - <a href='https://sparrowexchange.com/'>Sparrow Website</a>
 
 includes:
   - changelog
