@@ -66,6 +66,8 @@ body{
 	.search-results.visible{
 		margin: -15px 20px 15px 30px;
     	width: 191px;
+		height: auto;
+    	max-height: 132px;
     	background-color: #FAFAFA;
 	}
 
@@ -75,6 +77,10 @@ body{
 			line-height: 18px;
 			font-weight: normal;
     		color: #4D4D4D;
+		}
+
+		li{
+			margin: 17px 15px 15px 15px;
 		}
 	}
 
@@ -180,6 +186,10 @@ body{
 	   		color: #4D4D4D;
 	   		padding: 0 40px 0px 20px;
 	   		margin-bottom: 30px;
+
+	   		a{
+	   			color: #216efb;
+	   		}
 	   	}
 
 	   	table{
